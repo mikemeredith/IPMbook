@@ -1,4 +1,4 @@
-AHMbook
+IPMbook
 =======
 
 Marc Kéry and Michael Schaub are planning a new book on *Integrated Population Modeling*.
