@@ -2,19 +2,19 @@
 
 #importFrom("grDevices", "colorRampPalette", "devAskNewPage",  "dev.interactive",
 #           "topo.colors", "adjustcolor", "rgb")
-#importFrom("graphics", "abline", "barplot", "curve", "hist", "image",
-#           "lines", "matplot", "par", "plot", "points", "polygon", "mtext",
-#           "rect", "segments", "text", "title", "axis", "legend", "box")
 #importFrom("methods", "as", "is", "new")
 #importFrom("utils", "head", "stack", "packageVersion", "data")
 
+importFrom("graphics", "abline", "hist", "lines", "par", "plot")
 importFrom("stats", "dbeta", "pbeta", "qbeta", "rbeta",
-        "dgamma", "pgamma", "qgamma", "rgamma")
-
+        "dgamma", "pgamma", "qgamma", "rgamma",
+        "dnorm", "rnorm", "runif", "plogis",
+        "acf", "density")
 
 # Utilities
 export(
   "dbeta2", "pbeta2", "qbeta2", "rbeta2", "getBeta2Par",
   "dbeta3", "pbeta3", "qbeta3", "rbeta3", "getBeta3Par",
-  "dgamma2", "pgamma2", "qgamma2", "rgamma2", "getGammaPar" )
+  "dgamma2", "pgamma2", "qgamma2", "rgamma2", "getGammaPar",
+  "demoMCMC")
 
