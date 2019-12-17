@@ -27,20 +27,21 @@ demoMCMC <- function(y = 20, N = 50, niter = 25000,
   for (t in 1:niter){          # Repeat niter times
     prop.theta <- rnorm(1, current.theta, prop.s)    # Propose a value prop.theta
 
-    # Calculate log(likelihood) and log(prior) for proposed and current values of theta
-    #   and their log(product)
+    # Calculate log(likelihood) and log(prior) and their log(product)
+    #  for proposed and current values of theta
     # (We work with logs because likelihood can be tiny.)
-    prop.llh <- prop.theta * y - N * log(1 + exp(prop.theta))          # log(likelihood) for proposal
+    # log1p(x) = log(1+x) and is precise when x is very small.
+    prop.llh <- prop.theta * y - N * log1p(exp(prop.theta))            # log(likelihood) for proposal
     prop.lp <- dnorm(prop.theta, mu.theta, s.theta, log = TRUE)        # log(prior) for proposal
     prop.log.product <- prop.llh + prop.lp                             # log(product) for proposal
-    current.llh <- current.theta * y - N * log(1 + exp(current.theta)) # log(likelihood) for current
+    current.llh <- current.theta * y - N * log1p(exp(current.theta))   # log(likelihood) for current
     current.lp <- dnorm(current.theta, mu.theta, s.theta, log = TRUE)  # log(prior) for current
     current.log.product <- current.llh + current.lp                    # log(product) for current
     # Calculate the ratio of the products
     a <- exp(prop.log.product - current.log.product)
 
     # If a > 1, we accept the proposal; if a < 1, we accept with probability a.
-    # to do that, compare a with a draw from a uniform {0,1} distribution
+    # To do that, compare a with a draw from a uniform {0,1} distribution
     u <- runif(1)
     if (u < a){                        # Always TRUE if a > 1
       current.theta <- prop.theta
@@ -56,14 +57,14 @@ demoMCMC <- function(y = 20, N = 50, niter = 25000,
   par(mfrow = c(2,2))     # Plots of theta=logit(p) and of p
   plot(theta, type = "l", ylab = "theta (=logit(p))")   # Plot 1: time-series plot of theta = logit(p)
   plot(p, type = "l", ylim = c(0,1))                    # Plot 2: time-series plot of p
-  abline(h = y/N, col = "red")                            # Add maximum likelihood estimate
+  abline(h = y/N, col = "red")                          # Add maximum likelihood estimate
   abline(h = mean(p), col = "blue")                     # Add posterior mean
   hist(p, breaks = 100, col = "grey", main = "", freq = FALSE)  # plot 3: Histogram of posterior with smoothed line
   smooth <- density(p, adjust = 2)
   lines(smooth$x, smooth$y, type = 'l', lwd = 2, col = "blue")
   plot(acf(p, plot = FALSE), main = "", lwd = 3)        # Plot 4: Autocorrelation function plot
 
-  # Some summary
+  # Display some summary information
   cat("\nAcceptance probability:", round(acc.prob, 2), "\n")
   end.time <- Sys.time()         # Stop time
   elapsed.time <- round(difftime(end.time, start.time, units='secs'), 2)  # Compute elapsed time

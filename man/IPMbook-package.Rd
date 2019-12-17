@@ -15,10 +15,11 @@ Provides functions and data sets needed to run the code given in the book \emph{
 The functions are listed by chapter below.
 }
 
-%%\section{Chapter 1}{
-%%  \describe{
- %%% \item{\code{\link{sim.fn}}}{ Simulate a Poisson point process and illustrate the relationships between intensity, abundance and occurrence (AHM1 - section 1.1)}
-%%  } }
+\section{Chapter X}{
+  \describe{
+    \item{\code{\link{demoMCMC}}}{ Demonstration of a random-walk sampler for MCMC (section x.x)}
+  }
+}
 
 
 %%\section{DATA SETS}{
@@ -36,8 +37,7 @@ The functions are listed by chapter below.
 
 
 \author{
-Marc Kéry, Michael Schaub, Mike Meredith
-
+Michael Schaub, Marc Kéry, Mike Meredith
 }
 
 \keyword{package}

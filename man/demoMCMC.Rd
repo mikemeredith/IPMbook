@@ -20,10 +20,10 @@ number of trials.
 the number of MCMC draws required.
 }
   \item{mu.theta}{
-the mean of the normal prior distribution.
+the mean of the Normal prior distribution.
 }
   \item{s.theta}{
-the SD of the normal prior distribution.
+the SD of the Normal prior distribution.
 }
   \item{prop.s}{
 the SD of the Normal distribution for the proposals.
