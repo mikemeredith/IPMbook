@@ -38,7 +38,7 @@ A list with the values of the input arguments and the following additional eleme
  \item{acc.prob }{the proportion of proposed values accepted}
 }
 \author{
-Adapted from code in Ntzoufras (2009) emph{Bayesian Modeling Using WinBUGS} p. 48.
+Adapted from code in Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS} p. 48.
 }
 
 \examples{

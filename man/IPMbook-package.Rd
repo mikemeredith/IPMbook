@@ -7,7 +7,7 @@
 Functions and data for the Book 'Integrated Population Modeling'
 }
 \description{
-Provides functions and data sets needed to run the code given in the book \emph{Integrated Population Modeling} by Marc Kéry and Michael Schaub, Academic Press (in preparation).
+Provides functions and data sets needed to run the code given in the book \emph{Integrated Population Modeling} by Michael Schaub and Marc Kéry, Academic Press (in preparation).
 }
 \details{
 

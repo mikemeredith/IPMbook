@@ -1,9 +1,13 @@
 
+CHANGES in version 0.0.0.9003 (2019-12-19)
+
+  * Michael Schaub is now first author of book.
+
 CHANGES in version 0.0.0.9002 (2019-12-18)
 
   * Fixed precision issue with 'demoMCMC'.
 
-  * Michael Schaub is now first author.
+  * Michael Schaub is now first author of package.
 
 CHANGES in version 0.0.0.9001 (2019-12-17)
 
