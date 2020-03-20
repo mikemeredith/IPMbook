@@ -10,6 +10,7 @@ importFrom("stats", "dbeta", "pbeta", "qbeta", "rbeta",
         "dgamma", "pgamma", "qgamma", "rgamma",
         "dnorm", "rnorm", "runif", "plogis",
         "acf", "density")
+importFrom("stats", "rbinom", "rpois")
 
 # Utilities
 export(
@@ -18,3 +19,10 @@ export(
   "dgamma2", "pgamma2", "qgamma2", "rgamma2", "getGammaPar",
   "demoMCMC")
 
+export(
+  "simPop", "simCapHist", "simProd",
+  "simSurveyBin", "simSurveyNorm", "simSurveyPois",
+  "marray", "marrayAge",
+  "summaryPop",
+  "cleanCH", "rmFirst", "getFirst", "dUnif"
+)

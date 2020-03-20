@@ -5,6 +5,8 @@
 \alias{qgamma2}
 \alias{rgamma2}
 \alias{getGammaPar}
+\encoding{UTF-8}
+
 \title{
 The Gamma Distribution
 }

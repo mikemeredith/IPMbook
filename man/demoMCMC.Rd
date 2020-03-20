@@ -1,5 +1,7 @@
 \name{demoMCMC}
 \alias{demoMCMC}
+\encoding{UTF-8}
+
 \title{
 Demonstration of a random-walk sampler for MCMC
 }

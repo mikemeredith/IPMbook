@@ -10,6 +10,7 @@
 \alias{qbeta3}
 \alias{rbeta3}
 \alias{getBeta3Par}
+\encoding{UTF-8}
 
 \title{
 The Beta Distribution

@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9004 (2020-03-20)
+
+  * Added all the simulation functions for chapter 5.
+
+  * Added 'woodchat5' data set.
+
 CHANGES in version 0.0.0.9003 (2019-12-19)
 
   * Michael Schaub is now first author of book.
