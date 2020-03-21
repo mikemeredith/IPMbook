@@ -13,7 +13,7 @@ Various helper functions.
 
 \code{rmFirst} removes the first capture in each row of a capture history matrix, replacing it with zero.
 
-\code{getFirst} calculates the occasion of first capture in a row of a capture history matrix.
+\code{getFirst} calculates the occasion of first capture in a capture history matrix.
 
 \code{dUnif} creates a vector to be used with the categorical distribution in BUGS to generate a discrete uniform prior.
 }
@@ -28,7 +28,7 @@ dUnif(A, B)
 An individuals x time matrix with capture histories.
 }
   \item{x}{
-A vector of capture/noncapture data, typically 1 row of a capture history.
+An individuals x time matrix with capture histories, or a vector of capture/noncapture data, typically 1 row of a capture history.
 }
   \item{A, B}{
 Range of the discrete uniform prior.
@@ -38,7 +38,7 @@ Range of the discrete uniform prior.
 \value{
 \code{cleanCH} and \code{rmFirst} return the modified capture history matrix.
 
-\code{getFirst} returns the occasion of first capture (scalar).
+\code{getFirst} returns the occasion of first capture.
 
 \code{dUnif} returns a vector... ??
 }

@@ -41,10 +41,8 @@ cleanCH <- function(ch){
 #####################################################################################################
 
 rmFirst <- function(ch){
-  first <- apply(ch, 1, getFirst)
-  for (i in 1:nrow(ch)){
-    ch[i,first[i]] <- 0
-  }
+  index <- cbind(1:nrow(ch), getFirst(ch))
+  ch[index] <- 0
   return(ch)
 }
 
@@ -59,9 +57,13 @@ rmFirst <- function(ch){
 #
 #####################################################################################################
 
-getFirst <- function(x)
-  min(which(x==1))
-
+getFirst <- function(x) {
+  extract <- function(u) min(which(u > 0))
+  if(is.matrix(x)) {
+    return(apply(x, 1, extract))
+  }
+  extract(x)
+}
 
 #####################################################################################################
 #

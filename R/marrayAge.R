@@ -28,7 +28,7 @@ marrayAge <- function(ch, age, mAge = 1){
   maxAge <- max(c(max(age), mAge))
   nind <- nrow(ch)
   n.occasions <- ncol(ch)
-  first <- apply(ch, 1, getFirst)
+  first <- getFirst(ch)
   age.matrix <- matrix(0, ncol = n.occasions, nrow = nind)
   for (i in 1:nind){
     age.matrix[i,first[i]:n.occasions] <- 1:(n.occasions-first[i]+1)+(age[i]-1)

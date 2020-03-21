@@ -1,16 +1,12 @@
 # NAMESPACE for IPMbook package
 
-#importFrom("grDevices", "colorRampPalette", "devAskNewPage",  "dev.interactive",
-#           "topo.colors", "adjustcolor", "rgb")
-#importFrom("methods", "as", "is", "new")
-#importFrom("utils", "head", "stack", "packageVersion", "data")
-
 importFrom("graphics", "abline", "hist", "lines", "par", "plot")
 importFrom("stats", "dbeta", "pbeta", "qbeta", "rbeta",
         "dgamma", "pgamma", "qgamma", "rgamma",
         "dnorm", "rnorm", "runif", "plogis",
         "acf", "density")
 importFrom("stats", "rbinom", "rpois")
+importFrom("utils", "packageVersion")
 
 # Utilities
 export(

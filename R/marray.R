@@ -23,7 +23,7 @@ marray <- function(ch, unobs = 0){
   no <- ncol(ch)
   out <- matrix(0, ncol = ns*(no-1)+1, nrow = ns*(no-1))
   # Remove capture histories of individuals that are marked at last occasion
-  first <- apply(ch, 1, getFirst)
+  first <- getFirst(ch)
   last <- which(first==no)
   if (length(last) > 0)
     ch <- ch[-last,]

@@ -27,6 +27,11 @@ simCapHist <- function(ind, c, p, maxAge = 2){
   nstage <- dim(ind)[1]
   aclasses <- nstage-3
   age <- first <- last <- numeric(nind)
+  
+  if(!is.matrix(c))
+    c <- matrix(c, aclasses, T)
+  if(!is.matrix(p))
+    p <- matrix(p, aclasses, T-1)
 
   for (i in 1:nind){
     g <- which(!is.na(ind[1:(aclasses+1),,i]), arr.ind = TRUE)

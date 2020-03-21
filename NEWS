@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9005 (2020-03-21)
+
+  * Modified 'getFirst' to work with a capture history matrix or a vector.
+
+  * Simplified input needed for 'simPop'.
+
 CHANGES in version 0.0.0.9004 (2020-03-20)
 
   * Added all the simulation functions for chapter 5.

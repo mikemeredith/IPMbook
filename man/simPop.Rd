@@ -11,26 +11,27 @@ Simulates a female-based population. Reproduction is the total number of young, 
 The function allows for a flexible number of age classes.
 }
 \usage{
-simPop(Ni = c(10, 10),
-  phi = matrix(c(rep(0.3, 5), rep(0.55, 5)), ncol = 5, byrow = TRUE),
-  f = matrix(c(rep(3.2, 6), rep(3.2, 6)), ncol = 6, byrow = TRUE),
-  sex.ratio = rep(0.5, 6), Im = rep(0, 6))
+simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, 
+  sex.ratio = 0.5, Im = 0, nyears = 6)
 }
 \arguments{
   \item{Ni}{
 vector with age(stage)-specific population size in the first year [length of vector: number of age(stage) classes, but without immigrants]. Note that the first age(stage) class refers to the 1-year old individuals, since the model is a pre-breeding model. The number of age(stage) classes must correspond to the number of age(stage) classes in the matrix of the survival probabilities.
 }
   \item{phi}{
-matrix with age(stage)- and time-specific survival probabilities [dimension of matrix: number of age(stage) classes x number of years-1]. The rows correspond to the age(stage) classes (first row are the newborns), the columns to the years. Note that the number of age(stage) classes specified here will correspond to the number of age(stage) classes of the simulated population. Moreover, the number of colums defines the number of years.
+survival probabilities: can be (1) scalar, (2) a vector of length equal to Ni, or (3) a matrix with dimensions number of age(stage) classes x (number of years-1).
 }
   \item{f}{
-matrix with the age(stage)- and time-specific fecundity rates [dimension of matrix: number of age(stage) classes x number of years]. The first row corresponds to the fecundity of individuals in the first age(stage) class.
+fecundity rates: can be (1) scalar, (2) a vector of length equal to Ni, or (3) a matrix with dimensions number of age(stage) classes x number of years.
 }
   \item{sex.ratio}{
-vector with the sex ratio (probability that a young is a female) in each year.
+sex ratio (probability that a young is a female) in each year: either scalar or a vector of length nyears.
 }
   \item{Im}{
-vector with the number of immigrants in each year [length of vector: number of years].
+number of immigrants in each year: either scalar or a vector of length = number of years].
+}
+  \item{nyears}{
+number of years of data; ignored if either \code{phi} or \code{f} is a matrix.
 }
 }
 \value{

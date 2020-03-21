@@ -34,13 +34,26 @@
 #####################################################################################################
 
 
-simPop <- function(Ni = c(10, 10), 
-  phi = matrix(c(rep(0.3, 5), rep(0.55, 5)), ncol = 5, byrow = TRUE), 
-  f = matrix(c(rep(3.2, 6), rep(3.2, 6)), ncol = 6, byrow = TRUE), 
-  sex.ratio = rep(0.5, 6), Im = rep(0, 6)) {
+simPop <- function(Ni = c(10, 10),
+  phi = c(0.3, 0.55), f = 3.2, sex.ratio = 0.5, Im = 0, nyears = 6) {
 
   T <- ncol(phi)            # Number of years
-  mAge <- nrow(phi)         # Maximal number of age(stage) classes
+  if(is.null(T))
+    T <- ncol(f) - 1
+  if(length(T) == 0)
+    T <- nyears - 1
+  # mAge <- nrow(phi)         # Maximal number of age(stage) classes
+  mAge <- length(Ni)         # Maximal number of age(stage) classes
+
+  # Turn input in matrices/vectors
+  if(!is.matrix(phi))
+    phi <- matrix(phi, mAge, T)
+  if(!is.matrix(f))
+    f <- matrix(f, mAge, T+1)
+  if(length(sex.ratio) == 1)
+    sex.ratio <- rep(sex.ratio, T+1)
+  if(length(Im) == 1)
+    Im <- rep(Im, T+1)
 
   # 1. Expand the vital rate matrices, such that the number of age classes corresponds to the number of years
   PHI <- matrix(0, ncol = T, nrow = mAge + T)
@@ -63,7 +76,7 @@ simPop <- function(Ni = c(10, 10),
 
   Nindex <- c(0, cumsum(Ni))
 
-  # 2. Create a Leslie matrix to determine approximately how many individuals will be ever alive in the population 
+  # 2. Create a Leslie matrix to determine approximately how many individuals will be ever alive in the population
   N <- matrix(data = NA, nrow = mAge, ncol = T + 1)
   N[,1] <- Ni
   A <- array(0, dim = c(mAge, mAge, T))
@@ -75,7 +88,7 @@ simPop <- function(Ni = c(10, 10),
        A[j,j-1,t] <- PHI[j,t]           # Subdiagonal
        } # j
     A[mAge, mAge, t] <- PHI[mAge, t]
-    } # t       
+    } # t
   for (t in 1:T){
     N[,t+1] <- A[,,t]%*%N[,t] + matrix(c(rep(0, mAge-1), Im[t]), ncol = 1)
     } # t
@@ -84,7 +97,7 @@ simPop <- function(Ni = c(10, 10),
   # 3. Define array for each individual
   ind <- array(NA, dim = c(mAge + 5, T + 1, no.ani))   # information about [1-ye, 2-ye, ..., mAge-ye, Juv, Im, Rep, Dead]
 
-  # 4. Simulate the fates of individuals already present at t = 1 (in different age classes) and their reproduction   
+  # 4. Simulate the fates of individuals already present at t = 1 (in different age classes) and their reproduction
   # 4.a: Simulate survival of the individuals present at t=1
   # Initialize
   for (a in 1:mAge){
@@ -112,14 +125,14 @@ simPop <- function(Ni = c(10, 10),
              } # if
           else {
              ind[mAge,u+1,i] <- 1
-             } # else                
+             } # else
           } # u
        # Record year of death (if any)
        if (sum(z)==T) next
        else {
           D <- min(which(z==0))
           ind[mAge+5,D+1,i] <- 1
-          } # else          
+          } # else
        } # i
     } # a
 
@@ -135,7 +148,7 @@ simPop <- function(Ni = c(10, 10),
     if (Im[t]==0) next
     for (i in (Nimindex[t]+1):Nimindex[t+1]){
        z <- numeric()
-       for (d in t:T){      
+       for (d in t:T){
           z[d-t+1] <- rbinom(1,1,PHI[mAge+d,d])
           } # d
        Z <- max(sum(cumprod(z)))
@@ -147,17 +160,17 @@ simPop <- function(Ni = c(10, 10),
           if (t+u <= (T+1)){
              ind[mAge,u+t,i] <- 1
              } # if
-          else {next}                
+          else {next}
           }  # u
        # Record year of death (if any)
        if (sum(z)==T-t+1) next
        else {
           D <- min(which(z==0))
           ind[mAge+5,D+t,i] <- 1
-          } # else          
+          } # else
        } # i
     } # t
-        
+
   # 3.c: Simulate reproduction of all already existing individuals
   for (i in 1:max(Nimindex)){
     for (t in 1:(T+1)){
@@ -167,17 +180,17 @@ simPop <- function(Ni = c(10, 10),
       if (g != 8){
         juv.tot <- rpois(1,F[g,t])
         ind[mAge+3,t,i] <- rbinom(1,juv.tot,sex.ratio[t])
-        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]            
+        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]
       } # if
       if (g == 8){
-        juv.tot <- rpois(1,F[mAge,t])            
+        juv.tot <- rpois(1,F[mAge,t])
         ind[mAge+3,t,i] <- rbinom(1,juv.tot,sex.ratio[t])
-        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]            
+        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]
       } # if
     } # t
   } # i
 
-  # 4. Simulate the fates of individuals born during the study       
+  # 4. Simulate the fates of individuals born during the study
   # - determine the number of nestlings
   # - determine their fate over time
   # - determine their reproduction
@@ -190,7 +203,7 @@ simPop <- function(Ni = c(10, 10),
       (max(Nimindex)+max(cumsum(nestl[1:t]))+1):(max(Nimindex)+max(cumsum(nestl[1:(t+1)])))] <- 1
     if (t==(T+1))
       break
-     
+
     # 4.b: Model survival of these individuals
     for (i in (max(Nimindex)+max(cumsum(nestl[1:t]))+1):(max(Nimindex)+max(cumsum(nestl[1:(t+1)])))){
       z <- numeric()
@@ -207,7 +220,7 @@ simPop <- function(Ni = c(10, 10),
           ind[u,u+t,i] <- 1
         } else {
            ind[mAge,u+t,i] <- 1
-        } # else                
+        } # else
       }  # u
       # Record year of death (if any)
       if (sum(z)==T-t+1) {
@@ -215,24 +228,24 @@ simPop <- function(Ni = c(10, 10),
       } else {
         D <- min(which(z==0))
         ind[mAge+5,D+t,i] <- 1
-      } # else          
+      } # else
     } # i
 
     # 4.c: Model reproduction of the surviving individuals
     for (i in (max(Nimindex)+max(cumsum(nestl[1:t]))+1):(max(Nimindex)+max(cumsum(nestl[1:(t+1)])))){
-      for(d in t:T+1){       
+      for(d in t:T+1){
         g <- which(!is.na(ind[c(1:mAge),d,i]))
         if (length(g)==0)
           next
         if (g !=8){
           juv.tot <- rpois(1,F[g,d])
           ind[mAge+3,d,i] <- rbinom(1,juv.tot,sex.ratio[t])
-          ind[mAge+4,d,i] <- juv.tot - ind[mAge+3,d,i]            
+          ind[mAge+4,d,i] <- juv.tot - ind[mAge+3,d,i]
         } # if
       } # d
     } # i
   } # t
-      
+
   # 5. Enumerate the total number of animals
   Ntotal <- sum(Ni) + sum(ind[mAge+1,1:(T+1),], na.rm = TRUE) + sum(Im)
   # Remove empty cells and reorder the array such that it starts with the Juv
@@ -247,7 +260,7 @@ simPop <- function(Ni = c(10, 10),
   } # a
   rnames <- c("Juv", rnames, "Im", "Rep F", "Rep M", "Dead")
   rownames(IND) <- rnames
-      
+
   # Summary statistics: Number of individuals in each class and year, plus immigration rate
   Nu <- matrix(NA, ncol = T+1, nrow = mAge + 4)
   for (t in 1:(T+1)){
@@ -274,9 +287,9 @@ simPop <- function(Ni = c(10, 10),
     IND[,extinction.year:(T+1),] <- NA
     rem <- numeric()
     for (i in 1:dim(IND)[3]){
-      rem[i] <- sum(!is.na(IND[,,i]))   
+      rem[i] <- sum(!is.na(IND[,,i]))
     } # i
-    IND <- IND[,,rem>0]   
+    IND <- IND[,,rem>0]
   } # if
 
   # 6. Output
