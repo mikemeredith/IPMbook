@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9006 (2020-03-28)
+
+  * 'simPop2' is a trial version of 'simPop' which returns a state matrix instead of a 3d array.
+
 CHANGES in version 0.0.0.9005 (2020-03-21)
 
   * Modified 'getFirst' to work with a capture history matrix or a vector.

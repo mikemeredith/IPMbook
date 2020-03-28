@@ -35,13 +35,13 @@
 
 
 simPop <- function(Ni = c(10, 10),
-  phi = c(0.3, 0.55), f = 3.2, sex.ratio = 0.5, Im = 0, nyears = 6) {
+  phi = c(0.3, 0.55), f = 3.2, sex.ratio = 0.5, Im = 0, nYears = 6) {
 
-  T <- ncol(phi)            # Number of years
+  T <- ncol(phi)            # Number of years ### intervals
   if(is.null(T))
     T <- ncol(f) - 1
   if(length(T) == 0)
-    T <- nyears - 1
+    T <- nYears - 1
   # mAge <- nrow(phi)         # Maximal number of age(stage) classes
   mAge <- length(Ni)         # Maximal number of age(stage) classes
 
@@ -58,23 +58,23 @@ simPop <- function(Ni = c(10, 10),
   # 1. Expand the vital rate matrices, such that the number of age classes corresponds to the number of years
   PHI <- matrix(0, ncol = T, nrow = mAge + T)
   PHI[1:nrow(phi),] <- phi
-  u <- mAge + T - nrow(phi)
-  if (u > 0){
+  u <- mAge + T - nrow(phi)  ### u == T
+  if (u > 0){                ### u == T > 0 always
     for (j in 1:u){
        PHI[nrow(phi)+j,] <- phi[nrow(phi),]
-       } # j
-    } # if
+    } # j
+  } # if
 
   F <- matrix(0, ncol = T + 1, nrow = mAge + T)
   F[1:nrow(f),] <- f
   u <- mAge + T - nrow(f)
   if (u > 0){
     for (j in 1:u){
-       F[nrow(f)+j,] <- f[nrow(f),]
-       } # j
-    } # if
+      F[nrow(f)+j,] <- f[nrow(f),]
+    } # j
+  } # if
 
-  Nindex <- c(0, cumsum(Ni))
+  # Nindex <- c(0, cumsum(Ni))
 
   # 2. Create a Leslie matrix to determine approximately how many individuals will be ever alive in the population
   N <- matrix(data = NA, nrow = mAge, ncol = T + 1)
@@ -82,105 +82,110 @@ simPop <- function(Ni = c(10, 10),
   A <- array(0, dim = c(mAge, mAge, T))
   for (t in 1:T){
     for (j in 1:mAge){
-       A[1,j,t] <- F[j,t] * sex.ratio[t] * PHI[1,t]    # First row in Leslie matrix
-       } # j
+      A[1,j,t] <- F[j,t] * sex.ratio[t] * PHI[1,t]    # First row in Leslie matrix
+    } # j
     for (j in 2:mAge){
-       A[j,j-1,t] <- PHI[j,t]           # Subdiagonal
-       } # j
+      A[j,j-1,t] <- PHI[j,t]           # Subdiagonal
+    } # j
     A[mAge, mAge, t] <- PHI[mAge, t]
-    } # t
+  } # t
   for (t in 1:T){
     N[,t+1] <- A[,,t]%*%N[,t] + matrix(c(rep(0, mAge-1), Im[t]), ncol = 1)
-    } # t
+  } # t
   no.ani <- round(sum(N)*5)              # 5 times as many individuals that were alive
 
   # 3. Define array for each individual
-  ind <- array(NA, dim = c(mAge + 5, T + 1, no.ani))   # information about [1-ye, 2-ye, ..., mAge-ye, Juv, Im, Rep, Dead]
+  ind <- array(NA, dim = c(mAge + 5, T + 1, no.ani))   # information about [1-ye, 2-ye, ..., mAge-ye, Juv, Im, Rep, Dead]  ### add dimnames here?
 
   # 4. Simulate the fates of individuals already present at t = 1 (in different age classes) and their reproduction
   # 4.a: Simulate survival of the individuals present at t=1
-  # Initialize
+  # Initialize = insert 1s into array as per Ni
+  Nindex <- c(0, cumsum(Ni))
   for (a in 1:mAge){
-    if (Ni[a]==0) next
-    for (i in (Nindex[a]+1):Nindex[a+1]){
-       ind[a,1,i] <- 1
-       } # i
-    } # if
+    if (Ni[a]==0)
+      next
+    for (i in (Nindex[a]+1):Nindex[a+1]){  ### use indexing
+      ind[a,1,i] <- 1
+    } # i
+  } # if ### no, for(a...)
 
   # Simulate survival
-  z <- numeric()
+  z <- numeric(T)        ### inserted T
   for (a in 1:mAge){
     for (i in (Nindex[a]+1):Nindex[a+1]){
-       for (t in 1:T){
-          z[t] <- rbinom(1,1,PHI[a+t,t])
-          } # t
-       Z <- max(sum(cumprod(z)))
-       if (Z==0) {
-          ind[mAge+5,2,i] <- 1
-          next
-          } # if
-       for (u in 1:Z){
-          if (a+u < mAge){
-             ind[a+u,u+1,i] <- 1
-             } # if
-          else {
-             ind[mAge,u+1,i] <- 1
-             } # else
-          } # u
-       # Record year of death (if any)
-       if (sum(z)==T) next
-       else {
-          D <- min(which(z==0))
-          ind[mAge+5,D+1,i] <- 1
-          } # else
-       } # i
-    } # a
+      for (t in 1:T){                   ### use indexing
+        z[t] <- rbinom(1,1,PHI[a+t,t]) ### a starts at 1, t starts at 1 so a+t starts at 2
+      } # t
+      Z <- max(sum(cumprod(z)))  ### no. of intervals survived, Z > 0 if z[1] == 1, sum returns scalar, why max?
+      if (Z==0) {
+        ind[mAge+5,2,i] <- 1  ### flag as Dead in yr 2
+        next
+      } # if
+      for (u in 1:Z){
+        if (a+u < mAge){  ### maybe can use min(mAge, a+u)
+          ind[a+u,u+1,i] <- 1
+        } else {
+          ind[mAge,u+1,i] <- 1
+        } # else
+      } # u
+      # Record year of death (if any)
+      if (sum(z)==T) {  ### ie alive for whole study period
+        next
+      } else {
+        D <- min(which(z==0))  ### first non-survival
+        ind[mAge+5,D+1,i] <- 1  ### flag as dead at the end of the interval
+      } # else
+    } # i
+  } # a
 
   # 3.b: Survival of immigrants (in all years, not just of immigrants present at t = 1)
   Nimindex <- c(0, cumsum(Im)) + max(Nindex)
   for (t in 1:(T+1)){
-    if (Im[t]==0) next
+    if (Im[t]==0)
+      next
     for (i in (Nimindex[t]+1):Nimindex[t+1]){
-       ind[mAge+2,t,i] <- 1
-       } # i
-    } # t
+      ind[mAge+2,t,i] <- 1   ### flag as immigrants ### use ind['Im', t, i]
+    } # i
+  } # t
   for (t in 1:T){
     if (Im[t]==0) next
     for (i in (Nimindex[t]+1):Nimindex[t+1]){
-       z <- numeric()
-       for (d in t:T){
-          z[d-t+1] <- rbinom(1,1,PHI[mAge+d,d])
-          } # d
-       Z <- max(sum(cumprod(z)))
-       if (Z==0){
-          ind[mAge+5,t+1,i] <- 1
+      z <- numeric()
+      for (d in t:T){
+        z[d-t+1] <- rbinom(1,1,PHI[mAge+d,d])
+      } # d
+      Z <- max(sum(cumprod(z)))
+      if (Z==0){
+        ind[mAge+5,t+1,i] <- 1
+        next
+      } # if
+      for (u in 1:Z){
+        if (t+u <= (T+1)){
+          ind[mAge,u+t,i] <- 1
+        } else {
           next
-          } # if
-       for (u in 1:Z){
-          if (t+u <= (T+1)){
-             ind[mAge,u+t,i] <- 1
-             } # if
-          else {next}
-          }  # u
-       # Record year of death (if any)
-       if (sum(z)==T-t+1) next
-       else {
-          D <- min(which(z==0))
-          ind[mAge+5,D+t,i] <- 1
-          } # else
-       } # i
-    } # t
+        }
+      }  # u
+      # Record year of death (if any)
+      if (sum(z)==T-t+1) {
+        next
+      } else {
+        D <- min(which(z==0))
+        ind[mAge+5,D+t,i] <- 1
+      } # else
+    } # i
+  } # t
 
   # 3.c: Simulate reproduction of all already existing individuals
-  for (i in 1:max(Nimindex)){
+  for (i in 1:max(Nimindex)){   ### Nimdex includes immigrants
     for (t in 1:(T+1)){
       g <- which(!is.na(ind[c(1:mAge, mAge+2),t,i]))
       if (length(g)==0)
         next
-      if (g != 8){
+      if (g != 8){  ######## where does 8 come from?? What if g = 42?
         juv.tot <- rpois(1,F[g,t])
-        ind[mAge+3,t,i] <- rbinom(1,juv.tot,sex.ratio[t])
-        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]
+        ind[mAge+3,t,i] <- rbinom(1,juv.tot,sex.ratio[t])  ### RepF
+        ind[mAge+4,t,i] <- juv.tot - ind[mAge+3,t,i]       ### RepM
       } # if
       if (g == 8){
         juv.tot <- rpois(1,F[mAge,t])
@@ -194,11 +199,11 @@ simPop <- function(Ni = c(10, 10),
   # - determine the number of nestlings
   # - determine their fate over time
   # - determine their reproduction
-  nestl <- numeric()
+  nestl <- numeric(T+1)   #### inserted T+1
   nestl[1] <- 0
   for (t in 1:(T+1)){
     # 4.a: Enumerate the number of female nestlings
-    nestl[t+1] <- sum(ind[mAge+3,t,], na.rm = TRUE)
+    nestl[t+1] <- sum(ind[mAge+3,t,], na.rm = TRUE) ### total female nestlings in year t
     ind[mAge+1,t,
       (max(Nimindex)+max(cumsum(nestl[1:t]))+1):(max(Nimindex)+max(cumsum(nestl[1:(t+1)])))] <- 1
     if (t==(T+1))
@@ -206,20 +211,20 @@ simPop <- function(Ni = c(10, 10),
 
     # 4.b: Model survival of these individuals
     for (i in (max(Nimindex)+max(cumsum(nestl[1:t]))+1):(max(Nimindex)+max(cumsum(nestl[1:(t+1)])))){
-      z <- numeric()
+      z <- numeric() ###
       for (d in t:T){
         z[d-t+1] <- rbinom(1,1,PHI[d-t+1,d])
       } # d
-      Z <- max(sum(cumprod(z)))
+      Z <- max(sum(cumprod(z)))  ### sum returns scalar, why max??
       if (Z==0){
-        ind[mAge+5,t+1,i] <- 1
+        ind[mAge+5,t+1,i] <- 1  ### flag as Dead at next survey
         next
       } # if
       for (u in 1:Z){
-        if (u < mAge){
+        if (u < mAge){       ### use min
           ind[u,u+t,i] <- 1
         } else {
-           ind[mAge,u+t,i] <- 1
+          ind[mAge,u+t,i] <- 1
         } # else
       }  # u
       # Record year of death (if any)
@@ -250,11 +255,11 @@ simPop <- function(Ni = c(10, 10),
   Ntotal <- sum(Ni) + sum(ind[mAge+1,1:(T+1),], na.rm = TRUE) + sum(Im)
   # Remove empty cells and reorder the array such that it starts with the Juv
   IND <- ind[,,1:Ntotal]
-  IND[1,,] <- ind[mAge+1,,1:Ntotal]
+  IND[1,,] <- ind[mAge+1,,1:Ntotal] #### move "Juv" to first row
   for (a in 1:mAge){
     IND[a+1,,] <- ind[a,,1:Ntotal]
   } # a
-  rnames <- numeric()
+  rnames <- numeric()  #### numeric ??!!
   for (a in 1:mAge){
     rnames[a] <- paste(a,"-Year", sep="")
   } # a

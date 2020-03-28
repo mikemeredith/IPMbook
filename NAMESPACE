@@ -22,3 +22,5 @@ export(
   "summaryPop",
   "cleanCH", "rmFirst", "getFirst", "dUnif"
 )
+
+export("simPop2") ############# remove later
