@@ -60,31 +60,36 @@ simPop2 <- function(Ni = c(10, 10),
   mAge <- length(Ni)         # Number of adult age(stage) classes
 
   # Turn input into matrices/vectors
-  if(!is.matrix(phi))
-    if(length(phi) < mAge+1)
-      phi[length(phi):(mAge+1)] <- phi[length(phi)]
+  if(!is.matrix(phi))  {
     phi <- matrix(phi, length(phi), nIntervals)
-  if(!is.matrix(f))
-    if(length(f) < mAge)
-      f[length(f):mAge] <- f[length(f)]
+  }
+  if(nrow(phi) < mAge+1) {
+    phi0 <- matrix(phi[nrow(phi),], nrow=mAge+1-nrow(phi), nIntervals)
+    phi <- rbind(phi, phi0)
+  }
+  if(!is.matrix(f)) {
     f <- matrix(f, length(f), nYears)
+  }
+  if(nrow(f) < mAge) {
+    f0 <- matrix(f[nrow(f),], nrow=mAge-nrow(f), nYears)
+    f <- rbind(f, f0)
+  }
   if(length(sex.ratio) == 1)
     sex.ratio <- rep(sex.ratio, nYears)
   if(length(Im) == 1)
     Im <- rep(Im, nYears)
 
-  # 1. Expand the vital rate matrices
-  # Create matrix PHI for indexing
-  # row 1 = newborns; row 2 = immigrants; rows 3... = age classes 1...
+  # 1. Revamp the vital rate matrices to facilitate indexing
+  # row 1 = newborns (unused for f); row 2 = immigrants; rows 3... = age classes 1...
   PHI <- phi[c(1, nrow(phi), 2:nrow(phi)), ]
-
-  # Create F matrix for indexing: row 1 not used, 2 = immigrants, 3... age classes
   F <- f[c(NA, nrow(f), 1:nrow(f)), ]
 
   # 3. Define state matrix and reproduction array
   state <- matrix(NA, sum(Ni) + sum(Im), nYears)
-  reprod <- array(NA, c(sum(Ni) + sum(Im), nYears, 2))
-  
+  colnames(state) <- paste0("Y", 1:nYears)
+  reprod <- array(NA, c(sum(Ni) + sum(Im), nYears, 3))
+  dimnames(reprod) <- list(NULL, paste0("Y", 1:nYears), c("F", "M", "Mum"))
+
   # -------------------------------------
   # 4. Simulate the population for each year
   # 4.1: Initialize for Year 1, insert 1s into matrix as per Ni
@@ -103,12 +108,13 @@ simPop2 <- function(Ni = c(10, 10),
     g <- state[alive, t]
     births <- rpois(length(g), F[g,t])  # total births per individual
     Fbirths <- rbinom(length(g), births, sex.ratio[t])  # female births
-    reprod[alive, t, 1] <- Fbirths
-    reprod[alive, t, 2] <- births - Fbirths
+    reprod[alive, t, "F"] <- Fbirths
+    reprod[alive, t, "M"] <- births - Fbirths
+    reprod[alive, t, "Mum"] <- g
     Nborn <- sum(Fbirths)
     # 'grow' the arrays, add newborn females to the array but don't update Nadult yet
     if(Nborn > 0) {
-      reprod <- abind::abind(reprod, array(NA, c(Nborn, nYears, 2)), along=1)
+      reprod <- abind::abind(reprod, array(NA, c(Nborn, nYears, 3)), along=1)
       state <- rbind(state, matrix(NA, Nborn, nYears))
       state[(Nadult+1):(Nadult + Nborn), t] <- 1
     }
@@ -145,9 +151,9 @@ simPop2 <- function(Ni = c(10, 10),
   BM <- colSums(reprod[, , 2], na.rm=TRUE)
   adults <- apply(state, 2, tabulate, nbins=mAge+2)[-1,]
   rownames(adults) <- c("Im", paste(1:mAge, "Year", sep="-"))
-  Nu <- rbind(BornF = BF,
-              adults,
+  Nu <- rbind(adults,
               Total = colSums(adults),
+              BornF = BF,
               BornT = BF + BM)
 
   # 6. Output
@@ -155,40 +161,6 @@ simPop2 <- function(Ni = c(10, 10),
     # ~~~~ simulation parameters ~~~~~
     Ni = Ni, phi = phi, f = f, sex.ratio = sex.ratio, Im = Im,
     # ~~~~ simulated output ~~~~~
-    state = state, reprod = unname(reprod), N = Nu))
+    state = state, reprod = reprod, N = Nu))
 }
 
-# Testing, testing
-if(FALSE) {
-set.seed(1)
-tmp <- simPop2()
-str(tmp)
-tmp$N
-
-set.seed(1)
-tmp <- simPop2(Im=5)
-str(tmp)
-tmp$N
-
-set.seed(1)
-tmp <- simPop2(f = c(2.3, 4))
-str(tmp)
-tmp$N
-
-set.seed(1)
-tmp <- simPop2(f = 0.1, phi = c(0.1, 0.2))  # Extinction
-str(tmp)
-tmp$N
-
-set.seed(1)
-tmp <- simPop2(Ni = 10, phi=0.55, f=3.2)  # 1 age class
-str(tmp)
-tmp$N
-tmp$phi
-tmp$f
-
-set.seed(1)
-tmp <- simPop2(Ni = 10, phi=0.55, f=3.2, Im=5)
-str(tmp)
-tmp$N
-}
