@@ -23,4 +23,4 @@ export(
   "cleanCH", "rmFirst", "getFirst", "dUnif"
 )
 
-export("simPop2", "simCapHist2") ############# remove later
+export("simPop2", "simCapHist2", "simProd2") ############# remove later

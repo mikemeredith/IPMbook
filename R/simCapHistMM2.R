@@ -35,60 +35,50 @@ simCapHist2 <- function(state, cap = c(0.35, 0.4), recap = 0.6, maxAge = 2){
 
   nYears <- ncol(state)
   nind <- nrow(state)
-  nstage <- max(state, na.rm=TRUE)
-  if(maxAge > 2) {
-    warning("maxAge > 2 not yet implemented; using maxAge = 2", call.=FALSE)
-    maxAge <- 2
-  }
+  nstage <- max(state, na.rm=TRUE) + 1
 
   if(!is.matrix(cap))
     cap <- matrix(cap, nrow=length(cap), ncol=nYears)
+  if(nrow(cap) < nstage) {
+    cap0 <- matrix(cap[nrow(cap),], nrow=nstage-nrow(cap), nYears)
+    cap <- rbind(cap, cap0)
+  }
   if(!is.matrix(recap))
     recap <- matrix(recap, nrow=length(recap), ncol=nYears-1)
+  if(nrow(recap) < nstage) {
+    recap0 <- matrix(recap[nrow(recap),], nrow=nstage-nrow(recap), nYears-1)
+    recap <- rbind(recap, recap0)
+  }
 
-  # Revamp the capture prob matrices to facilitate indexing
-  # row 1 = newborns; row 2 = immigrants; rows 3... = age classes 1...
-  if(nrow(cap) == 1) {
-    C <- matrix(cap, nrow=nstage, ncol=nYears, byrow=TRUE)
-  } else {
-    C <- rbind(cap[1, ], cap[nrow(cap)], cap[-1,])
-    while(nrow(C) < nstage)
-      C <- rbind(C, cap[nrow(cap)])
-  }
-  if(nrow(recap) == 1) {
-    P <- matrix(recap, nrow=nstage, ncol=nYears-1, byrow=TRUE)
-  } else {
-    P <- rbind(recap[1, ], recap[nrow(recap)], recap[-1,])
-    while(nrow(P) < nstage)
-      P <- rbind(P, recap[nrow(recap)])
-  }
   # do a 3-d array, age x year x 2, [,,1] = first capture, [,,2] second capture.
   # Add a first column of NAs to P then combine
-  Px <- cbind(NA, P)
-  CP <- abind::abind(C, Px, along=3)
+  Px <- cbind(NA, recap)
+  CP <- abind::abind(cap, Px, along=3)
 
   # Objects to hold output
-  ch.age <- matrix(0, nind, nYears) # Matrix with age class if captured, or 0
+  ch.age <- matrix(NA, nind, nYears) # Matrix with age class if captured, or 0
   ctBefore <- rep(1, nind)          # 1 if not caught before, 2 if already caught.
 
   for(t in 1:nYears) {
-    alive <- which(state[, t] > 0)
-    index <- cbind(state[alive, t], t, ctBefore[alive])
+    alive <- which(state[, t] >= 0)
+    index <- cbind(state[alive, t]+1, t, ctBefore[alive])
     caped <- rbinom(length(alive), 1, CP[index]) == 1 # TRUE if captured
     caught <- alive[caped]
     ch.age[caught, t] <- state[caught, t]
     ctBefore[caught] <- 2
   }
 
-  # Remove individuals that have never been captured/marked
-  incl <- rowSums(ch.age) >= 1
+  # Remove individuals that have never been captured/marked (ie, all-NA rows)
+  incl <- rowSums(!is.na(ch.age)) >= 1
   ch.age <- ch.age[incl,]
   # Extract age of first capture
+  ch.age <- ch.age + 1 # 1 = newborns, other ages increased by 1
   index <- cbind(1:nrow(ch.age), getFirst(ch.age))
   age <- ch.age[index]  
-  age <- pmin(age, maxAge)  # Easy with maxAge=2, if >2, need to fix Im's.
+  age <- pmin(age, maxAge)
   # Get usual 0/1 capture histories
   ch <- (ch.age > 0) * 1  # *1 coerces to numeric but keeps the matrix structure.
+  ch[is.na(ch)] <- 0
   
   return(list(cap = cap, recap = recap, ch = ch, age = age))
 }

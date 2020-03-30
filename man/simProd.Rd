@@ -1,26 +1,30 @@
 \name{simProd}
 \alias{simProd}
+\alias{simProd2}
 \encoding{UTF-8}
 
 \title{
 Simulate productivity data
 }
 \description{
-Simulate ...
-
+Simulate a survey of breeding females, where a proportion of the females are included each year and the number of offspring (male and female) recorded.
 }
 \usage{
 simProd(ind, prep, females.only = 'no')
+simProd2(reprod, pInclude, females.only = FALSE)
 }
 \arguments{
   \item{ind}{
 array with the population, usually the output from \code{\link{simPop}}
 }
-  \item{prep}{
-vector with the annual detection probabilities of broods.
+  \item{reprod}{
+array with the reproductive performance of the population, usually the output from \code{\link{simPop2}}
+}
+  \item{prep, pInclude}{
+vector with the annual detection probabilities of broods; for \code{simProd2}, it can be scalar, used for all years.
 }
   \item{females.only}{
-if 'yes' only the number of females that are produced is recorded. Default: total reproduction is recorded.
+if 'yes'/TRUE only the number of females that are produced is recorded. Default: total reproduction is recorded.
 }
 }
 \value{
@@ -34,5 +38,8 @@ M. Schaub
 }
 
 \examples{
-# TODO
+# Generate a population
+pop <- simPop2()
+prod <- simProd2(pop$reprod)
+str(prod)
 }
