@@ -32,7 +32,7 @@ cap <- c(c_juv, c_ad)
 recap <- p_rec
 }
 
-simCapHist2 <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = 2){
+simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = 2){
 
   inputName <- deparse(substitute(state))
   # ~~~~~ check and fix input ~~~~~~~~~~~~~

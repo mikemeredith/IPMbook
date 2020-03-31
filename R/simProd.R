@@ -18,7 +18,7 @@
 ################################################
 
 
-simProd2 <- function(reprod, pInclude = 0.3, females.only = FALSE){
+simProd <- function(reprod, pInclude = 0.3, females.only = FALSE){
 
   inputName <- deparse(substitute(reprod))
 

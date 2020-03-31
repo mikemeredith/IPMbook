@@ -1,6 +1,5 @@
 \name{simPop}
 \alias{simPop}
-\alias{simPop2}  %%% temporary entry
 \encoding{UTF-8}
 
 \title{
@@ -20,9 +19,7 @@ Probability of survival can also vary by age class and interval between years. T
 User specification of the fecundity and survival matrices is simplified when values do not change over time or are the same for all age classes. See the examples.
 }
 \usage{
-simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2,
-  sex.ratio = 0.5, Im = 0, nYears = 6)
-simPop2(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, pBreed = 1,
+simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, pBreed = 1,
   sex.ratio = 0.5, Im = 0, ageOfIm = 1, nYears = 6)
 }
 \arguments{
@@ -52,9 +49,8 @@ number of years of data; ignored if either \code{phi} or \code{f} is a matrix.
 }
 }
 \value{
-This may change in future versions!
 
-For \code{simPop2}, a list with the simulation settings and the following components:
+A list with the simulation settings and the following components:
  \item{state }{an individuals x years matrix, with the state of each individual in each year. States are coded: -1 = died, 0 = newborn, 1,2,... = 1-Year, 2-Year,...}
  \item{imYear }{a vector with the year of immigration for each individual, or NA if not an immigrant}
  \item{reprod }{an individuals x years x 3 array with the number of female and male offspring and the state of the mother for each individual (states coded as for \code{state}; NAs indicate individuals not alive or not breeding.}
@@ -69,7 +65,7 @@ M. Schaub
 
 \examples{
 # Simulate a population with the default arguments:
-str(pop <- simPop2())
+str(pop <- simPop())
 pop$N
 View(pop$state)
 pop$phi
@@ -77,7 +73,7 @@ pop$f
 pop$reprod[1:5,,]
 
 # Just one (adult) age group:
-str(pop <- simPop2(Ni=20))
+str(pop <- simPop(Ni=20))
 pop$N
 pop$phi
 pop$f
@@ -88,18 +84,18 @@ phi <- matrix(c(
   0.5, 0.7, 0.7, 0.4, 0.4), # adults
   nrow=2, byrow=TRUE)
 f <- matrix(c(3, 4, 5, 2, 2, 3), nrow=1)
-str(pop <- simPop2(phi=phi, f=f))
+str(pop <- simPop(phi=phi, f=f))
 pop$phi
 pop$f    # Matrices expanded to all adult age classes
 pop$N
 
 # With immigration
-str(pop <- simPop2(Im=5))
+str(pop <- simPop(Im=5))
 pop$N
 # with ageOfIm = 1 (default) immigrants are included in 1-Year figures.
 
 # Not all 1-Years attempt to breed, and fecundity is lower
-str(pop <- simPop2(f = c(2, 3.2), pBreed = c(0.7, 1)))
+str(pop <- simPop(f = c(2, 3.2), pBreed = c(0.7, 1)))
 pop$f
 pop$pBreed
 # Note the difference between numbers of breeders and adults among 1-Years
@@ -108,11 +104,11 @@ pop$N
 
 # Extinction
 set.seed(1)
-str(pop <- simPop2(f = 0.1, phi = c(0.1, 0.2)))
+str(pop <- simPop(f = 0.1, phi = c(0.1, 0.2)))
 pop$N
 
 # Sink population, rescued by immigration
 set.seed(1)
-str(pop <- simPop2(f = 0.1, phi = c(0.1, 0.2), Im=5))
+str(pop <- simPop(f = 0.1, phi = c(0.1, 0.2), Im=5))
 pop$N
 }

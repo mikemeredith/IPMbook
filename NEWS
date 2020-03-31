@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9011 (2020-03-31)
+
+  * Renamed 'simPop2', 'simCapHist2' and 'simProd2' as 'simPop', 'simCapHist' and 'simProd'
+
 CHANGES in version 0.0.0.9010 (2020-03-31)
 
   * Fixed bugs in 'simPop2' and 'simCapHist2'.

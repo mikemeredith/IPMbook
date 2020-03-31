@@ -38,7 +38,7 @@ if(FALSE) {  # Use these if stepping through code
   Im = 0
   ageOfIm = 1
   nYears = 6
-  
+
   Ni = c(10, 10, 10) # 3 age classes
   # Ni = 10
   # phi = 0.55
@@ -61,7 +61,7 @@ if(FALSE) {  # Use these if stepping through code
 
 }
 
-simPop2 <- function(Ni = c(10, 10),
+simPop <- function(Ni = c(10, 10),
   phi = c(0.3, 0.55), f = 3.2, pBreed = 1, sex.ratio = 0.5, Im = 0, ageOfIm = 1, nYears = 6) {
 
   # ~~~~ Check and fix input ~~~~~~~~~~~~
@@ -77,13 +77,13 @@ simPop2 <- function(Ni = c(10, 10),
   stopifNegative(Im, allowNA=FALSE, allowZero=TRUE)
   ageOfIm <- round(ageOfIm)
   stopifNegative(ageOfIm, allowNA=FALSE, allowZero=FALSE)
-  
+
   nYears <- round(nYears[1])
   stopifnotGreaterthan(nYears, 2, allowNA=FALSE)
   stopifnotLength(sex.ratio, nYears, allow1=TRUE)
   stopifnotLength(Im, nYears, allow1=TRUE)
   stopifnotLength(ageOfIm, nYears, allow1=TRUE)
-  
+
   mAge <- length(Ni)          # Number of adult age(stage) classes
   if(any(ageOfIm > mAge))
     stop("'ageOfIm' cannot be greater than the number of age classes.", call.=FALSE)
@@ -105,7 +105,7 @@ simPop2 <- function(Ni = c(10, 10),
   }
   if(nrow(phi) > mAge+1)
     stop("'phi' should have max. one more row than the number of age classes.", call. = FALSE)
-    
+
   if(!is.matrix(f)) {
     f <- matrix(f, length(f), nYears)
   }
@@ -116,7 +116,7 @@ simPop2 <- function(Ni = c(10, 10),
   if(nrow(f) > mAge)
     stop("'f' should not have more rows than the number of age classes.", call. = FALSE)
   stopifnotCols(f, nYears)
-    
+
   if(!is.matrix(pBreed)) {
     pBreed <- matrix(pBreed, length(pBreed), nYears)
   }
