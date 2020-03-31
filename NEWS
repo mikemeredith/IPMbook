@@ -1,4 +1,12 @@
 
+CHANGES in version 0.0.0.9010 (2020-03-31)
+
+  * Fixed bugs in 'simPop2' and 'simCapHist2'.
+
+  * Added checks for input to 'simPop2', 'simCapHist2' and 'simProd2'.
+
+  * 'simCapHist2' and 'simProd2' print information on the data input.
+
 CHANGES in version 0.0.0.9009 (2020-03-30)
 
   * Additional arguments to 'simPop2' for partial breeding.

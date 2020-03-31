@@ -11,7 +11,7 @@ Simulate capture histories from a simulated population created by \code{simPop/s
 }
 \usage{
 simCapHist(ind, c, p, maxAge = 2)
-simCapHist2(state, cap = c(0.35, 0.4), recap = 0.6, maxAge = 2)
+simCapHist2(state, cap = c(0.35, 0.4), recap = NULL, maxAge = 2)
 }
 \arguments{
   \item{ind}{
@@ -24,14 +24,14 @@ an animals x years matrix with the age of each animal in the population (animals
 matrix with age- and time-specific probabilities for initial capture; the first row refers to newborns/nestlings. For \code{simPop2}, this may be a vector if probabilities do not vary with time, or scalar if all probabilities are equal.
 }
   \item{p, recap}{
-matrix with age- and time-specific probabilities probabilities of REcapture [currently the first row refers to nestlings, but they would never be recaptured, so this may change in future versions]. For \code{simPop2}, this may be a vector if probabilities do not vary with time, or scalar if all probabilities are equal.
+matrix with age- and time-specific probabilities probabilities of REcapture: this has 1 less column than \code{cap} (no recaptures in the first year) and 1 less row (animals marked in the youngest class will be older when recaptured). For \code{simPop2}, this may be a vector if probabilities do not vary with time, or scalar if all probabilities are equal. If \code{recap = NULL}, recapture probabilities will be the same as initial capture probabilities.
 }
   \item{maxAge}{
 maximal number of age classes that can be identified when the individuals are captured for the first time.
 }
 }
 \value{
-A list with the arguments used and following 2 components:
+A list with the arguments used and the following 2 components:
 
  \item{ch }{matrix with the capture histories}
  \item{age }{vector with the age class at first capture for each individual; note that animals marked as infants/nestlings have age = 1, adult ages from 2 to \code{maxAge}}
@@ -46,6 +46,12 @@ pop <- simPop2()
 ch <- simCapHist2(pop$state)
 str(ch)
 ch$cap
+ch$recap
 ch$age
 head(ch$ch)
+
+# Time-varying recapture probabily, same for all classes:
+#  use 1-row matrix
+ch <- simCapHist2(pop$state, recap=matrix(1:5/10, nrow=1))
+ch$recap
 }

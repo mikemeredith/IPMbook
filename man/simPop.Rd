@@ -9,7 +9,7 @@ Simulate a population based on demographic parameters
 \description{
 The simulation tracks individual females from birth through a series of adult age classes to death, as well as numbers of female and male offspring. The function allows for 1 or more age classes. Once an animal reaches the oldest age class, they do not progress further until death.
 
-The user specifies the number of females in each age class at the beginning of the simulation, before the first breeding season. Adult females can enter the population as immigrants; the age if immigrants is controlled by \code{ageOfImm}.
+The user specifies the number of females in each age class at the beginning of the simulation, before the first breeding season. Adult females can enter the population as immigrants; the age of immigrants is controlled by \code{ageOfImm}.
 
 Fecundity (the total number of offspring per adult female per year) can vary by age class and year in an age x year matrix. The sex ratio determines the proportion of females among the offspring.
 

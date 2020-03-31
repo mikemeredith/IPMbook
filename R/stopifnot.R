@@ -1,14 +1,29 @@
 
-# Sanity checks
-
-# Not exported.
+# Sanity checks, not exported.
 
 # These functions are very basic but simplify input checks while giving
 #   informative error messages.
 # Without checks, users may get mysterious error messages, eg,
 #   "is.na() applied to non-(list or vector) of type 'closure'".
-# base::stopifnot() is better, but error messages are still abstruse, eg,
-#  "p >= 0 & p <= 1 is not TRUE".
+
+# Summary of arguments:
+# ---------------------
+# stopifnotNumeric(arg, allowNA=FALSE)
+# stopifnotLogical(arg, allowNA=FALSE)
+# stopifnotScalar(arg, allowNA=FALSE)
+# stopifnotEqualLength(arg1, arg2)
+# stopifnotGreaterthan(arg, value, allowNA=FALSE)
+# stopifnotLessthan(arg, value, allowNA=FALSE)
+# stopifnotInteger(arg, allowNA=FALSE)
+# stopifnotLength(arg, length, allow1=FALSE)
+# stopifnotProbability(arg, allowNA=FALSE)
+# stopifnotBetween(arg, min, max, allowNA=FALSE)
+# stopifNegative(arg, allowNA=FALSE, allowZero=TRUE)
+# stopifnotArray(arg, dims=NA, allowNA=FALSE, numericOnly=TRUE) {
+# stopifnotMatrix(arg, allowNA=FALSE, numericOnly=TRUE)
+# stopifnotRows(arg, nrows)
+# stopifnotCols(arg, ncols)
+# -----------------------------------------------------------------
 
 stopifnotNumeric <- function(arg, allowNA=FALSE) {
   name <- deparse(substitute(arg))
@@ -82,6 +97,18 @@ stopifnotInteger <- function(arg, allowNA=FALSE) {
         stop("Argument '", name, "' must be integer (whole number).", call.=FALSE)
       }
     }
+  }
+}
+
+stopifnotLogical <- function(arg, allowNA=FALSE) {
+  name <- deparse(substitute(arg))
+  if(allowNA && is.na(arg)) {
+    # do nothing
+  } else {
+    if(!allowNA && any(is.na(arg)))
+      stop("Argument '", name, "' must not contain NA or NaN.", call.=FALSE)
+    if(!is.logical(arg))
+      stop("Argument '", name, "' must be logical.", call.=FALSE)
   }
 }
 
@@ -181,3 +208,46 @@ stopifNegative <- function(arg, allowNA=FALSE, allowZero=TRUE) {
   }
 }
 
+stopifnotArray <- function(arg, dims=NA, allowNA=FALSE, numericOnly=TRUE) {
+  name <- deparse(substitute(arg))
+  if(!is.array(arg))
+    stop("Argument '", name, "' must be an array.", call.=FALSE)
+  if(!is.na(dims) & dims != length(dim(arg)))
+    stop("Argument '", name, "' must have", dims, "dimensions.", call.=FALSE)
+  if(!allowNA && any(is.na(arg))) {
+    stop("Argument '", name, "' must not contain NA or NaN.", call.=FALSE)
+  }
+  if(numericOnly && !is.numeric(arg)) {
+    stop("Argument '", name, "' must be numeric.", call.=FALSE)
+  }
+}
+
+stopifnotMatrix <- function(arg, allowNA=FALSE, numericOnly=TRUE) {
+  name <- deparse(substitute(arg))
+  if(!is.matrix(arg))
+    stop("Argument '", name, "' must be a matrix.", call.=FALSE)
+  if(!allowNA && any(is.na(arg))) {
+    stop("Argument '", name, "' must not contain NA or NaN.", call.=FALSE)
+  }
+  if(numericOnly && !is.numeric(arg)) {
+    stop("Argument '", name, "' must be numeric.", call.=FALSE)
+  }
+}
+
+stopifnotRows <- function(arg, nrows) {
+  name <- deparse(substitute(arg))
+  if(!is.matrix(arg))
+    stop("Argument '", name, "' must be a matrix.", call.=FALSE)
+  if(nrow(arg) != nrows) {
+    stop("Argument '", name, "' must have ", nrows, " rows.", call.=FALSE)
+  }
+}
+
+stopifnotCols <- function(arg, ncols) {
+  name <- deparse(substitute(arg))
+  if(!is.matrix(arg))
+    stop("Argument '", name, "' must be a matrix.", call.=FALSE)
+  if(ncol(arg) != ncols) {
+    stop("Argument '", name, "' must have ", ncols, " columns.", call.=FALSE)
+  }
+}

@@ -29,11 +29,22 @@
 # It grows the matrix each year, no Leslie matrix guessing.
 
 if(FALSE) {  # Use these if stepping through code
+  # defaults
+  Ni = c(10, 10)
+  phi = c(0.3, 0.55)
+  f = 3.2
+  pBreed = 1
+  sex.ratio = 0.5
+  Im = 0
+  ageOfIm = 1
+  nYears = 6
+  
   Ni = c(10, 10, 10) # 3 age classes
   # Ni = 10
   # phi = 0.55
   # phi = c(0.1, 0.2)  # extinction
   phi = c(0.3, 0.6) # survival low for newborns, constant for adults
+  phi <- matrix(2:6/10, 1)
   # f = 3.2
   f = c(2, 3.2)  # (some of) first cohort breed, but fecundity lower
   # f = c(0, 3.2)  # first cohort do not breed
@@ -54,38 +65,69 @@ simPop2 <- function(Ni = c(10, 10),
   phi = c(0.3, 0.55), f = 3.2, pBreed = 1, sex.ratio = 0.5, Im = 0, ageOfIm = 1, nYears = 6) {
 
   # ~~~~ Check and fix input ~~~~~~~~~~~~
-  # TODO
+  Ni <- round(Ni)
+  stopifNegative(Ni, allowNA=FALSE, allowZero=TRUE)
+  if(sum(Ni) < 1)
+    stop("The initial population must have at least 1 animal.", call.=FALSE)
+  stopifnotProbability (phi, allowNA=FALSE)
+  stopifNegative(f, allowNA=FALSE, allowZero=TRUE)
+  stopifnotProbability (pBreed, allowNA=FALSE)
+  stopifnotProbability (sex.ratio, allowNA=FALSE)
+  Im <- round(Im)
+  stopifNegative(Im, allowNA=FALSE, allowZero=TRUE)
+  ageOfIm <- round(ageOfIm)
+  stopifNegative(ageOfIm, allowNA=FALSE, allowZero=FALSE)
+  
+  nYears <- round(nYears[1])
+  stopifnotGreaterthan(nYears, 2, allowNA=FALSE)
+  stopifnotLength(sex.ratio, nYears, allow1=TRUE)
+  stopifnotLength(Im, nYears, allow1=TRUE)
+  stopifnotLength(ageOfIm, nYears, allow1=TRUE)
+  
+  mAge <- length(Ni)          # Number of adult age(stage) classes
+  if(any(ageOfIm > mAge))
+    stop("'ageOfIm' cannot be greater than the number of age classes.", call.=FALSE)
 
   nIntervals <- ncol(phi)     # NULL if not a matrix
   if(is.null(nIntervals))
     nIntervals <- ncol(f) - 1 # numeric(0) if not a matrix
   if(length(nIntervals) == 0)
     nIntervals <- nYears - 1
-  nYears <- nIntervals + 1  # override user input if phi or f are matrices
-  mAge <- length(Ni)         # Number of adult age(stage) classes
+  nYears <- nIntervals + 1    # override user input if phi or f are matrices
 
   # Turn input into matrices/vectors
   if(!is.matrix(phi))  {
     phi <- matrix(phi, length(phi), nIntervals)
   }
   if(nrow(phi) < mAge+1) {
-    phi0 <- matrix(phi[nrow(phi),], nrow=mAge+1-nrow(phi), nIntervals)
+    phi0 <- matrix(phi[nrow(phi),], nrow=mAge+1-nrow(phi), nIntervals, byrow=TRUE)
     phi <- rbind(phi, phi0)
   }
+  if(nrow(phi) > mAge+1)
+    stop("'phi' should have max. one more row than the number of age classes.", call. = FALSE)
+    
   if(!is.matrix(f)) {
     f <- matrix(f, length(f), nYears)
   }
   if(nrow(f) < mAge) {
-    f0 <- matrix(f[nrow(f),], nrow=mAge-nrow(f), nYears)
+    f0 <- matrix(f[nrow(f),], nrow=mAge-nrow(f), nYears, byrow=TRUE)
     f <- rbind(f, f0)
   }
+  if(nrow(f) > mAge)
+    stop("'f' should not have more rows than the number of age classes.", call. = FALSE)
+  stopifnotCols(f, nYears)
+    
   if(!is.matrix(pBreed)) {
     pBreed <- matrix(pBreed, length(pBreed), nYears)
   }
   if(nrow(pBreed) < mAge) {
-    pBreed0 <- matrix(pBreed[nrow(pBreed),], nrow=mAge-nrow(pBreed), nYears)
+    pBreed0 <- matrix(pBreed[nrow(pBreed),], nrow=mAge-nrow(pBreed), nYears, byrow=TRUE)
     pBreed <- rbind(pBreed, pBreed0)
   }
+  if(nrow(pBreed) > mAge)
+    stop("'pBreed' should not have more rows than the number of age classes.", call. = FALSE)
+  stopifnotCols(pBreed, nYears)
+
   if(length(sex.ratio) == 1)
     sex.ratio <- rep(sex.ratio, nYears)
   if(length(Im) == 1)

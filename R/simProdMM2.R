@@ -20,11 +20,20 @@
 
 simProd2 <- function(reprod, pInclude = 0.3, females.only = FALSE){
 
+  inputName <- deparse(substitute(reprod))
+
+  stopifnotArray(reprod, dims=3, allowNA = TRUE, numericOnly=TRUE)
+  stopifnotProbability(pInclude, allowNA=FALSE)
+  females.only <- females.only[1]
+  stopifnotLogical(females.only, allowNA=FALSE)
   nYears <- dim(reprod)[2]
   if(length(pInclude) == 1)
-    pInclude <- rep(pInclude, nYears)
-
+    pInclude <- rep(pInclude[1], nYears)
   nNest <- sum(!is.na(reprod[,,3]))
+  cat(paste0("The input object ", sQuote(inputName), " has ", dim(reprod)[1], " individuals x ",
+    nYears, " Years, with ", sum(!is.na(reprod[,,3])), "\nbreeding attempts."))
+  cat(paste0(" Mothers' ages range from ", min(reprod[,,3], na.rm=TRUE), " to ",
+    max(reprod[,,3], na.rm=TRUE), ".\n\n"))
 
   prod.ind <- matrix(NA, nNest, 3)
   colnames(prod.ind) <- c("Productivity", "Year", "Age of mother")
