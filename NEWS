@@ -1,7 +1,22 @@
 
+CHANGES in version 0.0.0.9012 (2020-04-01)
+
+  * Revised simSurvey* functions and added input checks.
+
+  * In 'simPop', the 'nYears' argument now takes precedence over the number of columns in
+  'phi' or 'f'; a mismatch will throw an error; 'nYears' is now the 4th argument.
+
+  * Added helper functions 'fixAmatrix' and 'fixAvector' (not exported) and a help page explaining
+  how abbreviated input is expanded to the required matrix; this can now be done with 1 line of
+  code in the "fix and check" block of functions.
+
+  * In 'simCapHist', 'maxAge' has default NULL, and does nothing.
+
+  * In 'simSurveyBin', the 'psurv' argument rename 'pDetect'.
+
 CHANGES in version 0.0.0.9011 (2020-03-31)
 
-  * Renamed 'simPop2', 'simCapHist2' and 'simProd2' as 'simPop', 'simCapHist' and 'simProd'
+  * Renamed 'simPop2', 'simCapHist2' and 'simProd2' as 'simPop', 'simCapHist' and 'simProd'.
 
 CHANGES in version 0.0.0.9010 (2020-03-31)
 

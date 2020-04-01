@@ -20,7 +20,7 @@
 #####################################################################################################
 
 if(FALSE) {
-state <- simPop2()$state
+state <- simPop()$state
 c_juv <- 0.35           # Initial capture probability of juveniles
 c_ad <- 0.4            # Initial capture probability of adults
 p_rec <- 0.6           # Recapture probability
@@ -32,47 +32,33 @@ cap <- c(c_juv, c_ad)
 recap <- p_rec
 }
 
-simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = 2){
+simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL){
 
   inputName <- deparse(substitute(state))
   # ~~~~~ check and fix input ~~~~~~~~~~~~~
   stopifnotMatrix(state, allowNA=TRUE, numericOnly=TRUE)
-  stopifnotProbability(cap, allowNA=FALSE)
-  if(!is.null(recap))
-    stopifnotProbability(recap, allowNA=FALSE)
-  maxAge <- round(maxAge[1])
-  stopifNegative(maxAge, allowNA=FALSE, allowZero=FALSE)
-
   nYears <- ncol(state)
   nind <- nrow(state)
   nstage <- max(state, na.rm=TRUE) + 1
+  stopifnotProbability(cap, allowNA=FALSE)
+  cap <- fixAmatrix(cap, nrow=nstage, ncol=nYears)
+  if(is.null(recap)) {
+    recap <- cap[-1, -1, drop=FALSE]
+  } else {
+    stopifnotProbability(recap, allowNA=FALSE)
+    recap <- fixAmatrix(recap, nrow=nstage-1, ncol=nYears-1)
+  }
+  if(!is.null(maxAge)) {
+    maxAge <- round(maxAge[1])
+    stopifnotBetween(maxAge, min=1, max=nstage, allowNA=FALSE)
+  }
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  # Print some information
   cat(paste0("The input object ", sQuote(inputName), " has ", nind, " individuals x ", nYears,
     " Years. Ages range from ", max(0, min(state, na.rm=TRUE)), " to ", max(state, na.rm=TRUE), ".\n"))
   cat(paste0("The ", sQuote("cap"), " matrix should be ", nstage, " x ", nYears,
     " and the ", sQuote("recap"), " matrix ", nstage-1, " x ", nYears-1, ".\n\n" ))
-
-  if(!is.matrix(cap))
-    cap <- matrix(cap, nrow=length(cap), ncol=nYears)
-  stopifnotCols(cap, nYears)
-  if(nrow(cap) < nstage) {
-    cap0 <- matrix(cap[nrow(cap), ], nrow=nstage-nrow(cap), nYears, byrow=TRUE)
-    cap <- rbind(cap, cap0)
-  }
-  stopifnotRows(cap, nstage)
-
-  if(is.null(recap)) {
-    recap <- cap[-1, -1, drop=FALSE]
-  } else {
-    if(!is.matrix(recap))
-      recap <- matrix(recap, nrow=length(recap), ncol=nYears-1)
-    if(nrow(recap) < nstage-1) {
-      recap0 <- matrix(recap[nrow(recap),], nrow=nstage-nrow(recap)-1, nYears-1, byrow=TRUE)
-      recap <- rbind(recap, recap0)
-    }
-  }
-  stopifnotRows(recap, nstage-1)
-  stopifnotCols(recap, nYears-1)
 
   # do a 3-d array, age x year x 2, [,,1] = first capture, [,,2] second capture.
   # Add a first column and first row of NAs to recap then combine
@@ -99,7 +85,8 @@ simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = 2){
   ch.age <- ch.age + 1 # 1 = newborns, other ages increased by 1
   index <- cbind(1:nrow(ch.age), getFirst(ch.age))
   age <- ch.age[index]
-  age <- pmin(age, maxAge)
+  if(!is.null(maxAge))
+    age <- pmin(age, maxAge)
   # Get usual 0/1 capture histories
   ch <- (ch.age > 0) * 1  # *1 coerces to numeric but keeps the matrix structure.
   ch[is.na(ch)] <- 0

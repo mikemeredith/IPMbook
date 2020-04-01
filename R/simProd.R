@@ -22,16 +22,18 @@ simProd <- function(reprod, pInclude = 0.3, females.only = FALSE){
 
   inputName <- deparse(substitute(reprod))
 
+  # ~~~~~~ check and fix input ~~~~~~~~~~~~~~~~~~~~~~~~
   stopifnotArray(reprod, dims=3, allowNA = TRUE, numericOnly=TRUE)
+  nYears <- dim(reprod)[2]
   stopifnotProbability(pInclude, allowNA=FALSE)
+  pInclude <- fixAvector(pInclude, nYears)
   females.only <- females.only[1]
   stopifnotLogical(females.only, allowNA=FALSE)
-  nYears <- dim(reprod)[2]
-  if(length(pInclude) == 1)
-    pInclude <- rep(pInclude[1], nYears)
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   nNest <- sum(!is.na(reprod[,,3]))
   cat(paste0("The input object ", sQuote(inputName), " has ", dim(reprod)[1], " individuals x ",
-    nYears, " Years, with ", sum(!is.na(reprod[,,3])), "\nbreeding attempts."))
+    nYears, " Years, with ", nNest, "\nbreeding attempts."))
   cat(paste0(" Mothers' ages range from ", min(reprod[,,3], na.rm=TRUE), " to ",
     max(reprod[,,3], na.rm=TRUE), ".\n\n"))
 
@@ -55,7 +57,7 @@ simProd <- function(reprod, pInclude = 0.3, females.only = FALSE){
   prod.ind <- prod.ind[1:le, ]
 
   prod.agg <- cbind(
-    "Juveniles" = tapply(prod.ind[, 1], prod.ind[, 2], sum),  # c converts 1d array to vector
+    "Juveniles" = tapply(prod.ind[, 1], prod.ind[, 2], sum),
     "Surveyed broods" = tapply(prod.ind[, 1], prod.ind[, 2], length))
 
   return(list(pInclude = pInclude, females.only = females.only,

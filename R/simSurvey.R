@@ -18,16 +18,12 @@
 #
 ################################################
 
-simSurveyBin <- function(N, psur){
+simSurveyBin <- function(N, pDetect){
 
-  T <- length(N)
-  SUR <- numeric()
-  for (t in 1:T){
-    SUR[t] <- rbinom(1, N[t], psur[t])
-  } # t
-  return(SUR)
+  nYears <- length(N)
+  pDetect <- fixAvector(pDetect, nYears)
+  return(rbinom(nYears, N, pDetect))
 }
-
 
 #########################################
 #
@@ -46,16 +42,11 @@ simSurveyBin <- function(N, psur){
 
 simSurveyNorm <- function(N, sigma){
 
-  T <- length(N)
-  SUR <- numeric(T)
-  for (t in 1:T){
-    SUR[t] <- rnorm(1, N[t], sigma[t])
-  } # t
-  return(SUR)
+  nYears <- length(N)
+  sigma <- fixAvector(sigma, nYears)
+  SUR <- round(rnorm(nYears, N, sigma))
+  return(pmax(0, SUR))
 }
-
-
-
 
 #########################################
 #
@@ -72,12 +63,6 @@ simSurveyNorm <- function(N, sigma){
 ################################################
 
 simSurveyPois <- function(N){
-
-  T <- length(N)
-  SUR <- numeric(T)
-  for (t in 1:T){
-    SUR[t] <- rpois(1, N[t])
-  } # t
-  return(SUR)
+  return(rpois(length(N), N))
 }
 

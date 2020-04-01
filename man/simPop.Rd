@@ -15,25 +15,26 @@ Fecundity (the total number of offspring per adult female per year) can vary by 
 In some age classes, not all animals may attempt to breed, and the probability of breeding can be specified.
 
 Probability of survival can also vary by age class and interval between years. The first row of this matrix specifies the survival of the animals born at the beginning of each interval and the remaining rows control survival for the respective adult age classes.
-
-User specification of the fecundity and survival matrices is simplified when values do not change over time or are the same for all age classes. See the examples.
 }
 \usage{
-simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, pBreed = 1,
-  sex.ratio = 0.5, Im = 0, ageOfIm = 1, nYears = 6)
+simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, nYears = 6, pBreed = 1,
+  sex.ratio = 0.5, Im = 0, ageOfIm = 1)
 }
 \arguments{
   \item{Ni}{
 vector with number of females of each adult age class in the population prior to breeding in the first year. The length of this vector determines the number of age classes. The first age class refers to the individuals born the previous year.
 }
   \item{phi}{
-survival probabilities for new-borns and each age class for each interval between surveys: The full (age classes + 1) x (years - 1) matrix can be entered, or (1) a matrix with just 2 rows if all adults have the same survival probability, or (2) a vector (length between 2 and number of age classes +1) if survival does not change with time, or (3) scalar, if all survival probabilities are equal.
+survival probabilities for new-borns and each age class for each interval between surveys: a (age classes + 1) x (years - 1) matrix. Input can be \link{abbreviated}.
 }
   \item{f}{
-fecundity rates, the number of offspring (male + female) per female in the population, for each adult age class and each year: The full (age classes x years) matrix can be entered, or (1) a vector of length equal to number of age classes if fecundity does not change with time, or (2) scalar, if all fecundity rates are equal. %%% no option for fewer rows? %%%
+fecundity rates, the number of offspring (male + female) per female in the population, for each adult age class and each year: an age classes x years matrix. Input can be \link{abbreviated}.
+}
+  \item{nYears}{
+number of years of data.
 }
   \item{pBreed}{
-the probability that a female will attempt to breed for each adult age class and each year: The full (age classes x years) matrix can be entered, or (1) a vector of length equal to number of age classes if this does not change with time, or (2) scalar, if all values are equal. %%% no option for fewer rows? %%%
+the probability that a female will attempt to breed for each adult age class and each year: an age classes x years matrix. Input can be \link{abbreviated}.
 }
   \item{sex.ratio}{
 sex ratio (probability that a new-born is a female) in each year: either scalar or a vector of length \code{nYears}.
@@ -43,9 +44,6 @@ number of immigrants in each year: either scalar or a vector of length \code{nYe
 }
   \item{ageOfIm}{
 the age class of immigrants in each year: either scalar or a vector of length \code{nYears}.
-}
-  \item{nYears}{
-number of years of data; ignored if either \code{phi} or \code{f} is a matrix.
 }
 }
 \value{

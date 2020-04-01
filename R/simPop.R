@@ -62,78 +62,31 @@ if(FALSE) {  # Use these if stepping through code
 }
 
 simPop <- function(Ni = c(10, 10),
-  phi = c(0.3, 0.55), f = 3.2, pBreed = 1, sex.ratio = 0.5, Im = 0, ageOfIm = 1, nYears = 6) {
+  phi = c(0.3, 0.55), f = 3.2, nYears = 6, pBreed = 1, sex.ratio = 0.5, Im = 0, ageOfIm = 1) {
 
-  # ~~~~ Check and fix input ~~~~~~~~~~~~
+  # ~~~~ Check and fix input ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   Ni <- round(Ni)
   stopifNegative(Ni, allowNA=FALSE, allowZero=TRUE)
   if(sum(Ni) < 1)
     stop("The initial population must have at least 1 animal.", call.=FALSE)
-  stopifnotProbability (phi, allowNA=FALSE)
-  stopifNegative(f, allowNA=FALSE, allowZero=TRUE)
-  stopifnotProbability (pBreed, allowNA=FALSE)
-  stopifnotProbability (sex.ratio, allowNA=FALSE)
-  Im <- round(Im)
-  stopifNegative(Im, allowNA=FALSE, allowZero=TRUE)
-  ageOfIm <- round(ageOfIm)
-  stopifNegative(ageOfIm, allowNA=FALSE, allowZero=FALSE)
-
+  mAge <- length(Ni)          # Number of adult age(stage) classes
   nYears <- round(nYears[1])
   stopifnotGreaterthan(nYears, 2, allowNA=FALSE)
-  stopifnotLength(sex.ratio, nYears, allow1=TRUE)
-  stopifnotLength(Im, nYears, allow1=TRUE)
-  stopifnotLength(ageOfIm, nYears, allow1=TRUE)
-
-  mAge <- length(Ni)          # Number of adult age(stage) classes
-  if(any(ageOfIm > mAge))
-    stop("'ageOfIm' cannot be greater than the number of age classes.", call.=FALSE)
-
-  nIntervals <- ncol(phi)     # NULL if not a matrix
-  if(is.null(nIntervals))
-    nIntervals <- ncol(f) - 1 # numeric(0) if not a matrix
-  if(length(nIntervals) == 0)
-    nIntervals <- nYears - 1
-  nYears <- nIntervals + 1    # override user input if phi or f are matrices
-
-  # Turn input into matrices/vectors
-  if(!is.matrix(phi))  {
-    phi <- matrix(phi, length(phi), nIntervals)
-  }
-  if(nrow(phi) < mAge+1) {
-    phi0 <- matrix(phi[nrow(phi),], nrow=mAge+1-nrow(phi), nIntervals, byrow=TRUE)
-    phi <- rbind(phi, phi0)
-  }
-  if(nrow(phi) > mAge+1)
-    stop("'phi' should have max. one more row than the number of age classes.", call. = FALSE)
-
-  if(!is.matrix(f)) {
-    f <- matrix(f, length(f), nYears)
-  }
-  if(nrow(f) < mAge) {
-    f0 <- matrix(f[nrow(f),], nrow=mAge-nrow(f), nYears, byrow=TRUE)
-    f <- rbind(f, f0)
-  }
-  if(nrow(f) > mAge)
-    stop("'f' should not have more rows than the number of age classes.", call. = FALSE)
-  stopifnotCols(f, nYears)
-
-  if(!is.matrix(pBreed)) {
-    pBreed <- matrix(pBreed, length(pBreed), nYears)
-  }
-  if(nrow(pBreed) < mAge) {
-    pBreed0 <- matrix(pBreed[nrow(pBreed),], nrow=mAge-nrow(pBreed), nYears, byrow=TRUE)
-    pBreed <- rbind(pBreed, pBreed0)
-  }
-  if(nrow(pBreed) > mAge)
-    stop("'pBreed' should not have more rows than the number of age classes.", call. = FALSE)
-  stopifnotCols(pBreed, nYears)
-
-  if(length(sex.ratio) == 1)
-    sex.ratio <- rep(sex.ratio, nYears)
-  if(length(Im) == 1)
-    Im <- rep(Im, nYears)
-  if(length(ageOfIm) == 1)
-    ageOfIm <- rep(ageOfIm, nYears)
+  stopifnotProbability (phi, allowNA=FALSE)
+  phi <- fixAmatrix(phi, nrow=mAge+1, ncol=nYears-1)
+  stopifNegative(f, allowNA=FALSE, allowZero=TRUE)
+  f <- fixAmatrix(f, nrow=mAge, ncol=nYears)
+  stopifnotProbability(pBreed, allowNA=FALSE)
+  pBreed <- fixAmatrix(pBreed, nrow=mAge, ncol=nYears)
+  stopifnotProbability (sex.ratio, allowNA=FALSE)
+  sex.ratio <- fixAvector(sex.ratio, nYears)
+  Im <- round(Im)
+  stopifNegative(Im, allowNA=FALSE, allowZero=TRUE)
+  Im <- fixAvector(Im, nYears)
+  ageOfIm <- round(ageOfIm)
+  stopifnotBetween(ageOfIm, min=1, max=mAge, allowNA=FALSE)
+  ageOfIm <- fixAvector(ageOfIm, nYears)
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   # 3. Define state matrix, reproduction array, and immigration vector
   state <- matrix(NA, sum(Ni) + sum(Im), nYears)
@@ -142,8 +95,8 @@ simPop <- function(Ni = c(10, 10),
   dimnames(reprod) <- list(NULL, paste0("Y", 1:nYears), c("F", "M", "Age"))
   imYear <- rep(NA, sum(Ni) + sum(Im)) # year the animal immigrated into the population
 
-  # -------------------------------------
   # 4. Simulate the population for each year
+  # -------------------------------------
   # 4.1: Initialize for Year 1, insert ages into matrix as per Ni
   state[1:sum(Ni), 1] <- rep(1:mAge, Ni)
   Nadult <- sum(Ni)
