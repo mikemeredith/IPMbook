@@ -3,30 +3,36 @@
 \encoding{UTF-8}
 
 \title{
-Create summary statistics from a subset of a population
+Calculate summary statistics from a subset of a population
 }
 \description{
-Create summary statistics from a subset of a population; only needed if the sampling(counts) is conducted on a subset of the complete population.
+Calculate summary statistics from a subset of a population; used if a count survey is to be simulated with a subset of the complete population.
 }
 \usage{
-summaryPop(ind, incl)
+summaryPop(state, subset)
 
 }
 \arguments{
-  \item{ind}{
-array with the population, usually the output from \code{\link{simPop}}.
+  \item{state}{
+individuals x years matrix for the population with ages of adult individuals plus newborns (coded 0) and died (-1), usually the output from \code{\link{simPop}}.
 }
-  \item{incl}{
-vector with the indices of the individuals that are to be included for the summary statistics.
+  \item{subset}{
+vector with the indices of the individuals that are to be included for the summary statistics; if missing, all individuals are included.
 }
 }
 \value{
-A matrix with the numbers in each age class for each year.
+A matrix with the numbers in each adult age class for each year, total adults, and number  of female juveniles.
 }
 \author{
 M. Schaub
 }
 
 \examples{
-# TODO
+pop <- simPop()
+summaryPop(pop$state) # default is to include all, compare with
+pop$N
+
+# define a subset of 80 drawn at random
+sset <- sample(nrow(pop$state), 80)
+summaryPop(pop$state, subset=sset)
 }

@@ -8,30 +8,32 @@
 # Input variables
 #    ind: array with the detailed population data
 #    incl: vector with the number of the individuals that are included for the summary statistics.
-#
+#'
 # Last-up date: 15.3.2016, 6.12.2019, M.Schaub
 #
 #####################################################################################################
 
-summaryPop <- function(ind, incl){
+summaryPop <- function(state, subset){
 
-  T <- dim(ind)[2]
-  mAge <- dim(ind)[1]-4
+  # ~~~~~ check and fix input ~~~~~~~~~~~~~
+  stopifnotMatrix(state, allowNA=TRUE, numericOnly=TRUE)
+  if(!missing(subset))
+    stopifnotBetween(subset, min=1, max=nrow(state))
 
-  # Summary statistics: Number of individuals in each class and year, plus immigration rate
-  Nu <- matrix(0, ncol = T, nrow = mAge + 4)
-  ind.sel <- ind[,,incl]
-  for (t in 1:T){
-    for (a in 1:(mAge+1)){
-      Nu[a,t] <- sum(ind.sel[a,t,], na.rm = TRUE)
-    }
+  mAge <- max(state, na.rm=TRUE)
+  if(missing(subset)) {
+    statex <- state
+  } else {
+    statex <- state[subset, ]
   }
-  rnames <- numeric()
-  for (a in 1:mAge){
-    rnames[a] <- paste(a,"-Year", sep="")
-  }
-  rnames <- c("Juv", rnames, "Im", "Total", "Imm rate")
-  rownames(Nu) <- rnames
-  return(Nu)
+
+  # Summary statistics: Number of individuals in each class and year, total adults and newborns
+  Nu <- apply(statex+1, 2, tabulate, nbins=mAge+1) # +1 because tabulate ignores 0s.
+  adults <- Nu[-1, ]
+  rownames(adults) <- paste(1:mAge, "Years", sep="-")
+  N <- rbind(adults,
+            Total = colSums(adults),
+            JuvF = Nu[1,])
+  return(N)
 }
 

@@ -1,7 +1,11 @@
 
+CHANGES in version 0.0.0.9013 (2020-04-01)
+
+  * Revised 'summaryPop' functions and added input checks.
+
 CHANGES in version 0.0.0.9012 (2020-04-01)
 
-  * Revised simSurvey* functions and added input checks.
+  * Revised 'simSurvey*' functions and added input checks.
 
   * In 'simPop', the 'nYears' argument now takes precedence over the number of columns in
   'phi' or 'f'; a mismatch will throw an error; 'nYears' is now the 4th argument.
