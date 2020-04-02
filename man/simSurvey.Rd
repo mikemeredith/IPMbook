@@ -6,10 +6,10 @@
 \encoding{UTF-8}
 
 \title{
-Simulate population survey data
+Simulate count survey data
 }
 \description{
-Simulate population survey data assuming a binomial, normal, or Poisson sampling process. For the last two, it is assumed that individuals may be double counted and missed at the same rate.
+Simulate count survey data assuming a binomial, normal, or Poisson sampling process. For the last two, it is assumed that individuals may be double counted and missed at the same rate.
 
 }
 \usage{
@@ -29,7 +29,7 @@ vector with the annual observation error (SD); a scalar can be used if probabili
 }
 }
 \value{
-A vector with the number of individuals counted in each year.
+A list with the parameters entered and \code{count} with the number of individuals counted in each year.
 }
 \author{
 M. Schaub
@@ -38,10 +38,7 @@ M. Schaub
 \examples{
 pop <- simPop()
 pop$breeders
-( N <- pop$breeders["Total", ] )
-simSurveyBin(N, p=0.6)
-simSurveyNorm(N, sigma=10)
-simSurveyPois(N)
-
-
+simSurveyBin(pop$totBreeders, p=0.6)
+simSurveyNorm(pop$totBreeders, sigma=10)
+simSurveyPois(pop$totAdults)
 }

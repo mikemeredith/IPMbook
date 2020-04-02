@@ -160,9 +160,10 @@ simPop <- function(Ni = c(10, 10),
   adults <- apply(state, 2, tabulate, nbins=mAge)  # not all adults are necessarily breeders
   if(mAge == 1)
     adults <- matrix(adults, nrow=1)
+  totAdults <- colSums(adults)
   rownames(adults) <- paste(1:mAge, "Year", sep="-")
   Nu <- rbind(adults,
-              Total = colSums(adults),
+              totAdults = totAdults,
               BornF = BF,
               BornT = BF + BM,
               Im = Im)
@@ -171,8 +172,9 @@ simPop <- function(Ni = c(10, 10),
   breeders <- apply(reprod[,,3], 2, tabulate, nbins=mAge)
   if(mAge == 1)
     breeders <- matrix(breeders, nrow=1)
+  totBreeders = colSums(breeders)
   rownames(breeders) <- paste(1:mAge, "Year", sep="-")
-  breeders <- rbind(breeders, "Total" = colSums(breeders))
+  breeders <- rbind(breeders, totBreeders = totBreeders)
 
   # 6. Output
   return(list(
@@ -180,6 +182,7 @@ simPop <- function(Ni = c(10, 10),
     Ni = Ni, phi = phi, f = f, pBreed = pBreed, sex.ratio = sex.ratio,
     Im = Im, ageOfIm = ageOfIm,
     # ~~~~ simulated output ~~~~~
-    state = state, imYear = imYear, reprod = reprod, N = Nu, breeders = breeders))
+    state = state, imYear = imYear, reprod = reprod, N = Nu, breeders = breeders,
+    totAdults = totAdults, totBreeders = totBreeders))
 }
 

@@ -22,7 +22,8 @@ simSurveyBin <- function(N, pDetect){
 
   nYears <- length(N)
   pDetect <- fixAvector(pDetect, nYears)
-  return(rbinom(nYears, N, pDetect))
+  count <- rbinom(nYears, N, pDetect)
+  return(list(pDetect = pDetect, count = count))
 }
 
 #########################################
@@ -45,7 +46,8 @@ simSurveyNorm <- function(N, sigma){
   nYears <- length(N)
   sigma <- fixAvector(sigma, nYears)
   SUR <- round(rnorm(nYears, N, sigma))
-  return(pmax(0, SUR))
+  SUR <- pmax(0, SUR)
+  return(list(sigma = sigma, count = SUR))
 }
 
 #########################################
@@ -63,6 +65,7 @@ simSurveyNorm <- function(N, sigma){
 ################################################
 
 simSurveyPois <- function(N){
-  return(rpois(length(N), N))
+  count <- rpois(length(N), N)
+  return(list(count = count))
 }
 

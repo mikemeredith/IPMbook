@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9014 (2020-04-02)
+
+  * 'simSurvey*' functions now return a list with the values input and 'count'.
+  
+  * Added 'totAdults' and 'totBreeders' to the output in 'simPop'.
+
 CHANGES in version 0.0.0.9013 (2020-04-01)
 
   * Revised 'summaryPop' functions and added input checks.

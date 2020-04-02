@@ -51,11 +51,11 @@ the age class of immigrants in each year: either scalar or a vector of length \c
 A list with the simulation settings and the following components:
  \item{state }{an individuals x years matrix, with the state of each individual in each year. States are coded: -1 = died, 0 = newborn, 1,2,... = 1-Year, 2-Year,...}
  \item{imYear }{a vector with the year of immigration for each individual, or NA if not an immigrant}
- \item{reprod }{an individuals x years x 3 array with the number of female and male offspring and the state of the mother for each individual (states coded as for \code{state}; NAs indicate individuals not alive or not breeding.}
+ \item{reprod }{an individuals x years x 3 array with the number of female and male offspring and the age of the mother for each individual; NAs indicate individuals not alive or alive but not attempting to breeding.}
  \item{N }{a matrix with a column for each year and rows for numbers surviving in each age class, total adults, number of females born and total births, number of immigrants. (Immigrants are included in the age classes at the top of the table.)}
- \item{breeders }{a matrix with a column for each year and rows for numbers breeding in each age class, total breeders.}
-
-Note that all animals attempting to breed are classified as breeders, even though no offspring may be produced.
+ \item{breeders }{a matrix with a column for each year and rows for numbers breeding in each age class and total breeders. Note that all animals attempting to breed are classified as breeders, even though no offspring may be produced.}
+ \item{totAdults }{a vector with total adults in each year.}
+ \item{totBreeders }{a vector with total breeders in each year. These two are the same as the relevant rows in \code{N} and \code{breeders}, repeated for ease of extraction with \code{$}.}
 }
 \author{
 M. Schaub
