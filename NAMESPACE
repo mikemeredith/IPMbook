@@ -17,7 +17,7 @@ export(
 
 export(
   "simPop", "simCapHist", "simProd",
-  "simSurveyBin", "simSurveyNorm", "simSurveyPois",
+  "simCountBin", "simCountNorm", "simCountPois",
   "marray", "marrayAge",
   "summaryPop",
   "cleanCH", "rmFirst", "getFirst", "dUnif"

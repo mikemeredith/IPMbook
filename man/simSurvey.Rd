@@ -1,8 +1,8 @@
-\name{simSurvey}
-\alias{simSurvey}
-\alias{simSurveyBin}
-\alias{simSurveyNorm}
-\alias{simSurveyPois}
+\name{simCount}
+\alias{simCount}
+\alias{simCountBin}
+\alias{simCountNorm}
+\alias{simCountPois}
 \encoding{UTF-8}
 
 \title{
@@ -13,9 +13,9 @@ Simulate count survey data assuming a binomial, normal, or Poisson sampling proc
 
 }
 \usage{
-simSurveyBin(N, pDetect)
-simSurveyNorm(N, sigma)
-simSurveyPois(N)
+simCountBin(N, pDetect)
+simCountNorm(N, sigma)
+simCountPois(N)
 }
 \arguments{
   \item{N}{
@@ -38,7 +38,7 @@ M. Schaub
 \examples{
 pop <- simPop()
 pop$breeders
-simSurveyBin(pop$totBreeders, p=0.6)
-simSurveyNorm(pop$totBreeders, sigma=10)
-simSurveyPois(pop$totAdults)
+simCountBin(pop$totBreeders, p=0.6)
+simCountNorm(pop$totBreeders, sigma=10)
+simCountPois(pop$totAdults)
 }

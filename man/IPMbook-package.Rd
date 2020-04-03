@@ -27,18 +27,18 @@ The functions are listed by chapter below.
     \item{\code{\link{simPop}}}{ Simulate a population based on demographic parameters (section x.x)}
     \item{\code{\link{simCapHist}}}{ Simulate capture histories from a population (section x.x)}
     \item{\code{\link{simProd}}}{ Simulate productivity data (section x.x)}
-    \item{\code{\link{simSurvey}}}{ Simulate population survey data (section x.x)}
+    \item{\code{\link{simCount}}}{ Simulate population survey data (section x.x)}
     \item{\code{\link{marray}}}{ Converts capture-histories to an m-array for one age class (section x.x)}
     \item{\code{\link{marrayAge}}}{ Create age-dependent m-arrays (section x.x)}
   }
 }
 
 
-%%\section{DATA SETS}{
-%%  \describe{
-%%%  \item{\code{\link{willowWarbler}}}{ Data for willow warblers in Britain (AHM2-3.4.1)}
+\section{DATA SETS}{
+  \describe{
+  \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
 
-%%  } }
+  } }
 
 \section{UTILITY FUNCTIONS}{
   \describe{

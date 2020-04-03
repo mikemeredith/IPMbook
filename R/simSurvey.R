@@ -1,7 +1,7 @@
 
-# simSurveyBin
-# simSurveyNorm
-# simSurveyPois
+# simCountBin
+# simCountNorm
+# simCountPois
 
 #########################################
 #
@@ -18,7 +18,7 @@
 #
 ################################################
 
-simSurveyBin <- function(N, pDetect){
+simCountBin <- function(N, pDetect){
 
   nYears <- length(N)
   pDetect <- fixAvector(pDetect, nYears)
@@ -41,7 +41,7 @@ simSurveyBin <- function(N, pDetect){
 #
 ################################################
 
-simSurveyNorm <- function(N, sigma){
+simCountNorm <- function(N, sigma){
 
   nYears <- length(N)
   sigma <- fixAvector(sigma, nYears)
@@ -64,7 +64,7 @@ simSurveyNorm <- function(N, sigma){
 #
 ################################################
 
-simSurveyPois <- function(N){
+simCountPois <- function(N){
   count <- rpois(length(N), N)
   return(list(count = count))
 }
