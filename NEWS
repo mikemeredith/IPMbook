@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9016 (2020-04-15)
+
+  * Added 'hoopoe' data set.
+
 CHANGES in version 0.0.0.9015 (2020-04-03)
 
   * Renamed 'simSurvey*' functions as 'simCount*'.

@@ -36,6 +36,7 @@ The functions are listed by chapter below.
 
 \section{DATA SETS}{
   \describe{
+  \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
 
   } }
