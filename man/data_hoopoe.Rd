@@ -13,17 +13,14 @@ Data for hoopoe \emph{Upupa epops} from the Valais valley in Switzerland from 20
 \usage{data("hoopoe")}
 
 \format{
-\code{hoopoe} is a list with 10 components:
+\code{hoopoe} is a list with 5 components:
 
 \describe{
-  \item{ch }{capture histories for 3,844 individuals x 16 years.}
-  \item{age }{the age of each individual at first capture, 1 = nestling, 2 otherwise.}
+  \item{ch }{matrix of capture histories for 3,844 female birds x 16 years.}
+  \item{age }{the age of each female at first capture, 1 = nestling, 2 otherwise.}
   \item{count }{the annual population index.}
-  \item{B1, B2 }{annual number of mothers for which fledglings were recorded: 1-year-old (B1) and older females (B2).}
-  \item{J1, J2 }{annual number of fledglings produced by 1-year-old (J1) and older mothers (J2).}
-  \item{id }{id of mothers of 1092 broods monitored.}
-  \item{fl }{number of fledglings in each brood.}
-  \item{year }{year of the brood.}
+  \item{reproAgg }{a data frame with annual totals of mothers for which fledglings were recorded (B1 = 1-year-old, B2 = older females) and the corresponding number of fledglings (J1 and J2 respectively).}
+  \item{reproInd }{a data frame with details of 1092 broods monitored: id = mother's ID, fl = number of fledglings in each brood, year = year of the brood.}
   }
 }
 
