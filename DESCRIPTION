@@ -1,15 +1,15 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9017
-Date: 2020-04-16
+Version: 0.0.0.9018
+Date: 2020-04-17
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:
 Authors@R: c(
   person("Michael", "Schaub", role="aut"),
   person("Marc", "Kéry", role="aut"),
-  person("Mike", "Meredith", role=c("aut", "cre"), email="mike@mikemeredith.net") )
+  person("Mike", "Meredith", role=c("aut", "cre"), email="mike@mmeredith.net") )
 BugReports: https://github.com/mikemeredith/IPMbook/issues
 Description: Provides functions and data sets to accompany the forthcoming book 'Integrated Population Modeling' by Michael Schaub and Marc Kéry.
 License: GPL (>=3)

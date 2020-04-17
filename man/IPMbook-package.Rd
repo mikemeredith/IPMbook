@@ -38,6 +38,7 @@ The functions are listed by chapter below.
   \describe{
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
+  \item{\code{\link{woodchat10}}}{ Simulated data for Woodchat Shrike for use in Chapter 10.}
 
   } }
 
