@@ -39,8 +39,10 @@ The functions are listed by chapter below.
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
   \item{\code{\link{woodchat10}}}{ Simulated data for Woodchat Shrike for use in Chapter 10.}
+  \item{\code{\link{woodchat11}}}{ Real data for Woodchat Shrike for use in Chapter 11.}
 
-  } }
+  }
+}
 
 \section{UTILITY FUNCTIONS}{
   \describe{
@@ -50,7 +52,8 @@ The functions are listed by chapter below.
   \item{\code{\link{dbeta2}}}{ Beta distribution with mean and sd.}
   \item{\code{\link{dbeta3}}}{ Beta distribution with mode and concentration.}
   \item{\code{\link{dgamma2}}}{ Gamma distribution with mean and sd.}
-   } }
+  }
+}
 
 \author{
 Michael Schaub, Marc Kéry, Mike Meredith
