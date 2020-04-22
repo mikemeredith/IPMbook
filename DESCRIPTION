@@ -1,8 +1,8 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9019
-Date: 2020-04-21
+Version: 0.0.0.9020
+Date: 2020-04-22
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:

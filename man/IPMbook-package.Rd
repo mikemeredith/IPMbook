@@ -37,7 +37,11 @@ The functions are listed by chapter below.
 \section{DATA SETS}{
   \describe{
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017.}
+  \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike ????.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
+  \item{\code{\link{woodchat6}}}{ Simulated data for Woodchat Shrike for use in Chapter 6.}
+  \item{\code{\link{woodchat64}}}{ Simulated data for Woodchat Shrike for use in section 6.4.}
+  \item{\code{\link{woodchat66}}}{ Simulated data for Woodchat Shrike for use in section 6.6.}
   \item{\code{\link{woodchat10}}}{ Simulated data for Woodchat Shrike for use in Chapter 10.}
   \item{\code{\link{woodchat11}}}{ Real data for Woodchat Shrike for use in Chapter 11.}
 

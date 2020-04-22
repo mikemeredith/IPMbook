@@ -16,7 +16,7 @@ Real data for Woodchat Shrike \emph{Lanius senator} in orchards in southern Germ
 \code{woodchat11} is a list with 6 components:
 
 \describe{
-  \item{ch }{capture histories for 1079 females x 29 years.}
+  \item{ch }{capture histories for 1079 individuals (males and females) x 29 years.}
   \item{age }{the age of each individual at first capture.}
   \item{C }{the annual number of breeding pairs found in the study area.}
   \item{f }{the number fledglings (male or female) produced by 365 broods monitored.}
