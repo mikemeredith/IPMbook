@@ -18,7 +18,7 @@ Real data for Woodchat Shrike \emph{Lanius senator} in orchards in southern Germ
 \describe{
   \item{ch }{capture histories for 1079 individuals (males and females) x 29 years.}
   \item{age }{the age of each individual at first capture.}
-  \item{C }{the annual number of breeding pairs found in the study area.}
+  \item{count }{the annual number of breeding pairs found in the study area.}
   \item{f }{the number fledglings (male or female) produced by 365 broods monitored.}
   \item{d }{d = 0 if \code{f} is an accurate count, d = 1 if it is a lower bound.}
   \item{year }{the year the brood was monitored.}

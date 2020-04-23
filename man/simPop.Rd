@@ -65,7 +65,8 @@ M. Schaub
 # Simulate a population with the default arguments:
 str(pop <- simPop())
 pop$N
-View(pop$state)
+# Try View, but not available on all platforms
+# View(pop$state)
 pop$phi
 pop$f
 pop$reprod[1:5,,]

@@ -16,12 +16,12 @@ Simulation of data with demographic parameters based on the Woodchat Shrike are 
 \code{woodchat6} is a list with 6 components:
 
 \describe{
-  \item{ch }{capture histories for 947 individuals ?? females x 10 years.}
+  \item{ch }{capture histories for 947 females x 10 years.}
   \item{age }{the age of each individual at first capture.}
-  \item{count }{number of breeding pairs recorded in each year ??.}
-  \item{J }{??.}
-  \item{R }{??.}
-  \item{J.ind }{??.}
+  \item{count }{number of breeding pairs recorded in each year.}
+  \item{J }{annual number of juveniles (fledglings) per year.}
+  \item{B }{annual number of broods surveyed from which the fledglings counts are obtained.}
+  \item{f }{number of fledglings per nest.}
   }
 }
 
@@ -29,7 +29,7 @@ Simulation of data with demographic parameters based on the Woodchat Shrike are 
 Simulated data.
 }
 \examples{
-data(woodchat5)
-str(woodchat5)
+data(woodchat6)
+str(woodchat6)
 }
 \keyword{datasets}

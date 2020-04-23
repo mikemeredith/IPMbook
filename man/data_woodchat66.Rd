@@ -16,11 +16,11 @@ Simulation of data with demographic parameters based on the Woodchat Shrike are 
 \code{woodchat66} is a list with 5 components:
 
 \describe{
-  \item{ch }{capture histories for 947 individuals ?? females x 10 years.}
+  \item{ch }{capture histories for 947 females x 10 years.}
   \item{age }{the age of each individual at first capture.}
-  \item{count }{number of breeding pairs recorded in each year ??.}
-  \item{J }{??.}
-  \item{R }{??.}
+  \item{count }{number of breeding pairs recorded in each year.}
+  \item{J }{annual number of juveniles (fledglings) per year.}
+  \item{B }{annual number of broods surved from which the fledglings counts are obtained.}
   }
 }
 

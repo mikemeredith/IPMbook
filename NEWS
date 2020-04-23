@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9021 (2020-04-23)
+
+  * Tweaks to names of variables in data sets and better help files.
+
 CHANGES in version 0.0.0.9020 (2020-04-22)
 
   * Added 'redbacked' and 'woodchat6/64/66' data sets.
