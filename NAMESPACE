@@ -23,3 +23,6 @@ export(
   "cleanCH", "rmFirst", "getFirst", "dUnif"
 )
 
+# delete these when 'plotrix' is updated
+importFrom("graphics", "strheight", "strwidth", "text")
+export("corner.label")

@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9023 (2020-04-24)
+
+  * Added 'corner.label', a patched version of the 'plotrix' function.
+
 CHANGES in version 0.0.0.9022 (2020-04-24)
 
   * Tweaks to 'woodchat64' data set.
