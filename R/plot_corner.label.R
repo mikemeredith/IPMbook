@@ -25,12 +25,12 @@ corner.label <- function (label = NULL, x = -1, y = 1, xoff = NA, yoff = NA,
     }
     if (!is.null(label)) {
         if (figcorner)
-            par(xpd = TRUE)
+            oldpar <- par(xpd = TRUE)
         text(xpos - x * xoff, ypos - y * yoff, label, adj = c((1 +
             # x)/2, (1 + y)/2))
             x)/2, (1 + y)/2), ...)  # added dots
         if (figcorner)
-            par(xpd = FALSE)
+            par(oldpar)
     }
     return(list(x = xpos, y = ypos))
 }
