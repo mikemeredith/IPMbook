@@ -20,7 +20,7 @@ Data for hoopoe \emph{Upupa epops} from the Valais valley in Switzerland from 20
   \item{age }{the age of each female at first capture, 1 = nestling, 2 otherwise.}
   \item{count }{the annual population index (number of breeding pairs recorded).}
   \item{reproAgg }{a data frame with annual totals of mothers for which fledglings were recorded (B1 = 1-year-old, B2 = older females) and the corresponding number of fledglings (J1 and J2 respectively).}
-  \item{reproInd }{a data frame with details of 1092 broods monitored: id = mother's ID, f = number of fledglings in each brood, year = year of the brood.}
+  \item{reproInd }{a data frame with details of reproduction of individual females: id = mother's ID, f = total annual number of fledglings raised by each mother, including any replacement and second broods, year = year of the record.}
   }
 }
 

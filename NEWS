@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9024 (2020-04-30)
+
+  * Correction to 'hoopoe' help file.
+
 CHANGES in version 0.0.0.9023 (2020-04-24)
 
   * Added 'corner.label', a patched version of the 'plotrix' function.
