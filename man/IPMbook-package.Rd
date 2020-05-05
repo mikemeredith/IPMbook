@@ -53,6 +53,8 @@ The functions are listed by chapter below.
   \describe{
   \item{\code{\link{getFirst}}}{ Calculates the occasion of first capture.}
   \item{\code{\link{rmFirst}}}{ Removes the records of first capture from a capture history matrix.}
+  \item{\code{\link{zKnown}}}{ Converts a capture history matrix to one with 1 where the animal is know to be alive, NA elsewhere.}
+  \item{\code{\link{zInit}}}{ Converts a capture history matrix to one with 1 after the occasion of first capture, NA elsewhere.}
   \item{\code{\link{cleanCH}}}{ Removes all-zero rows from a capture history matrix.}
   \item{\code{\link{dbeta2}}}{ Beta distribution with mean and sd.}
   \item{\code{\link{dbeta3}}}{ Beta distribution with mode and concentration.}

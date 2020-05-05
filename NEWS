@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9026 (2020-05-05)
+
+  * Added utility functions 'zKnown' and 'zInit'.
+
 CHANGES in version 0.0.0.9025 (2020-05-05)
 
   * Added 'bats' data set.

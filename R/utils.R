@@ -1,61 +1,72 @@
 
 # cleanCH
+# zKnown
+# zInit
 # rmFirst
 # getFirst
 # dUnif
 
 
-#####################################################################################################
-#
 # Function to remove histories without any capture from a capture-recapture matrix
-#
 # Input variables
 #    ch: matrix with capture histories.
-#
 # Written: 14.3.2016, M.Schaub
-#
-# Last up-date:  18.3.2020
-#
-#####################################################################################################
 
 cleanCH <- function(ch){
   incl <- which(rowSums(ch)>=1)
   ch <- ch[incl,]
   return(ch)
 }
+# ......................................................
 
-
-#####################################################################################################
-#
-# Function to the first capture in a capture-recapture matrix
-#
+# From a capture history matrix, creates a matrix with 1 where the individual
+#  is known to be alive, NA elsewhere.
 # Input variables
 #    ch: matrix with capture histories.
-#
+
+zKnown <- function(ch) {
+  zknown1 <- function(x) {
+    kn <- which(x > 0)
+    x[min(kn):max(kn)] <- 1
+    x[x == 0] <- NA
+    return(x)
+  }
+  return(t(apply(ch, 1, zknown1)))
+}
+# .................................................................
+
+# From a capture history matrix, creates a matrix with 1 after the occasion of first
+#   capture, NA elsewhere.
+# Input variables
+#    ch: matrix with capture histories.
+
+zInit  <- function(ch){
+  f <- getFirst(ch) # occasion of first capture
+  zInit <- array(NA, dim = dim(ch))
+  for(i in 1:nrow(ch)){
+    if(f[i] >= ncol(ch)) # first captured on last occasion (or never!)
+      next
+    zInit[i,(f[i]+1):ncol(ch)] <- 1
+  }
+  return(zInit)
+}
+
+
+# Function to remove the first capture in a capture-recapture matrix
+# Input variables
+#    ch: matrix with capture histories.
 # Written: 14.3.2016, M.Schaub
-#
 # Depends on function 'getFirst'
-#
-# Last up-date: 18.3.2020
-#
-#####################################################################################################
 
 rmFirst <- function(ch){
   index <- cbind(1:nrow(ch), getFirst(ch))
   ch[index] <- 0
   return(ch)
 }
+# ..................................................................................
 
-
-#####################################################################################################
-#
 # Function to calculate the occasion of first capture
-#
 # Written: 2011, BPA
-#
-# Last up-date: 18.3.2020
-#
-#####################################################################################################
 
 getFirst <- function(x) {
   extract <- function(u) min(which(u > 0))
@@ -64,9 +75,9 @@ getFirst <- function(x) {
   }
   extract(x)
 }
+# ...................................................................................
 
-#####################################################################################################
-#
+
 # Function to create a vector to be used with the categorical distribution in BUGS to generate a discrete uniform prior
 #
 # Input variables
