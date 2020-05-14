@@ -37,6 +37,7 @@ The functions are listed by chapter below.
 \section{DATA SETS}{
   \describe{
   \item{\code{\link{bats}}}{ Data for greater horseshoe bats, 1989 to 2017, chapter 19.}
+  \item{\code{\link{grouse}}}{ Data for black grouse from Northern Italy, 1997-2016, chapter 12.}
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 16.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
