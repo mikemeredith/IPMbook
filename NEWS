@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9028 (2020-05-31)
+
+  * Added contributors to Authors@R in DESCRIPTION file.
+
 CHANGES in version 0.0.0.9027 (2020-05-14)
 
   * Added 'grouse' data set.
