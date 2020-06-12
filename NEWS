@@ -1,31 +1,35 @@
 
+CHANGES in version 0.0.0.9029 (2020-06-12)
+
+  * Added `woodchat7` data set.
+
 CHANGES in version 0.0.0.9028 (2020-05-31)
 
   * Added contributors to Authors@R in DESCRIPTION file.
 
 CHANGES in version 0.0.0.9027 (2020-05-14)
 
-  * Added 'grouse' data set.
+  * Added `grouse` data set.
 
 CHANGES in version 0.0.0.9026 (2020-05-05)
 
-  * Added utility functions 'zKnown' and 'zInit'.
+  * Added utility functions `zKnown` and `zInit'.
 
 CHANGES in version 0.0.0.9025 (2020-05-05)
 
-  * Added 'bats' data set.
+  * Added `bats` data set.
 
 CHANGES in version 0.0.0.9024 (2020-04-30)
 
-  * Correction to 'hoopoe' help file.
+  * Correction to `hoopoe` help file.
 
 CHANGES in version 0.0.0.9023 (2020-04-24)
 
-  * Added 'corner.label', a patched version of the 'plotrix' function.
+  * Added `corner.label`, a patched version of the `plotrix` function.
 
 CHANGES in version 0.0.0.9022 (2020-04-24)
 
-  * Tweaks to 'woodchat64' data set.
+  * Tweaks to `woodchat64` data set.
 
 CHANGES in version 0.0.0.9021 (2020-04-23)
 
@@ -33,92 +37,92 @@ CHANGES in version 0.0.0.9021 (2020-04-23)
 
 CHANGES in version 0.0.0.9020 (2020-04-22)
 
-  * Added 'redbacked' and 'woodchat6/64/66' data sets.
+  * Added `redbacked` and `woodchat6/64/66` data sets.
 
 CHANGES in version 0.0.0.9019 (2020-04-21)
 
-  * Added 'woodchat11' data set.
+  * Added `woodchat11` data set.
 
 CHANGES in version 0.0.0.9018 (2020-04-17)
 
-  * Added 'woodchat10' data set.
+  * Added `woodchat10` data set.
 
 CHANGES in version 0.0.0.9017 (2020-04-16)
 
-  * Change to structure of 'hoopoe' data set.
+  * Change to structure of `hoopoe` data set.
 
 CHANGES in version 0.0.0.9016 (2020-04-15)
 
-  * Added 'hoopoe' data set.
+  * Added `hoopoe` data set.
 
 CHANGES in version 0.0.0.9015 (2020-04-03)
 
-  * Renamed 'simSurvey*' functions as 'simCount*'.
+  * Renamed `simSurvey*` functions as `simCount*`.
 
 CHANGES in version 0.0.0.9014 (2020-04-02)
 
-  * 'simSurvey*' functions now return a list with the values input and 'count'.
+  * `simSurvey*` functions now return a list with the values input and `count`.
 
-  * Added 'totAdults' and 'totBreeders' to the output in 'simPop'.
+  * Added `totAdults` and `totBreeders` to the output in `simPop`.
 
 CHANGES in version 0.0.0.9013 (2020-04-01)
 
-  * Revised 'summaryPop' functions and added input checks.
+  * Revised `summaryPop` functions and added input checks.
 
 CHANGES in version 0.0.0.9012 (2020-04-01)
 
-  * Revised 'simSurvey*' functions and added input checks.
+  * Revised `simSurvey*` functions and added input checks.
 
-  * In 'simPop', the 'nYears' argument now takes precedence over the number of columns in
-  'phi' or 'f'; a mismatch will throw an error; 'nYears' is now the 4th argument.
+  * In `simPop`, the `nYears` argument now takes precedence over the number of columns in
+  `phi` or `f`; a mismatch will throw an error; `nYears` is now the 4th argument.
 
-  * Added helper functions 'fixAmatrix' and 'fixAvector' (not exported) and a help page explaining
+  * Added helper functions `fixAmatrix` and `fixAvector` (not exported) and a help page explaining
   how abbreviated input is expanded to the required matrix; this can now be done with 1 line of
   code in the "fix and check" block of functions.
 
-  * In 'simCapHist', 'maxAge' has default NULL, and does nothing.
+  * In `simCapHist`, `maxAge` has default NULL, and does nothing.
 
-  * In 'simSurveyBin', the 'psurv' argument rename 'pDetect'.
+  * In `simSurveyBin`, the `psurv` argument rename `pDetect`.
 
 CHANGES in version 0.0.0.9011 (2020-03-31)
 
-  * Renamed 'simPop2', 'simCapHist2' and 'simProd2' as 'simPop', 'simCapHist' and 'simProd'.
+  * Renamed `simPop2`, `simCapHist2` and `simProd2` as `simPop`, `simCapHist` and `simProd`.
 
 CHANGES in version 0.0.0.9010 (2020-03-31)
 
-  * Fixed bugs in 'simPop2' and 'simCapHist2'.
+  * Fixed bugs in `simPop2` and `simCapHist2`.
 
-  * Added checks for input to 'simPop2', 'simCapHist2' and 'simProd2'.
+  * Added checks for input to `simPop2`, `simCapHist2` and `simProd2`.
 
-  * 'simCapHist2' and 'simProd2' print information on the data input.
+  * `simCapHist2` and `simProd2` print information on the data input.
 
 CHANGES in version 0.0.0.9009 (2020-03-30)
 
-  * Additional arguments to 'simPop2' for partial breeding.
+  * Additional arguments to `simPop2` for partial breeding.
 
 CHANGES in version 0.0.0.9008 (2020-03-29)
 
-  * 'simCapHist2' is a trial version which uses the state matrix produced by 'simPop2'.
+  * `simCapHist2` is a trial version which uses the state matrix produced by `simPop2`.
 
 CHANGES in version 0.0.0.9007 (2020-03-29)
 
-  * Fixed bug in 'simPop2' and added mother's age to 'reprod' array in output.
+  * Fixed bug in `simPop2` and added mother`s age to `reprod` array in output.
 
 CHANGES in version 0.0.0.9006 (2020-03-28)
 
-  * 'simPop2' is a trial version of 'simPop' which returns a state matrix instead of a 3d array.
+  * `simPop2` is a trial version of `simPop` which returns a state matrix instead of a 3d array.
 
 CHANGES in version 0.0.0.9005 (2020-03-21)
 
-  * Modified 'getFirst' to work with a capture history matrix or a vector.
+  * Modified `getFirst` to work with a capture history matrix or a vector.
 
-  * Simplified input needed for 'simPop'.
+  * Simplified input needed for `simPop`.
 
 CHANGES in version 0.0.0.9004 (2020-03-20)
 
   * Added all the simulation functions for chapter 5.
 
-  * Added 'woodchat5' data set.
+  * Added `woodchat5` data set.
 
 CHANGES in version 0.0.0.9003 (2019-12-19)
 
@@ -126,14 +130,14 @@ CHANGES in version 0.0.0.9003 (2019-12-19)
 
 CHANGES in version 0.0.0.9002 (2019-12-18)
 
-  * Fixed precision issue with 'demoMCMC'.
+  * Fixed precision issue with `demoMCMC`.
 
   * Michael Schaub is now first author of package.
 
 CHANGES in version 0.0.0.9001 (2019-12-17)
 
-  * Added 'demoMCMC' function.
+  * Added `demoMCMC` function.
 
 Initial version 0.0.0.9000
 
-  * Includes *beta2, *beta3 and *gamma2 functions.
+  * Includes `*beta2`, `*beta3` and `*gamma2` functions.
