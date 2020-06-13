@@ -44,6 +44,7 @@ The functions are listed by chapter below.
   \item{\code{\link{woodchat6}}}{ Simulated data for Woodchat Shrike for use in Chapter 6.}
   \item{\code{\link{woodchat64}}}{ Simulated data for Woodchat Shrike for use in section 6.4.}
   \item{\code{\link{woodchat66}}}{ Simulated data for Woodchat Shrike for use in section 6.6.}
+  \item{\code{\link{woodchat7}}}{ Simulated data for Woodchat Shrike for use in chapter 7.}
   \item{\code{\link{woodchat10}}}{ Simulated data for Woodchat Shrike for use in Chapter 10.}
   \item{\code{\link{woodchat11}}}{ Real data for Woodchat Shrike for use in Chapter 11.}
 
