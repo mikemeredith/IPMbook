@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9030 (2020-08-23)
+
+  * Added `cormorant` data set.
+
 CHANGES in version 0.0.0.9029 (2020-06-12)
 
   * Added `woodchat7` data set.
