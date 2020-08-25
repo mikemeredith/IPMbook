@@ -25,7 +25,7 @@ Resightings: In all colonies, a large number of nestlings were marked with a sta
   }
 }
 
-\source{National Environmental Research Institute, Denmark ??}
+\source{Thomas Bregnballe}
 
 \references{
 Borysiewicz, R. S., Morgan, B. J. T., Hénaux, V., Bregnballe, T., Lebreton, J. D., Gimenez, O., 2009.An integrated analysis of multisite recruitment, mark-recapture-recovery and multisite census data.Pages 579–591 in D. Thomson, E. Cooch and M. Conroy, editors. \emph{Modeling demographic processes in marked populations}.Springer, New York
