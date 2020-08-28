@@ -1,0 +1,41 @@
+\name{catbird}
+\alias{catbird}
+\encoding{UTF-8}
+\docType{data}
+
+\title{
+Gray catbird data from New England/Mid Atlantic region, USA
+}
+\description{
+The data set includes sighting data from the North American Breeding Bird Survey (BBS) and mark-recapture data from the Monitoring Avian Productivity and Survivorship program (MAPS) for gray catbirds (\emph{Dumetella carolinensis}) in the New England/Mid Atlantic region, USA, for 1992-2008.
+}
+
+\usage{data("catbird")}
+
+\format{
+\code{catbird} is a list with 9 components:
+
+\describe{
+  \item{y }{matrix of capture-recapture data from MAPS data, 4276 birds x 17 years.}
+  \item{r }{residency for each bird, 1 if the bird was captured more than once at least 11 days apart in the same year; 0 otherwise.}
+  \item{station }{banding station identifier.}
+  \item{count }{number of individuals detected at each point in the BBS data.}
+  \item{stratum }{identifier of the stratum of the point.}
+  \item{year }{year of the count.}
+  \item{observer }{identifier of the observer making the count.}
+  \item{firstyr }{1 if the observer counted at the point for the first time, 0 otherwise.}
+  \item{area }{the area of each stratum.}
+}
+}
+
+\source{North American Breeding Bird Survey (BBS) and Monitoring Avian Productivity and Survivorship program (MAPS)}
+
+\references{
+Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 18.
+}
+
+\examples{
+data(catbird)
+str(catbird)
+}
+\keyword{datasets}

@@ -1,7 +1,7 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9031
+Version: 0.0.0.9032
 Date: 2020-08-28
 Depends: R (>= 2.10)
 Imports: stats, abind
@@ -18,7 +18,10 @@ Authors@R: c(
   person("Luca", "Rotelli", role="dtc", comment="grouse"),
   person("Antoine", "Sierro", role="dtc", comment="bats"),
   person("Wolfgang", "Stauber", role="dtc", comment="redbacked"),
-  person("Bruno", "Ullrich", role="dtc", comment="woodchat11"))
+  person("Bruno", "Ullrich", role="dtc", comment="woodchat11"),
+  person("Idaho Department of Fish and Game", role="dtc", comment="elk"),
+  person("Monitoring Avian Productivity and Survivorship program (MAPS)", role="dtc", comment="catbird"),
+  person("North American Breeding Bird Survey (BBS)", role="dtc", comment="catbird"))
 BugReports: https://github.com/mikemeredith/IPMbook/issues
 Description: Provides functions and data sets to accompany the forthcoming book 'Integrated Population Modeling' by Michael Schaub and Marc Kéry.
 License: GPL (>=3)
