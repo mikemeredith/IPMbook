@@ -1,8 +1,8 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9030
-Date: 2020-08-23
+Version: 0.0.0.9031
+Date: 2020-08-28
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:
@@ -12,6 +12,7 @@ Authors@R: c(
   person("Mike", "Meredith", role=c("aut", "cre"), email="mike@mmeredith.net"),
   person("Raphaël", "Arlettaz", role="dtc", comment="bats, hoopoe"),
   person("François", "Biollaz", role="dtc", comment="bats"),
+  person("Thomas", "Bregnballe", role="dtc", comment="cormorant"),
   person("Hans", "Jakober", role="dtc", comment="redbacked"),
   person("Ioannis", "Ntzoufras", role="ctb"),
   person("Luca", "Rotelli", role="dtc", comment="grouse"),

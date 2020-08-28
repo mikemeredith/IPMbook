@@ -1,0 +1,43 @@
+\name{elk}
+\alias{elk}
+\encoding{UTF-8}
+\docType{data}
+
+\title{
+Data from an elk (\emph{Cervus canadensis}) population in USA
+}
+\description{
+All three data sets are from Northern Idaho, 1988 to 1993, and include only females, i.e., the elk cows.
+
+The age-at-harvest data summarize the number of elk cows harvested and reported in each year stratified by age. All animals reported are sexed and aged based on tooth inspection, discarding records of elk older than 18 years. Not all hunted animals are reported.
+
+The reporting rate was assessed by a telephone survey of registered hunters, recording in each year the number who said they had killed an elk cow and the number who had reported their kill.
+
+Some elk cows were radio-tracked each year, and for these we have data for survival, hunting mortality and other mortality.
+}
+
+\usage{data("elk")}
+
+\format{
+\code{elk} is a list with 3 matrices:
+
+\describe{
+  \item{C }{age-at-harvest data from cow elk, 17 age classes x 6 years.}
+  \item{H }{hunter survey results, 2 rows x 6 years.}
+  \item{R }{data for radio-tagged elk, 3 categories x 6 years.}
+}
+}
+
+\source{Gove et al. (2002)}
+
+\references{
+Gove, N. E., Skalski, J. R., Zager, P., Townsend, R. L., 2002. Statistical models for population reconstruction using age-at-harvest data. J. Wildl. Manage. 66, 310–320
+
+Schaub, M. & Kery, M., in prep., \emph{Integrated Population Modeling}, chapter 13.
+}
+
+\examples{
+data(elk)
+str(elk)
+}
+\keyword{datasets}
