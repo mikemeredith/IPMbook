@@ -4,7 +4,7 @@
 \alias{zInit}
 \alias{rmFirst}
 \alias{getFirst}
-\alias{dUnif}
+\alias{dUnif0}  %%%%%%%%%%%% take out later
 \encoding{UTF-8}
 
 \title{
@@ -21,7 +21,7 @@ Various helper functions.
 
 \code{getFirst} calculates the occasion of first capture in a capture history matrix.
 
-\code{dUnif} creates a vector to be used with the categorical distribution in BUGS to generate a discrete uniform prior.
+\code{dUnif0} creates a vector to be used with the categorical distribution in BUGS to generate a discrete uniform prior. Now replaced with \code{dUnif}.
 }
 \usage{
 cleanCH(ch)
@@ -29,7 +29,7 @@ zKnown(ch)
 zInit(ch)
 rmFirst(ch)
 getFirst(x)
-dUnif(A, B)
+dUnif0(A, B)
 }
 \arguments{
   \item{ch}{
@@ -48,7 +48,7 @@ Range of the discrete uniform prior.
 
 \code{getFirst} returns the occasion of first capture.
 
-\code{dUnif} returns a vector... ??
+\code{dUnif0} returns a vector
 }
 \author{
 M. Schaub, Marc Kéry, Mike Meredith

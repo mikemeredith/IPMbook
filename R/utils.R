@@ -4,7 +4,7 @@
 # zInit
 # rmFirst
 # getFirst
-# dUnif
+## dUnif - now has its own file
 
 
 # Function to remove histories without any capture from a capture-recapture matrix
@@ -35,8 +35,8 @@ zKnown <- function(ch) {
 }
 # .................................................................
 
-# From a capture history matrix, creates a matrix with 1 after the occasion of first
-#   capture, NA elsewhere.
+# From a capture history matrix, creates a matrix with 1 after the occasion
+#   of first capture, NA elsewhere.
 # Input variables
 #    ch: matrix with capture histories.
 
@@ -63,7 +63,7 @@ rmFirst <- function(ch){
   ch[index] <- 0
   return(ch)
 }
-# ..................................................................................
+# .............................................................................
 
 # Function to calculate the occasion of first capture
 # Written: 2011, BPA
@@ -74,22 +74,4 @@ getFirst <- function(x) {
     return(apply(x, 1, extract))
   }
   extract(x)
-}
-# ...................................................................................
-
-
-# Function to create a vector to be used with the categorical distribution in BUGS to generate a discrete uniform prior
-#
-# Input variables
-#    A, B: range of the discrete uniform prior
-#
-# Written: September 2014, Michael Schaub
-#
-# Last up-date: 6.12.2019
-#
-#####################################################################################################
-
-dUnif <- function(A, B){
-  pprob <- c(rep(0, A-1), rep(1/(B-A+1), (B-A+1)))
-  return(pprob)
 }

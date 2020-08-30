@@ -20,7 +20,8 @@ export(
   "simCountBin", "simCountNorm", "simCountPois",
   "marray", "marrayAge",
   "summaryPop",
-  "cleanCH", "zKnown", "zInit", "rmFirst", "getFirst", "dUnif"
+  "cleanCH", "zKnown", "zInit", "rmFirst", "getFirst", "dUnif",
+  "dUnif0"  ###### temporary!
 )
 
 # delete these when 'plotrix' is updated
