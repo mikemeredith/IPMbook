@@ -31,6 +31,8 @@ The data set includes sighting data from the North American Breeding Bird Survey
 \source{North American Breeding Bird Survey (BBS) and Monitoring Avian Productivity and Survivorship program (MAPS)}
 
 \references{
+Ahrestani, F.S., Saracco, J.F., Sauer, J.R., Pardieck, K.L., & Royle, J.A. (2017) An integrated population model for bird monitoring in North America. \emph{Ecological Applications}, 27, 916-924.
+
 Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 18.
 }
 
