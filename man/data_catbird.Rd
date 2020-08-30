@@ -19,11 +19,11 @@ The data set includes sighting data from the North American Breeding Bird Survey
   \item{y }{matrix of capture-recapture data from MAPS data, 4276 birds x 17 years.}
   \item{r }{residency for each bird, 1 if the bird was captured more than once at least 11 days apart in the same year; 0 otherwise.}
   \item{station }{banding station identifier.}
-  \item{count }{number of individuals detected at each point in the BBS data.}
-  \item{stratum }{identifier of the stratum of the point.}
+  \item{count }{number of individuals detected on each route in the BBS data.}
+  \item{stratum }{identifier of the stratum of the route.}
   \item{year }{year of the count.}
   \item{observer }{identifier of the observer making the count.}
-  \item{firstyr }{1 if the observer counted at the point for the first time, 0 otherwise.}
+  \item{firstyr }{1 if the observer counted on the route for the first time, 0 otherwise.}
   \item{area }{the area of each stratum.}
 }
 }
