@@ -33,6 +33,12 @@ The functions are listed by chapter below.
   }
 }
 
+\section{Chapter 12}{
+  \describe{
+    \item{\code{\link{marrayDead}}}{ Create m-array from dead-recovery data (section 12.x)}
+  }
+}
+
 
 \section{DATA SETS}{
   \describe{
@@ -42,6 +48,7 @@ The functions are listed by chapter below.
   \item{\code{\link{elk}}}{ Data for elk cows from Northern Idaho, 1988 to 1993, chapter 13.}
   \item{\code{\link{grouse}}}{ Data for black grouse from Northern Italy, 1997-2016, chapter 12.}
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 16.}
+  \item{\code{\link{peregrine}}}{ Data for Peregrine Falcons, section 12.4.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
   \item{\code{\link{woodchat6}}}{ Simulated data for Woodchat Shrike for use in Chapter 6.}

@@ -18,11 +18,9 @@ export(
 export(
   "simPop", "simCapHist", "simProd",
   "simCountBin", "simCountNorm", "simCountPois",
-  "marray", "marrayAge",
+  "marray", "marrayAge", "marrayDead",
   "summaryPop",
-  "cleanCH", "zKnown", "zInit", "rmFirst", "getFirst", "dUnif",
-  "dUnif0"  ###### temporary!
-)
+  "cleanCH", "zKnown", "zInit", "rmFirst", "getFirst", "dUnif")
 
 # delete these when 'plotrix' is updated
 importFrom("graphics", "strheight", "strwidth", "text")

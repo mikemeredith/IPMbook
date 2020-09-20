@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9035 (2020-09-20)
+
+  * Added `peregrine` data set.
+
+  * Added `marrayDead` function.
+
 CHANGES in version 0.0.0.9034 (2020-09-03)
 
   * Corrected `woodchat11` data set.
