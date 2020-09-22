@@ -22,7 +22,7 @@ Data for peregrine falcons \emph{Falco peregrinus} from the Jura Mountains strad
   }
 }
 
-\source{Swiss data from Swiss Ornithological Institute. French data from "Groupe Pèlerin Jura".}
+\source{Swiss data from Gabriel Banderet and the Swiss Ornithological Institute. French data from Fonds Sauvegarde Faune Flore Jurassienne - Groupe Pèlerin Jura.}
 
 \references{
 Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Parish, D., 2018. Population trends of the Peregrine Falcon in Switzerland with special reference to the period 2005–2016. Ornis Hungarica 26, 91–103.
