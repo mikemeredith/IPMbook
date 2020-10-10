@@ -42,12 +42,13 @@ The functions are listed by chapter below.
 
 \section{DATA SETS}{
   \describe{
-  \item{\code{\link{bats}}}{ Data for greater horseshoe bats, 1989 to 2017, chapter 19.}
-  \item{\code{\link{catbird}}}{ Data for catbirds from USA, 1992-2008, chapter 18.}
-  \item{\code{\link{cormorant}}}{ Data for cormorants from Denmark, 1991-2004, chapter 20.}
-  \item{\code{\link{elk}}}{ Data for elk cows from Northern Idaho, 1988 to 1993, chapter 13.}
-  \item{\code{\link{grouse}}}{ Data for black grouse from Northern Italy, 1997-2016, chapter 12.}
-  \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 16.}
+  \item{\code{\link{bats}}}{ Data for greater horseshoe bats, 1989 to 2017, chapter 13.}
+  \item{\code{\link{bear}}}{ Data for black bears, 2007-2012, chapter 21.}
+  \item{\code{\link{catbird}}}{ Data for catbirds from USA, 1992-2008, chapter 19.}
+  \item{\code{\link{cormorant}}}{ Data for cormorants from Denmark, 1991-2004, chapter 18.}
+  \item{\code{\link{elk}}}{ Data for elk cows from Northern Idaho, 1988 to 1993, chapter 17.}
+  \item{\code{\link{grouse}}}{ Data for black grouse from Northern Italy, 1997-2016, chapter 15.}
+  \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 14.}
   \item{\code{\link{peregrine}}}{ Data for Peregrine Falcons, section 12.4.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
