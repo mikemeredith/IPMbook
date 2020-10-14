@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9038 (2020-10-14)
+
+  * Corrected source of `bear` data set.
+
 CHANGES in version 0.0.0.9037 (2020-10-10)
 
   * Added `bear` data set.

@@ -1,8 +1,8 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9037
-Date: 2020-10-10
+Version: 0.0.0.9038
+Date: 2020-10-14
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:
@@ -22,6 +22,7 @@ Authors@R: c(
   person("Bruno", "Ullrich", role="dtc", comment="woodchat11"),
   person("Fonds Sauvegarde Faune Flore Jurassienne - Groupe Pèlerin Jura", role="dtc", comment="peregrine"),
   person("Idaho Department of Fish and Game", role="dtc", comment="elk"),
+  person("Louisiana Department of Wildlife and Fisheries", role="dtc", comment="bear"),
   person("Monitoring Avian Productivity and Survivorship program (MAPS)", role="dtc", comment="catbird"),
   person("North American Breeding Bird Survey (BBS)", role="dtc", comment="catbird"),
   person("Swiss Ornithological Institute", role="dtc", comment="peregrine")  )
