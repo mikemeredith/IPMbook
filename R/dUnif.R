@@ -11,10 +11,10 @@
 #
 ##############################################################################
 
-dUnif0 <- function(A, B){
-  pprob <- c(rep(0, A-1), rep(1/(B-A+1), (B-A+1)))
-  return(pprob)
-}
+# dUnif0 <- function(A, B){
+  # pprob <- c(rep(0, A-1), rep(1/(B-A+1), (B-A+1)))
+  # return(pprob)
+# }
 
 # Proposed changes (by Mike):
 # 1. Change arg names A, B to lower, upper (can be abbreviated).

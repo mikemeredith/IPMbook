@@ -56,20 +56,29 @@ zInit  <- function(ch){
 # Input variables
 #    ch: matrix with capture histories.
 # Written: 14.3.2016, M.Schaub
+# Modified to handle vectors, 2020-10-15
 # Depends on function 'getFirst'
 
-rmFirst <- function(ch){
-  index <- cbind(1:nrow(ch), getFirst(ch))
-  ch[index] <- 0
-  return(ch)
+rmFirst <- function(x){
+  if(is.array(x)) {
+    index <- cbind(1:nrow(x), getFirst(x))
+    x[index] <- 0
+  } else {
+    x[getFirst(x)] <- 0
+  }
+  return(x)
 }
 # .............................................................................
 
 # Function to calculate the occasion of first capture
 # Written: 2011, BPA
+# Modified to deal with all-zero rows, 2020-10-15
 
 getFirst <- function(x) {
-  extract <- function(u) min(which(u > 0))
+  extract <- function(u) {
+    tmp <- which(u > 0)
+    ifelse(length(tmp) == 0, NA, min(tmp))
+  }
   if(is.matrix(x)) {
     return(apply(x, 1, extract))
   }

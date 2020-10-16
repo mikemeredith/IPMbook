@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9039 (2020-10-16)
+
+  * Fixed: `getFirst` can now handle all-zero rows or vectors, returning NA.
+
+  * Fixed: `rmFirst` and `marrayDead` can now handle vectors.
+
 CHANGES in version 0.0.0.9038 (2020-10-14)
 
   * Corrected source of `bear` data set.

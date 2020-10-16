@@ -13,7 +13,7 @@ marrayDead(MR)
 }
 \arguments{
   \item{MR}{
-An individuals x time matrix with 1 denoting either the time of marking or the time of recovery; otherwise 0.
+An individuals x time matrix with 1 denoting either the time of marking or the time of recovery; otherwise 0. With only 1 individual, this can be a vector (or a 1-row matrix).
 }
 }
 \value{

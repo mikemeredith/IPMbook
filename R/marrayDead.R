@@ -1,6 +1,10 @@
 
 # Define function to create an m-array based for mark-recovery (MR) data
-marrayDead<- function(MR){
+# Modified to deal with a single individual as a vector 2020-10-15
+
+marrayDead <- function(MR){
+  if(!is.matrix(MR))
+    MR <- matrix(MR, nrow=1)
   nind <- nrow(MR)
   n.occasions <- ncol(MR)
   out <- matrix(0, ncol=n.occasions, nrow=n.occasions-1)
