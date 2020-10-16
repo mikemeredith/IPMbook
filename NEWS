@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9040 (2020-10-16)
+
+  * Fixed: `marrayAge` now works if some age groups are absent from the data.
+
+  * Fixed: `marray` can now handle vectors as input.
+
 CHANGES in version 0.0.0.9039 (2020-10-16)
 
   * Fixed: `getFirst` can now handle all-zero rows or vectors, returning NA.

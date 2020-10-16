@@ -24,7 +24,7 @@
 
 marrayAge <- function(ch, age, mAge = 1){
   if (is.matrix(ch)==FALSE)
-  ch <- matrix(ch, nrow = 1)
+    ch <- matrix(ch, nrow = 1)
   maxAge <- max(c(max(age), mAge))
   nind <- nrow(ch)
   n.occasions <- ncol(ch)
@@ -48,7 +48,7 @@ marrayAge <- function(ch, age, mAge = 1){
   for (a in 1:maxAge){
     for (i in 1:nind){
       j <- which(ch.rec[i,]==a | ch.rec[i,]==(a+1))
-      if (length(j)==0) 
+      if (length(j)==0)
         next
       ch.split[i,j[1:2],age.matrix[i,j[1]]] <- 1
       if (length(j)>1){
@@ -65,20 +65,17 @@ marrayAge <- function(ch, age, mAge = 1){
         next
       if (u[1]==n.occasions)
         next
-      if (length(u)==1) 
+      if (length(u)==1)
         marr[u,n.occasions,a] <- marr[u,n.occasions,a] + 1
-      if (length(u)==2) 
+      if (length(u)==2)
         marr[u[1], u[2]-1, a] <- marr[u[1], u[2]-1, a] + 1
     } # i
   } # a
-  a <- maxAge
 
-  if (is.matrix(ch.split[,,a])==FALSE){
-    ch.split1 <- matrix(ch.split[,,a], nrow = 1)
-    marr[,,a] <- marray(ch.split1)
-  } else {
-    marr[,,a] <- marray(cleanCH(ch.split[,,a]))
-  }
+  a <- maxAge
+  if(sum(ch.split[,,a])) # all zeros, leave the zeros in marr[,,a]
+     marr[,,a] <- marray(cleanCH(ch.split[,,a]))
+
   return(marr)
 }
 

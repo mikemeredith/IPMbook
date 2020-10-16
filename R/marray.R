@@ -19,8 +19,10 @@
 #####################################################################################################
 
 marray <- function(ch, unobs = 0){
-  ns <- length(table(ch)) - 1 + unobs
-  no <- ncol(ch)
+  if(!is.matrix(ch))
+    ch <- matrix(ch, nrow=1)
+  ns <- length(table(ch)) - 1 + unobs # number of states, excluding 0
+  no <- ncol(ch)                      # number of observations (replicates, years, surveys, ...)
   out <- matrix(0, ncol = ns*(no-1)+1, nrow = ns*(no-1))
   # Remove capture histories of individuals that are marked at last occasion
   first <- getFirst(ch)
