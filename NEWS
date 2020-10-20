@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9041 (2020-10-20)
+
+  * Added `swallow` data set.
+
 CHANGES in version 0.0.0.9040 (2020-10-16)
 
   * Fixed: `marrayAge` now works if some age groups are absent from the data.

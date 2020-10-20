@@ -51,6 +51,7 @@ The functions are listed by chapter below.
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 14.}
   \item{\code{\link{peregrine}}}{ Data for Peregrine Falcons, section 12.4.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
+  \item{\code{\link{swallow}}}{ Data for barn swallows, Chapter 16.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
   \item{\code{\link{woodchat6}}}{ Simulated data for Woodchat Shrike for use in Chapter 6.}
   \item{\code{\link{woodchat64}}}{ Simulated data for Woodchat Shrike for use in section 6.4.}
