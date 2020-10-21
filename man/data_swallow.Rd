@@ -21,7 +21,7 @@ See Schaub et al (2015) for details.
   \item{marr.j }{an array with mark-recapture data for juvenile females in m-array format, sites x release year x recapture year.}
   \item{marr.a }{an array with mark-recapture data for adult females in m-array format, sites x release year x recapture year.}
   \item{counts }{a matrix with number of breeding pairs observed, sites x years.}
-  \item{productivity }{an array with productivity variables for monitored broods, sites x years x variable x brood type (first or second); the variables are total number of eggs and fledglings in monitored broods and the number of broods.}
+  \item{productivity }{an array with productivity variables for monitored broods, brood type (first or second) x sites x years x variable; the variables are total number of eggs and fledglings in monitored broods and the number of broods monitored.}
   \item{second }{an array with the number of first broods and second broods observed, sites x years x brood type.}
   }
 }

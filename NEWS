@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9042 (2020-10-21)
+
+  * Reordered dimensions in `swallow$productivity`.
+
 CHANGES in version 0.0.0.9041 (2020-10-20)
 
   * Added `swallow` data set.
