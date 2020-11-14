@@ -22,6 +22,13 @@ The functions are listed by chapter below.
   }
 }
 
+\section{Chapter 4}{
+  \describe{
+    \item{\code{\link{simMHB}}}{ Simulate detection and count data with spatial and temporal replication (section 4.3.3)}
+    \item{\code{\link{createAge}}}{ Create an age matrix (section 4.5.1.1)}
+  }
+}
+
 \section{Chapter 5}{
   \describe{
     \item{\code{\link{simPop}}}{ Simulate a population based on demographic parameters (section x.x)}
@@ -51,6 +58,7 @@ The functions are listed by chapter below.
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 14.}
   \item{\code{\link{peregrine}}}{ Data for Peregrine Falcons, section 12.4.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
+  \item{\code{\link{stork}}}{ Data for white storks, section 4.5.4.}
   \item{\code{\link{swallow}}}{ Data for barn swallows, Chapter 16.}
   \item{\code{\link{woodchat5}}}{ Simulated data for Woodchat Shrike for use in Chapter 5.}
   \item{\code{\link{woodchat6}}}{ Simulated data for Woodchat Shrike for use in Chapter 6.}
@@ -59,7 +67,7 @@ The functions are listed by chapter below.
   \item{\code{\link{woodchat7}}}{ Simulated data for Woodchat Shrike for use in chapter 7.}
   \item{\code{\link{woodchat10}}}{ Simulated data for Woodchat Shrike for use in Chapter 10.}
   \item{\code{\link{woodchat11}}}{ Real data for Woodchat Shrike for use in Chapter 11.}
-
+  \item{\code{\link{wryneck}}}{ Nest survival data for wryneck, section 4.4.6.}
   }
 }
 
@@ -69,6 +77,7 @@ The functions are listed by chapter below.
   \item{\code{\link{rmFirst}}}{ Removes the records of first capture from a capture history matrix.}
   \item{\code{\link{zKnown}}}{ Converts a capture history matrix to one with 1 where the animal is know to be alive, NA elsewhere.}
   \item{\code{\link{zInit}}}{ Converts a capture history matrix to one with 1 after the occasion of first capture, NA elsewhere.}
+  \item{\code{\link{zInitDR}}}{ Converts a dead-recovery capture history matrix to one with 1 after the occasion of first capture until the occasion of dead recovery, then 0; NA elsewhere.}
   \item{\code{\link{cleanCH}}}{ Removes all-zero rows from a capture history matrix.}
   \item{\code{\link{dbeta2}}}{ Beta distribution with mean and sd.}
   \item{\code{\link{dbeta3}}}{ Beta distribution with mode and concentration.}

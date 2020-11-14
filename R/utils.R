@@ -2,6 +2,7 @@
 # cleanCH
 # zKnown
 # zInit
+# zInitDR
 # rmFirst
 # getFirst
 ## dUnif - now has its own file
@@ -49,6 +50,24 @@ zInit  <- function(ch){
     zInit[i,(f[i]+1):ncol(ch)] <- 1
   }
   return(zInit)
+}
+
+# Function to create initial values for the latent states for dead recoveries
+#  with 0 on and after the occasion of dead recovery
+zInitDR <- function(chDR)
+{
+  zInitDR <- zInit(chDR)
+  g <- which(rmFirst(chDR)==1, arr.ind=TRUE) # recovery events
+  for (i in 1:nrow(g)){
+    zInitDR[g[i,1],g[i,2]:ncol(chDR)] <- 0
+  }
+  # zInitDR[is.na(zInitDR)] <- 0
+  # for (i in 1:nrow(chDR)) {
+    # if (f[i] >= ncol(chDR))
+      # next
+    # zInitDR[i, 1:f[i]] <- NA
+  # }
+  return(zInitDR)
 }
 
 

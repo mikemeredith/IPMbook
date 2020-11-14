@@ -1,4 +1,10 @@
 
+CHANGES in version 0.0.0.9043 (2020-11-14)
+
+  * Added data sets `stork` and `wryneck`.
+
+  * Added `simMHB` function and utility functions `createAge` and `zInitDR`.
+
 CHANGES in version 0.0.0.9042 (2020-10-21)
 
   * Reordered dimensions in `swallow$productivity`.

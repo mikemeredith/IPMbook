@@ -1,0 +1,36 @@
+\name{wryneck}
+\alias{wryneck}
+\encoding{UTF-8}
+\docType{data}
+
+\title{
+Data from a nestbox study of wrynecks in Switzerland
+}
+\description{
+The data contain information about 181 broods of wrynecks \emph{Jynx torquilla}  collected in the Valais (Swiss Alps) from 2002-2006. Dates are recorded such that day 1 is May 16.
+}
+
+\usage{data("wryneck")}
+
+\format{
+\code{wryneck} is a data frame with 5 columns:
+
+\describe{
+  \item{f }{day of first detection of nestlings.}
+  \item{j }{day of the latest check when nestlings were present.}
+  \item{k }{day of the last check; this is the same as 'j' if nestlings fledged successfully, or the day when the nest was found to have failed.}
+  \item{x }{1 if nestlings fledged successfully, otherwise 0.}
+  \item{age }{the age of the nestlings on first detection.}
+  }
+}
+
+\source{Swiss Ornithological Institute}
+
+\references{
+Geiser, S., R. Arlettaz, and M. Schaub. 2008. Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149:597–606.}
+
+\examples{
+data(wryneck)
+str(wryneck)
+}
+\keyword{datasets}

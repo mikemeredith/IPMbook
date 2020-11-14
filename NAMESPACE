@@ -1,11 +1,11 @@
 # NAMESPACE for IPMbook package
 
-importFrom("graphics", "abline", "hist", "lines", "par", "plot")
+importFrom("graphics", "abline", "hist", "lines", "par", "plot", "matplot")
 importFrom("stats", "dbeta", "pbeta", "qbeta", "rbeta",
         "dgamma", "pgamma", "qgamma", "rgamma",
         "dnorm", "rnorm", "runif", "plogis",
         "acf", "density")
-importFrom("stats", "rbinom", "rpois")
+importFrom("stats", "rbinom", "rpois", "qlogis")
 importFrom("utils", "packageVersion")
 
 # Utilities
@@ -16,7 +16,7 @@ export(
   "demoMCMC")
 
 export(
-  "simPop", "simCapHist", "simProd",
+  "simPop", "simCapHist", "simProd", "simMHB",
   "simCountBin", "simCountNorm", "simCountPois",
   "marray", "marrayAge", "marrayDead",
   "summaryPop",
