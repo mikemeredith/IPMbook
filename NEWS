@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9045 (2020-11-15)
+
+  * Fixed `stork` data set.
+
 CHANGES in version 0.0.0.9044 (2020-11-15)
 
   * Utility functions `createAge` and `zInitDR` now exported.
