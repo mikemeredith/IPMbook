@@ -7,7 +7,7 @@
 # for each individual i, based on the occasion of first capture, f, and
 # age at first capture.
 
-# Function to create the age matrix 
+# Function to create the age matrix
 createAge <- function(f, age, nyears, mAge=2){
   # a <- matrix(NA, nrow=length(f), ncol=nyears-1)
   a <- matrix(NA, nrow=length(f), ncol=nyears)
@@ -16,6 +16,6 @@ createAge <- function(f, age, nyears, mAge=2){
     # a[i,f[i]:(nyears-1)] <- k[age[i]:(nyears-f[i]+age[i]-1)]
     a[i,f[i]:(nyears)] <- k[age[i]:(nyears-f[i]+age[i])]
   }
-  return(a)
+  return(a[, 1:(nyears - 1)])
 }
 

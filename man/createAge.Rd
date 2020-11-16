@@ -6,7 +6,7 @@
 Create an age matrix
 }
 \description{
-Creates an animals x years matrix which indicates the age class in each year for each individual, based on the occasion of first capture and the age at first capture.
+Creates an animals x intervals matrix which gives the age class for each individual at the beginning of each interval, based on the occasion of first capture and the age at first capture.
 }
 \usage{
 createAge(f, age, nyears, mAge=2)
@@ -19,7 +19,7 @@ A vector of first capture occasions.
 A corresponding vector with the age at first capture of each animal.
 }
   \item{nyears}{
-The number of years to be covered by the matrix, ie, the number of columns.
+The number of years of the study; the number of intervals is \code{nyears - 1}.
 }
   \item{mAge}{
 The maximum age class; age is incremented by 1 each year up to \code{mAge}.
@@ -27,7 +27,7 @@ The maximum age class; age is incremented by 1 each year up to \code{mAge}.
 
 }
 \value{
-An individuals x years matrix with the age of each individual in each year. Cells prior to the first capture are filled with NAs.
+An individuals x intervals matrix with the age of each individual at the beginning of each interval. Cells prior to the first capture are filled with NAs.
 }
 \author{
 M. Schaub.

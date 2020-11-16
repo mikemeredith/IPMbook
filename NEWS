@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9046 (2020-11-16)
+
+  * Fixed `createAge` to return columns for intervals instead of years.
+
 CHANGES in version 0.0.0.9045 (2020-11-15)
 
   * Fixed `stork` data set.
