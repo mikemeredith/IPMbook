@@ -3,13 +3,14 @@
 \encoding{UTF-8}
 
 \title{
-Demonstration of a random-walk sampler for MCMC
+Demonstration of a random-walk sampler for a single parameter
 }
 \description{
-Implements a random-walk sampler for a single parameter: the probability of success on the logit scale, theta = logit(p), for binomial data with y successes in N trials. The prior for theta is a Normal distribution with mean mu.theta and SD s.theta. Proposal values are drawn from a Normal distribution with mean = current value and SD = prop.s.
+Generates an MCMC chain for the probability of success on the logit scale, ltheta = logit(theta), for binomial data with y successes in N trials. The prior for ltheta is a Normal distribution with mean mu.ltheta and SD sd.ltheta. Proposal values are drawn from a Normal distribution with mean = current value and SD = prop.sd.
 }
 \usage{
-demoMCMC(y = 20, N = 50, niter = 25000, mu.theta = 0, s.theta = 100, prop.s = 1, init = 0)
+demoMCMC(y = 20, N = 50, niter = 25000, mu.ltheta = 0, sd.ltheta = 100,
+    prop.sd = 1, init = 0, quiet = FALSE, show.plots = TRUE)
 }
 \arguments{
   \item{y}{
@@ -21,22 +22,28 @@ number of trials.
   \item{niter}{
 the number of MCMC draws required.
 }
-  \item{mu.theta}{
-the mean of the Normal prior distribution.
+  \item{mu.ltheta}{
+the mean of the Normal prior distribution for logit(theta).
 }
-  \item{s.theta}{
-the SD of the Normal prior distribution.
+  \item{sd.ltheta}{
+the SD of the Normal prior distribution for logit(theta).
 }
-  \item{prop.s}{
+  \item{prop.sd}{
 the SD of the Normal distribution for the proposals.
 }
   \item{init}{
 initial value for theta.
 }
+  \item{quiet}{
+if TRUE, console output is suppressed.
+}
+  \item{show.plots}{
+if FALSE, plotting is suppressed.
+}
 }
 \value{
 A list with the values of the input arguments and the following additional elements:
- \item{theta }{a vector with the MCMC draws}
+ \item{ltheta }{a vector with the MCMC draws}
  \item{acc.prob }{the proportion of proposed values accepted}
 }
 \author{
@@ -47,26 +54,26 @@ Adapted from code in Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS} p. 
 require(graphics)
 # Default settings
 str(tmp <- demoMCMC(y = 20, N = 50, niter = 25000,
-  mu.theta = 0, s.theta = 100, prop.s = 1, init = 0))
+  mu.ltheta = 0, sd.ltheta = 100, prop.sd = 1, init = 0))
 
 # Show convergence
-str(tmp <- demoMCMC(prop.s = 0.1, init = 10))
+str(tmp <- demoMCMC(prop.sd = 0.1, init = 10))
 
 # Show convergence: no convergence
-str(tmp <- demoMCMC(prop.s = 0.1, init = 100))
+str(tmp <- demoMCMC(prop.sd = 0.1, init = 100))
 
 # Very, very small step size: very inefficient
-str(tmp <- demoMCMC(prop.s = 0.01))
+str(tmp <- demoMCMC(prop.sd = 0.01))
 
 # Very small step size: inefficient
-str(tmp <- demoMCMC(prop.s = 0.1))
+str(tmp <- demoMCMC(prop.sd = 0.1))
 
 # Default step size: pretty good for this case
-str(tmp <- demoMCMC(prop.s = 1))
+str(tmp <- demoMCMC(prop.sd = 1))
 
 # Larger than default step size: efficiency goes down again
-str(tmp <- demoMCMC(prop.s = 10))
+str(tmp <- demoMCMC(prop.sd = 10))
 
 # Muuuuch larger ..... brrrrr !
-str(tmp <- demoMCMC(prop.s = 100))
+str(tmp <- demoMCMC(prop.sd = 100))
 }
