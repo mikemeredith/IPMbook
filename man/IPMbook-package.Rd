@@ -16,9 +16,9 @@ Provides functions and data sets needed to run the code given in the book \emph{
 The functions are listed by chapter below.
 }
 
-\section{Chapter X}{
+\section{Chapter 2}{
   \describe{
-    \item{\code{\link{demoMCMC}}}{ Demonstration of a random-walk sampler for MCMC (section x.x)}
+    \item{\code{\link{demoMCMC}}}{ Demonstration of a random-walk sampler for MCMC (section 2.5)}
   }
 }
 
@@ -56,6 +56,7 @@ The functions are listed by chapter below.
   \item{\code{\link{elk}}}{ Data for elk cows from Northern Idaho, 1988 to 1993, chapter 17.}
   \item{\code{\link{grouse}}}{ Data for black grouse from Northern Italy, 1997-2016, chapter 15.}
   \item{\code{\link{hoopoe}}}{ Data for Hoopoe from Valais valley, 2001-2017, chapter 14.}
+  \item{\code{\link{kestrel}}}{ Data for Kestrels in NW Switzerland, chapter 20.}
   \item{\code{\link{peregrine}}}{ Data for Peregrine Falcons, section 12.4.}
   \item{\code{\link{redbacked}}}{ Data for Redbacked Shrike, section 8.2.}
   \item{\code{\link{stork}}}{ Data for white storks, section 4.5.4.}
