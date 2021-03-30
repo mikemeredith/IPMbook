@@ -21,7 +21,3 @@ export(
   "marray", "marrayAge", "marrayDead", "createAge",
   "summaryPop",
   "cleanCH", "zKnown", "zInit", "zInitDR", "rmFirst", "getFirst", "dUnif")
-
-# delete these when 'plotrix' is updated
-importFrom("graphics", "strheight", "strwidth", "text")
-export("corner.label")

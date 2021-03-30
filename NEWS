@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9049 (2021-03-30)
+
+  * Removed `corner.label` as the `plotrix` function now works.
+
 CHANGES in version 0.0.0.9048 (2021-01-29)
 
   * Added `kestrel` data set.
