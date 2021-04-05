@@ -18,7 +18,7 @@
 ################################################
 
 
-simProd <- function(reprod, pInclude = 0.3, females.only = FALSE){
+simProd <- function(reprod, pInclude = 0.3, females.only = FALSE, verbose = TRUE){
 
   inputName <- deparse(substitute(reprod))
 
@@ -32,11 +32,12 @@ simProd <- function(reprod, pInclude = 0.3, females.only = FALSE){
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   nNest <- sum(!is.na(reprod[,,3]))
-  cat(paste0("The input object ", sQuote(inputName), " has ", dim(reprod)[1], " individuals x ",
-    nYears, " Years, with ", nNest, "\nbreeding attempts."))
-  cat(paste0(" Mothers' ages range from ", min(reprod[,,3], na.rm=TRUE), " to ",
-    max(reprod[,,3], na.rm=TRUE), ".\n\n"))
-
+  if(verbose) {
+    cat(paste0("The input object ", sQuote(inputName), " has ", dim(reprod)[1], " individuals x ",
+       nYears, " Years, with ", nNest, "\nbreeding attempts."))
+    cat(paste0(" Mothers' ages range from ", min(reprod[,,3], na.rm=TRUE), " to ",
+       max(reprod[,,3], na.rm=TRUE), ".\n\n"))
+  }
   prod.ind <- matrix(NA, nNest, 3)
   colnames(prod.ind) <- c("Productivity", "Year", "Age of mother")
   le <- 0

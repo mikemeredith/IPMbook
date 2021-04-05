@@ -9,11 +9,9 @@
 
 # Function to create the age matrix
 createAge <- function(f, age, nyears, mAge=2){
-  # a <- matrix(NA, nrow=length(f), ncol=nyears-1)
   a <- matrix(NA, nrow=length(f), ncol=nyears)
   k <- c(1:mAge, rep(max(mAge), nyears))
   for (i in 1:length(f)){
-    # a[i,f[i]:(nyears-1)] <- k[age[i]:(nyears-f[i]+age[i]-1)]
     a[i,f[i]:(nyears)] <- k[age[i]:(nyears-f[i]+age[i])]
   }
   return(a[, 1:(nyears - 1)])

@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9050 (2021-04-05)
+
+  * Add `verbose` argument to `simCapHist` and `simProd`.
+
 CHANGES in version 0.0.0.9049 (2021-03-30)
 
   * Removed `corner.label` as the `plotrix` function now works.

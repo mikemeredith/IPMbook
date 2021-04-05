@@ -32,7 +32,7 @@ cap <- c(c_juv, c_ad)
 recap <- p_rec
 }
 
-simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL){
+simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL, verbose = TRUE){
 
   inputName <- deparse(substitute(state))
   # ~~~~~ check and fix input ~~~~~~~~~~~~~
@@ -55,10 +55,12 @@ simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL){
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   # Print some information
-  cat(paste0("The input object ", sQuote(inputName), " has ", nind, " individuals x ", nYears,
-    " Years. Ages range from ", max(0, min(state, na.rm=TRUE)), " to ", max(state, na.rm=TRUE), ".\n"))
-  cat(paste0("The ", sQuote("cap"), " matrix should be ", nstage, " x ", nYears,
-    " and the ", sQuote("recap"), " matrix ", nstage-1, " x ", nYears-1, ".\n\n" ))
+  if(verbose) {
+    cat(paste0("The input object ", sQuote(inputName), " has ", nind, " individuals x ", nYears,
+      " Years. Ages range from ", max(0, min(state, na.rm=TRUE)), " to ", max(state, na.rm=TRUE), ".\n"))
+    cat(paste0("The ", sQuote("cap"), " matrix should be ", nstage, " x ", nYears,
+      " and the ", sQuote("recap"), " matrix ", nstage-1, " x ", nYears-1, ".\n\n" ))
+  }
 
   # do a 3-d array, age x year x 2, [,,1] = first capture, [,,2] second capture.
   # Add a first column and first row of NAs to recap then combine

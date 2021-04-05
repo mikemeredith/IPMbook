@@ -8,9 +8,11 @@ Simulate capture histories from a population
 \description{
 Simulate capture histories from a simulated population created by \code{simPop}. Capture probabilities may vary among the age classes and with time, and can be different for initial capture vs recapture.
 }
+
 \usage{
-simCapHist(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL)
+simCapHist(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL, verbose = TRUE)
 }
+
 \arguments{
   \item{state}{
 an animals x years matrix with the age of each animal in the population (animals born in the current year coded as age = 0), usually the output from \code{\link{simPop}}
@@ -23,6 +25,9 @@ matrix with age- and time-specific probabilities probabilities of REcapture: thi
 }
   \item{maxAge}{
 maximal number of age classes that can be identified when the individuals are captured for the first time; if NULL, no upper limit is imposed.
+}
+  \item{verbose}{
+if TRUE, information is displayed in the console.
 }
 }
 \value{
