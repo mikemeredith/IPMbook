@@ -20,7 +20,7 @@ Simulation of data with demographic parameters based on the Woodchat Shrike are 
   \item{age }{the age of each individual at first capture.}
   \item{count }{number of breeding pairs recorded in each year.}
   \item{J }{annual number of juveniles (fledglings) per year.}
-  \item{B }{annual number of broods surved from which the fledglings counts are obtained.}
+  \item{B }{annual number of broods surveyed from which the fledglings counts are obtained.}
   }
 }
 

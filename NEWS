@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9051 (2021-05-17)
+
+  * Spell check: standardize on US spellings; added inst/WORDLIST with exceptions.
+
 CHANGES in version 0.0.0.9050 (2021-04-05)
 
   * Add `verbose` argument to `simCapHist` and `simProd`.

@@ -33,7 +33,7 @@ Schaub, M., Gimenez, O., Sierro, A., Arlettaz, R., 2007. Use of integrated model
 
 Sierro, A., Lugon, A., Arlettaz, R., 2009. La colonie de grands rhinolophes Rhinolophus ferrumequinum de l'église St-Sylvie à Vex (Valais, Suisse): évolution sur deux décennies (1968-2006). \emph{Le Rhinolophe} 18, 75–82.
 
-Schaub, M. & Kery, M., in prep., \emph{Integrated Population Modeling}, chapter 19.
+Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 19.
 }
 
 \examples{

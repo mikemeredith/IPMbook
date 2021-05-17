@@ -4,8 +4,11 @@ setwd("C:/Github/IPMbook_package") # my laptop
 dir()
 
 # Install dependencies
-# install.packages(c("plotrix", "raster", "RandomFields", "coda",
-    # "unmarked", "mvtnorm", "spdep"))
+install.packages("abind")
+
+library(spelling)
+update_wordlist(pkg = "IPMbook", confirm = TRUE)
+out <- spell_check_package(pkg = "IPMbook")
 
 # For package development
 system("R CMD INSTALL IPMbook") # Use this for a "dev" install.
@@ -16,7 +19,7 @@ devtools::load_all("IPMbook")
 # ==========================
 unlink(list.files(pattern="Rplots.pdf", recursive=TRUE))
 system("R CMD build IPMbook")  # Produces the .tar.gz
-pkg <- "IPMbook_0.0.0.9050.tar.gz"  # <-- fix version number here
+pkg <- "IPMbook_0.0.0.9051.tar.gz"  # <-- fix version number here
 
 # Pick one to check:
 ## on desktop

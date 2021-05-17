@@ -32,7 +32,7 @@ Borysiewicz, R. S., Morgan, B. J. T., Hénaux, V., Bregnballe, T., Lebreton, J. 
 
 McCrea, R. S., Morgan, B. J. T., Gimenez, O., Besbeas, P., Bregnballe, T., Hénaux, V., Lebreton, J. D., 2010. Multi-site integrated population modelling. \emph{JABES} 15, 539–561.
 
-Schaub, M. & Kery, M., in prep., \emph{Integrated Population Modeling}, chapter 20.
+Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 20.
 }
 
 \examples{
