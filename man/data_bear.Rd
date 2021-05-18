@@ -7,7 +7,7 @@
 Data for black bears in Louisiana, USA, 2007-2012
 }
 \description{
-The data on the Louisiana black bear (\emph{Ursus americanus luteolus}) were collected during six years (2007‒2012) in the Upper Atchafalaya River Basin in South-central Louisiana, USA, using hair snares. Hair samples were collected on eight consecutive weeks in each year and a selection of samples were genotyped resulting in spatial capture-recapture (SCR) data. This data set includes SCR data for 2007, 2009 and 2011, plus simple occupancy data for 2008, 210 and 2012. See Chandler and Clark (2014) for details.
+The data on the Louisiana black bear (\emph{Ursus americanus luteolus}) were collected during six years (2007‒2012) in the Upper Atchafalaya River Basin in South-central Louisiana, USA, using hair snares. Hair samples were collected on eight consecutive weeks in each year and a selection of samples were genotyped resulting in spatial capture-recapture (SCR) data. This data set includes SCR data for 2007, 2009 and 2011, plus simple occupancy data for 2008, 2010 and 2012. See Chandler and Clark (2014) for details.
 
 Note that not all hair samples were successfully genotyped, and traps were not deployed at all 128 locations in every year, leading to NAs in the data.
 }
