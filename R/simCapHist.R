@@ -19,20 +19,8 @@
 #
 #####################################################################################################
 
-if(FALSE) {
-state <- simPop()$state
-c_juv <- 0.35           # Initial capture probability of juveniles
-c_ad <- 0.4            # Initial capture probability of adults
-p_rec <- 0.6           # Recapture probability
-
-c = matrix(c(c_juv, c_ad), nrow = 2, ncol=6)
-p = matrix(p_rec, nrow = 1, ncol=5)
-
-cap <- c(c_juv, c_ad)
-recap <- p_rec
-}
-
-simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL, maxAge = NULL, verbose = TRUE){
+simCapHist <- function(state, cap = c(0.35, 0.4), recap = NULL,
+    maxAge = NULL, verbose = TRUE){
 
   inputName <- deparse(substitute(state))
   # ~~~~~ check and fix input ~~~~~~~~~~~~~

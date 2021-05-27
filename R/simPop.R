@@ -28,38 +28,6 @@
      # 1,2,... = adult age classes 1,2,...
 # It grows the matrix each year, no Leslie matrix guessing.
 
-if(FALSE) {  # Use these if stepping through code
-  # defaults
-  Ni = c(10, 10)
-  phi = c(0.3, 0.55)
-  f = 3.2
-  pBreed = 1
-  sex.ratio = 0.5
-  Im = 0
-  ageOfIm = 1
-  nYears = 6
-
-  Ni = c(10, 10, 10) # 3 age classes
-  # Ni = 10
-  # phi = 0.55
-  # phi = c(0.1, 0.2)  # extinction
-  phi = c(0.3, 0.6) # survival low for newborns, constant for adults
-  phi <- matrix(2:6/10, 1)
-  # f = 3.2
-  f = c(2, 3.2)  # (some of) first cohort breed, but fecundity lower
-  # f = c(0, 3.2)  # first cohort do not breed
-  # f = 0.1  # extinction
-  # f = 0  # extinction
-  # pBreed = 1
-  pBreed = c(0.7, 1)  # only 70% of 1-Year's attempt to breed
-  sex.ratio = 0.5
-  # Im = 0
-  Im = 2:7
-  # ageOfIm = 1
-  ageOfIm = 2
-  nYears = 6
-
-}
 
 simPop <- function(Ni = c(10, 10),
   phi = c(0.3, 0.55), f = 3.2, nYears = 6, pBreed = 1, sex.ratio = 0.5, Im = 0, ageOfIm = 1) {

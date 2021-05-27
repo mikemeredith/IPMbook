@@ -23,7 +23,7 @@
 #    returns a matrix with a row corresponding to each element in the input.
 
 dUnif <- function(lower, upper){
-  stopifnot(length(lower) == length(upper))
+  stopifnotEqualLength(lower, upper)
   A <- round(lower) ; B <- round(upper)
   nrow <- length(lower)
   out <- matrix(0, nrow=nrow, ncol=max(B))

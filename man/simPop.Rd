@@ -60,6 +60,9 @@ A list with the simulation settings and the following components:
 \author{
 M. Schaub
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 5.5.1.
+}
 
 \examples{
 # Simulate a population with the default arguments:

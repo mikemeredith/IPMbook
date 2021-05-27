@@ -18,6 +18,19 @@ demoMCMC <- function(y = 20, N = 50, niter = 25000,
   mu.ltheta = 0, sd.ltheta = 100, prop.sd = 1, init = 0,
   quiet = FALSE, show.plots = TRUE){
 
+  # Checks and fixes for input data -----------------------------
+  y <- round(y)[1]
+  stopifNegative(y, allowNA=FALSE, allowZero=TRUE)
+  N <- round(N)[1]
+  stopifNegative(N, allowNA=FALSE, allowZero=FALSE)
+  if(N < y)
+    stop("The value of 'y' cannot exceed 'N'", call.=FALSE)
+  niter <- round(niter)[1]
+  stopifNegative(niter, allowNA=FALSE, allowZero=FALSE)
+  stopifNegative(sd.ltheta, allowNA=FALSE, allowZero=TRUE)
+  stopifNegative(prop.sd, allowNA=FALSE, allowZero=TRUE)
+  # --------------------------------------------------------------
+
   # Initialize calculations
   start.time <- Sys.time()    # Set timer
   ltheta <- numeric(niter)    # Set up vector for posterior draws of ltheta

@@ -3,8 +3,12 @@
 # Modified to deal with a single individual as a vector 2020-10-15
 
 marrayDead <- function(MR){
+  MR <- round(MR)
+  stopifNegative(MR, allowNA=FALSE, allowZero=TRUE)
   if(!is.matrix(MR))
     MR <- matrix(MR, nrow=1)
+  if(any(rowSums(MR) > 2))
+    stop("The rows of MR may not have more that two 1's", call.=FALSE)
   nind <- nrow(MR)
   n.occasions <- ncol(MR)
   out <- matrix(0, ncol=n.occasions, nrow=n.occasions-1)

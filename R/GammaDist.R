@@ -2,10 +2,9 @@
 # Wrappers for dgamma, pgamma, etc which use mean and sd as parameters.
 
 getGammaPar <- function(mean, sd) {
-  if(any(mean <= 0))
-    stop("'mean' must be greater than zero.")
-  if(any(sd <= 0))
-    stop("'sd' must be greater than zero.")
+  stopifNegative(mean, allowNA=FALSE, allowZero=FALSE)
+  stopifNegative(sd, allowNA=FALSE, allowZero=FALSE)
+
   rate <- mean / sd^2
   shape <- rate * mean
   cbind(shape=shape, rate=rate)

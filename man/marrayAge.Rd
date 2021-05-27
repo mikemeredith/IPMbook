@@ -19,7 +19,7 @@ An individuals x time matrix with capture histories (0: not captured; 1: capture
 Vector with the age class at first capture for each individual.
 }
   \item{mAge}{
-maximal number of age classes for which m-arrays are constructed. Input is optional and only required if the age vector has fewer age classes than we want to separate (e.g. CH contains only individuals marked as juveniles, and we want 2 age classes).
+maximal number of age classes for which m-arrays are constructed; ignored if \code{max(age) > mAge}. Only required if the \code{age} vector has fewer age classes than we want to separate (e.g. CH contains only individuals marked as juveniles, and we want 2 age classes).
 }
 
 }
@@ -29,7 +29,13 @@ A 3-d array, (years-1) x years x age classes, where element [i, j, k] contains t
 \author{
 M. Schaub.
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.2.
+}
 
 \examples{
-# TODO
+data(woodchat5)
+marr <- marrayAge(ch=woodchat5$ch, age=woodchat5$age, mAge=2)
+str(marr)
+marr
 }

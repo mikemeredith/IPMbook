@@ -22,7 +22,13 @@ An m-array, a (years-1) x years matrix, where element [i, j] contains the number
 \author{
 M. Schaub.
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 12.4.2.
+}
 
 \examples{
-# TODO
+data(peregrine)
+str(peregrine$recoveries)  # 1810 animals x 43 years
+m.dead <- marrayDead(peregrine$recoveries)
+str(m.dead)  # 42 years-of-release x 43 = 42 years-of-recovery + never-recovered
 }

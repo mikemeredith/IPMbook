@@ -26,7 +26,12 @@ An m-array, a (years-1) x years matrix, where element [i, j] contains the number
 \author{
 M. Schaub.
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.2.
+}
 
 \examples{
-# TODO
+data(woodchat5)
+dim(woodchat5$ch)  # 1902 animals x 20 years
+marray(woodchat5$ch)
 }

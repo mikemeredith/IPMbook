@@ -26,23 +26,23 @@ The functions are listed by chapter below.
   \describe{
     \item{\code{\link{simMHB}}}{ Simulate detection and count data with spatial and temporal replication (section 4.3.3)}
     \item{\code{\link{createAge}}}{ Create an age matrix (section 4.5.1.1)}
+    \item{\code{\link{marray}}}{ Converts capture-histories to an m-array for one age class (section 4.5.1.2)}
+    \item{\code{\link{marrayAge}}}{ Create age-dependent m-arrays (section 4.5.1.2)}
   }
 }
 
 \section{Chapter 5}{
   \describe{
-    \item{\code{\link{simPop}}}{ Simulate a population based on demographic parameters (section x.x)}
-    \item{\code{\link{simCapHist}}}{ Simulate capture histories from a population (section x.x)}
-    \item{\code{\link{simProd}}}{ Simulate productivity data (section x.x)}
-    \item{\code{\link{simCount}}}{ Simulate population survey data (section x.x)}
-    \item{\code{\link{marray}}}{ Converts capture-histories to an m-array for one age class (section x.x)}
-    \item{\code{\link{marrayAge}}}{ Create age-dependent m-arrays (section x.x)}
+    \item{\code{\link{simPop}}}{ Simulate a population based on demographic parameters (section 5.5.1)}
+    \item{\code{\link{simCapHist}}}{ Simulate capture histories from a population (section 5.5.1)}
+    \item{\code{\link{simProd}}}{ Simulate productivity data (section 5.5.1)}
+    \item{\code{\link{simCount}}}{ Simulate population survey data (section 5.5.1)}
   }
 }
 
 \section{Chapter 12}{
   \describe{
-    \item{\code{\link{marrayDead}}}{ Create m-array from dead-recovery data (section 12.x)}
+    \item{\code{\link{marrayDead}}}{ Create m-array from dead-recovery data (section 12.4.2)}
   }
 }
 

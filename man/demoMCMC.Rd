@@ -32,7 +32,7 @@ the SD of the Normal prior distribution for logit(theta).
 the SD of the Normal distribution for the proposals.
 }
   \item{init}{
-initial value for theta.
+initial value for logit(theta).
 }
   \item{quiet}{
 if TRUE, console output is suppressed.

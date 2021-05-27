@@ -4,10 +4,9 @@
 # Using mean and sd
 # =================
 getBeta2Par <- function(mean, sd) {
-  if(any(mean <= 0 | mean >= 1))
-    stop("'mean' must be between 0 and 1.")
-  if(any(sd <= 0))
-    stop("'sd' must be greater than 0.")
+  stopifnotProbability(mean, allowNA=FALSE)
+  stopifNegative(sd, allowNA=FALSE, allowZero=FALSE)
+
   nu <- mean * (1-mean) / sd^2 - 1
   if(any(nu <= 0)) {
     warning("sd is too large; some shape parameters will be NA.", call.=FALSE)
@@ -40,10 +39,9 @@ rbeta2 <- function(n, mean, sd) {
 # Using mode and concentration
 # ============================
 getBeta3Par <- function(mode, concentration) {
-  if(any(mode < 0 | mode > 1))
-    stop("'mode' must be between 0 and 1.")
+  stopifnotProbability(mode, allowNA=FALSE)
   if(any(concentration < 2))
-    stop("'concentration' must be 2 or more.")
+    stop("'concentration' must be 2 or more.", call.=FALSE)
   alpha <- mode * (concentration - 2) + 1
   beta <- (1 - mode) * (concentration - 2) + 1
   cbind(shape1=alpha, shape2=beta)

@@ -38,6 +38,18 @@ simMHB <- function(nsites = 267, nsurveys = 3, nyears = 25,
   #    intercept of the logit-linear model for p)
   # beta.p: slope of the logit(p) in year(centered)
 
+  # -------- check and fix input -------------------
+  nsites <- round(nsites[1])
+  stopifNegative(nsites, allowNA=FALSE, allowZero=FALSE)
+  nsurveys <- round(nsurveys[1])
+  stopifNegative(nsurveys, allowNA=FALSE, allowZero=FALSE)
+  nyears <- round(nyears[1])
+  stopifnotGreaterthan(nyears, 1, allowNA=FALSE)
+  stopifNegative(mean.lam, allowNA=FALSE, allowZero=FALSE)
+  stopifNegative(sd.lam, allowNA=FALSE, allowZero=TRUE)
+  stopifnotProbability(mean.p, allowNA=FALSE)
+  # -------------------------------------------------------
+
   year <- (1:nyears) - ceiling(nyears/2)  # Year covariate (centered)
 
   # Simulate true system state: Expected and realized abundance

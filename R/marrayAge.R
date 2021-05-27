@@ -23,10 +23,18 @@
 
 
 marrayAge <- function(ch, age, mAge = 1){
-  if (is.matrix(ch)==FALSE)
+  ch <- round(ch)
+  stopifNegative(ch, allowNA=FALSE, allowZero=TRUE)
+  age <- round(age)
+  stopifNegative(age, allowNA=FALSE, allowZero=FALSE)
+  mAge <- round(mAge[1])
+  stopifNegative(mAge, allowNA=FALSE, allowZero=FALSE)
+
+  if (!is.matrix(ch))
     ch <- matrix(ch, nrow = 1)
-  maxAge <- max(c(max(age), mAge))
+  maxAge <- max(age, mAge)
   nind <- nrow(ch)
+  stopifnotLength(age, nind, allow1=FALSE)
   n.occasions <- ncol(ch)
   first <- getFirst(ch)
   age.matrix <- matrix(0, ncol = n.occasions, nrow = nind)

@@ -19,8 +19,10 @@
 ################################################
 
 simCountBin <- function(N, pDetect){
-
+  N <- round(N)
+  stopifNegative(N, allowNA=FALSE, allowZero=TRUE)
   nYears <- length(N)
+  stopifnotProbability(pDetect, allowNA=FALSE)
   pDetect <- fixAvector(pDetect, nYears)
   count <- rbinom(nYears, N, pDetect)
   return(list(pDetect = pDetect, count = count))
@@ -42,8 +44,10 @@ simCountBin <- function(N, pDetect){
 ################################################
 
 simCountNorm <- function(N, sigma){
-
+  N <- round(N)
+  stopifNegative(N, allowNA=FALSE, allowZero=TRUE)
   nYears <- length(N)
+  stopifNegative(sigma, allowNA=FALSE, allowZero=TRUE)
   sigma <- fixAvector(sigma, nYears)
   SUR <- round(rnorm(nYears, N, sigma))
   SUR <- pmax(0, SUR)
@@ -65,6 +69,8 @@ simCountNorm <- function(N, sigma){
 ################################################
 
 simCountPois <- function(N){
+  N <- round(N)
+  stopifNegative(N, allowNA=FALSE, allowZero=TRUE)
   count <- rpois(length(N), N)
   return(list(count = count))
 }

@@ -32,7 +32,20 @@ An individuals x intervals matrix with the age of each individual at the beginni
 \author{
 M. Schaub.
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.1.
+}
 
 \examples{
-# TODO
+data(woodchat5)
+f <- getFirst(woodchat5$ch)
+# Remove animals first captured on the last occasion
+last <- which(f==ncol(woodchat5$ch))
+f <- f[-last]
+age <- woodchat5$age[-last]
+
+x <- createAge(f, age, 20, 2)
+head(x)
+x[115:120,]
+tail(x)
 }

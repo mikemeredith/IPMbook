@@ -61,6 +61,9 @@ A list with the arguments used and the following components:
 \author{
 M. Schaub
 }
+\references{
+Schaub & Kéry (2021) Integrated Population Modeling, section 4.3.3.
+}
 
 \examples{
 # Explicit default values for all function arguments
