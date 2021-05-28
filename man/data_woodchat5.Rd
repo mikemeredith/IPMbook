@@ -7,7 +7,7 @@
 Simulated data for Woodchat Shrike for use in Chapter 5
 }
 \description{
-Simulation of data with demographic parameters based on the Woodchat Shrike are introduced in section 3.3. This data set has additional simulated data for use in chapter 5.
+Demographic parameters based on the Woodchat Shrike are introduced in Schaub & Kéry (2021) section 3.2 and details of the simulation are given in section 5.5. This data set has simulated data for use in chapter 5.
 }
 
 \usage{data("woodchat5")}
@@ -26,6 +26,10 @@ Simulation of data with demographic parameters based on the Woodchat Shrike are 
 \source{
 Simulated data.
 }
+\references{
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 5.
+}
+
 \examples{
 data(woodchat5)
 str(woodchat5)

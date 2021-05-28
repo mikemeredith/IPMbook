@@ -29,7 +29,9 @@ Real data for Woodchat Shrike \emph{Lanius senator} in orchards in southern Germ
 Ullrich (2017)
 }
 \references{
-Ullrich, B., 2017. Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273–335
+Ullrich, B. (2017) Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273–335.
+
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 11.
 }
 \examples{
 data(woodchat11)

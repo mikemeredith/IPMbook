@@ -6,7 +6,7 @@
 Demonstration of a random-walk sampler for a single parameter
 }
 \description{
-Generates an MCMC chain for the probability of success on the logit scale, ltheta = logit(theta), for binomial data with y successes in N trials. The prior for ltheta is a Normal distribution with mean mu.ltheta and SD sd.ltheta. Proposal values are drawn from a Normal distribution with mean = current value and SD = prop.sd.
+Generates an MCMC chain for the probability of success on the logit scale, \code{ltheta = logit(theta)}, for binomial data with y successes in N trials. The prior for \code{ltheta} is a Normal distribution with mean \code{mu.ltheta} and SD \code{sd.ltheta}. Proposal values are drawn from a Normal distribution with mean = current value and SD = prop.sd.
 }
 \usage{
 demoMCMC(y = 20, N = 50, niter = 25000, mu.ltheta = 0, sd.ltheta = 100,
@@ -47,9 +47,13 @@ A list with the values of the input arguments and the following additional eleme
  \item{acc.prob }{the proportion of proposed values accepted}
 }
 \author{
-Adapted from code in Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS} p. 48.
+Adapted from code in Ntzoufras (2009) p. 48.
 }
+\references{
+Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ
 
+Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Modeling}, chapter 13.
+}
 \examples{
 require(graphics)
 # Default settings

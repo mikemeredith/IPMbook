@@ -7,7 +7,7 @@
 Data for Red-Backed Shrike
 }
 \description{
-Data for the Redbacked Shrike \emph{Lanius collurio} from a site in southern Germany from 1971 to 2006 section 8.2.
+Data for the Red-Backed Shrike \emph{Lanius collurio} from a site in southern Germany from 1971 to 2006. ?? need succinct description of data collection ?? cf. section 8.2.
 }
 
 \usage{data("redbacked")}
@@ -28,11 +28,11 @@ Data for the Redbacked Shrike \emph{Lanius collurio} from a site in southern Ger
 Wolfgang Stauber and Hans Jakober
 }
 \references{
-Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M., 2012. Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling}. 242, 1–9
+Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012) Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling}. 242, 1–9
 
-Schaub, M., Jakober, H., Stauber, W., 2013. Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828–1838.
+Schaub, M., Jakober, H., Stauber, W. (2013) Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828–1838.
 
-Schaub & Kéry (2021) \emph{Integrated Population Modeling}, Academic Press, section 8.2.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 8.2.
 }
 \examples{
 data(redbacked)

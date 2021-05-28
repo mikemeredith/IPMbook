@@ -25,9 +25,11 @@ Data for peregrine falcons \emph{Falco peregrinus} from the Jura Mountains strad
 \source{Swiss data from Gabriel Banderet and the Swiss Ornithological Institute. French data from Fonds Sauvegarde Faune Flore Jurassienne - Groupe Pèlerin Jura.}
 
 \references{
-Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Parish, D., 2018. Population trends of the Peregrine Falcon in Switzerland with special reference to the period 2005–2016. Ornis Hungarica 26, 91–103.
+Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Parish, D. (2018) Population trends of the Peregrine Falcon in Switzerland with special reference to the period 2005–2016. \emph{Ornis Hungarica} 26, 91–103.
 
-Monneret, R.-J., Rufinioni, R., Parish, D., Pinaud, D., Kéry, M., 2018. The Peregrine population study in the French Jura mountains 1964–2016: use of occupancy modeling to estimate population size and analyze site persistence and colonization rates. Ornis Hungarica 26, 69–90.
+Monneret, R.-J., Rufinioni, R., Parish, D., Pinaud, D., Kéry, M. (2018) The Peregrine population study in the French Jura mountains 1964–2016: use of occupancy modeling to estimate population size and analyze site persistence and colonization rates. \emph{Ornis Hungarica} 26, 69–90.
+
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 12.
 }
 
 \examples{

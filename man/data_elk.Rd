@@ -31,9 +31,9 @@ Some elk cows were radio-tracked each year, and for these we have data for survi
 \source{Idaho Department of Fish and Game, see Gove et al. (2002)}
 
 \references{
-Gove, N. E., Skalski, J. R., Zager, P., Townsend, R. L., 2002. Statistical models for population reconstruction using age-at-harvest data. J. Wildl. Manage. 66, 310–320
+Gove, N. E., Skalski, J. R., Zager, P., Townsend, R. L. (2002) Statistical models for population reconstruction using age-at-harvest data. \emph{J. Wildl. Manage}. 66, 310–320
 
-Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 13.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 17.
 }
 
 \examples{

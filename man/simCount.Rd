@@ -35,7 +35,7 @@ A list with the parameters entered and \code{count} with the number of individua
 M. Schaub
 }
 \references{
-Schaub & Kéry (2021) Integrated Population Modeling, section 5.5.1.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 5.5.1.
 }
 
 \examples{

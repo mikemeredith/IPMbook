@@ -27,7 +27,7 @@ An m-array, a (years-1) x years matrix, where element [i, j] contains the number
 M. Schaub.
 }
 \references{
-Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.2.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 4.5.1.2.
 }
 
 \examples{

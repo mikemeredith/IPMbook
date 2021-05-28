@@ -28,11 +28,11 @@ Resightings: In all colonies, a large number of nestlings were marked with a sta
 \source{Thomas Bregnballe}
 
 \references{
-Borysiewicz, R. S., Morgan, B. J. T., Hénaux, V., Bregnballe, T., Lebreton, J. D., Gimenez, O., 2009.An integrated analysis of multisite recruitment, mark-recapture-recovery and multisite census data.Pages 579–591 in D. Thomson, E. Cooch and M. Conroy, editors. \emph{Modeling demographic processes in marked populations}.Springer, New York
+Borysiewicz, R. S., Morgan, B. J. T., Hénaux, V., Bregnballe, T., Lebreton, J. D., Gimenez, O. (2009) An integrated analysis of multisite recruitment, mark-recapture-recovery and multisite census data.Pages 579–591 in D. Thomson, E. Cooch and M. Conroy, editors. \emph{Modeling demographic processes in marked populations}. Springer, New York
 
-McCrea, R. S., Morgan, B. J. T., Gimenez, O., Besbeas, P., Bregnballe, T., Hénaux, V., Lebreton, J. D., 2010. Multi-site integrated population modelling. \emph{JABES} 15, 539–561.
+McCrea, R. S., Morgan, B. J. T., Gimenez, O., Besbeas, P., Bregnballe, T., Hénaux, V., Lebreton, J. D. (2010) Multi-site integrated population modelling. \emph{JABES} 15, 539–561.
 
-Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 20.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 18.
 }
 
 \examples{

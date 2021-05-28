@@ -29,7 +29,10 @@ See Schaub et al (2015) for details.
 \source{Swiss Ornithological Institute}
 
 \references{
-Schaub, M., von Hirschheydt, J., & Grüebler, M.U. (2015) Differential contribution of demographic rate synchrony to population synchrony in barn swallows. \emph{Journal of Animal Ecology}, 84, 1530-1541.}
+Schaub, M., von Hirschheydt, J., & Grüebler, M.U. (2015) Differential contribution of demographic rate synchrony to population synchrony in barn swallows. \emph{Journal of Animal Ecology}, 84, 1530-1541.
+
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 16.
+}
 
 \examples{
 data(swallow)

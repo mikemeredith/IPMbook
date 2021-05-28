@@ -33,6 +33,9 @@ Data for black grouse \emph{Lyrurus tetrix} from Alpe Devero in the Piemont regi
 
 \references{
 Rotelli, L., Zbinden, N., Bionda, R., Schaad, M. (in prep.) Dynamics of two black grouse populations are driven by the variation of chick survival. \emph{Wildlife Biology}.
+
+Schaub, M. & Kéry, M. (2021), \emph{Integrated Population Modeling}, chapter 15.
+
 }
 
 \examples{

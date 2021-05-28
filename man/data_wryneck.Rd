@@ -27,7 +27,10 @@ The data contain information about 181 broods of wrynecks \emph{Jynx torquilla} 
 \source{Swiss Ornithological Institute}
 
 \references{
-Geiser, S., R. Arlettaz, and M. Schaub. 2008. Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149:597–606.}
+Geiser, S., R. Arlettaz, and M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149:597–606.
+
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 4.4.6.
+}
 
 \examples{
 data(wryneck)

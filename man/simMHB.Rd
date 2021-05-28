@@ -6,9 +6,9 @@
 Simulate detection and count data with spatial and temporal replication
 }
 \description{
-Function simulates MHB lookalike data. The MHB is the Swiss breeding bird survey that is described in many chapters in the AHM1 and AHM2 books. This survey was launched in 1999 and for a total of 267 1km2 quadrats laid out in an approximate grid over Switzerland. 2 or 3 surveys are conducted in each breeding season (mid April to early July) on a quadrat-specific, constant route averaging 4-6 km and all birds detected are mapped, thus yielding replicated counts of unmarked individuals.
+Function simulates MHB lookalike data. The MHB is the Swiss breeding bird survey that is the source of many classic data sets (e.g. Kéry & Royle, 2016, 2021). This survey was launched in 1999 and for a total of 267 1km2 quadrats laid out in an approximate grid over Switzerland. 2 or 3 surveys are conducted in each breeding season (mid April to early July) on a quadrat-specific, constant route averaging 4-6 km and all birds detected are mapped, thus yielding replicated counts of unmarked individuals.
 
-The data are simulated under the assumptions of a binomial N-mixture model where for lambda we can specify a log-linear trend over the years and we can account for site-level random effects in both the intercept and the slopes of the log-linear model.
+The data are simulated under the assumptions of a binomial N-mixture model where for \code{lambda} we can specify a log-linear trend over the years and we can account for site-level random effects in both the intercept and the slopes of the log-linear model.
 
 For detection probability we have currently a constant average or a logit-linear trend over the years, with no further heterogeneity.
 }
@@ -62,7 +62,11 @@ A list with the arguments used and the following components:
 M. Schaub
 }
 \references{
-Schaub & Kéry (2021) Integrated Population Modeling, section 4.3.3.
+Kéry, M. & Royle, A. (2016) \emph{Applied Hierarchical Modeling in Ecology} Vol 1, Academic Press
+
+Kéry, M. & Royle, A. (2021) \emph{Applied Hierarchical Modeling in Ecology}Vol 2, Academic Press
+
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 4.3.3.
 }
 
 \examples{

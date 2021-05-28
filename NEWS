@@ -1,7 +1,11 @@
 
+CHANGES in version 0.0.0.9053 (2021-05-28)
+
+  * Tidying up help pages, especially references.
+
 CHANGES in version 0.0.0.9052 (2021-05-26)
 
-  * Added sanity checks and few fixes for help pages.
+  * Added sanity checks and more examples for help pages.
 
 CHANGES in version 0.0.0.9051 (2021-05-17)
 

@@ -29,11 +29,11 @@ Data for greater horseshoe bats \emph{Rhinolophus ferrumequinum} for 1989 to 201
 \source{Raphaël Arlettaz, François Biollaz and Antoine Sierro}
 
 \references{
-Schaub, M., Gimenez, O., Sierro, A., Arlettaz, R., 2007. Use of integrated modeling to enhance estimates of population dynamics obtained from limited data. \emph{Conservation Biology} 21, 945–955.
+Schaub, M., Gimenez, O., Sierro, A., Arlettaz, R. (2007) Use of integrated modeling to enhance estimates of population dynamics obtained from limited data. \emph{Conservation Biology} 21, 945–955.
 
-Sierro, A., Lugon, A., Arlettaz, R., 2009. La colonie de grands rhinolophes Rhinolophus ferrumequinum de l'église St-Sylvie à Vex (Valais, Suisse): évolution sur deux décennies (1968-2006). \emph{Le Rhinolophe} 18, 75–82.
+Sierro, A., Lugon, A., Arlettaz, R. (2009) La colonie de grands rhinolophes Rhinolophus ferrumequinum de l'église St-Sylvie à Vex (Valais, Suisse): évolution sur deux décennies (1968-2006). \emph{Le Rhinolophe} 18, 75–82.
 
-Schaub, M. & Kéry, M., in prep., \emph{Integrated Population Modeling}, chapter 19.
+Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Modeling}, chapter 13.
 }
 
 \examples{

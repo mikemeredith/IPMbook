@@ -25,7 +25,9 @@ Otherwise a matrix with each row constructed as above: the columns from \code{lo
 \author{
 M. Schaub, Marc Kéry, Mike Meredith
 }
-
+\references{
+Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Modeling}, section 5.4.4.
+}
 \examples{
 # Both arguments scalar, vector output
 (p <-  dUnif(lower = 4, upper = 8))

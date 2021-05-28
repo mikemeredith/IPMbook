@@ -30,7 +30,7 @@ A 3-d array, (years-1) x years x age classes, where element [i, j, k] contains t
 M. Schaub.
 }
 \references{
-Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.2.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 4.5.1.2.
 }
 
 \examples{

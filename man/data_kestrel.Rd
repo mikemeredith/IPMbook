@@ -51,11 +51,11 @@ Three different data sets for kestrels (\emph{Falco tinnunculus}) in the north-w
 \source{Swiss Ornithological Institute}
 
 \references{
-Fay, R., Michler, S., Laesser, J., Schaub, M., 2019. Integrated population model reveals that kestrels breeding in nest boxes operate as a source population. \emph{Ecography} 42, 2122–2131.
+Fay, R., Michler, S., Laesser, J., Schaub, M. (2019) Integrated population model reveals that kestrels breeding in nest boxes operate as a source population. \emph{Ecography} 42, 2122–2131.
 
-Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T., 2018. \emph{SchweizerBrutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
+Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T. (2018) \emph{SchweizerBrutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
 
-Schaub & Kéry, 2021. \emph{Integrated Population Modeling} chapter 20.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 20.
 
 Schmid, H., Zbinden, N., Keller, V., 2004. \emph{Überwachung der Bestandsentwicklung häufiger Brutvögel in der Schweiz}. Schweizerische Vogelwarte, Sempach.
 }

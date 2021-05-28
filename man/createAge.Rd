@@ -33,7 +33,7 @@ An individuals x intervals matrix with the age of each individual at the beginni
 M. Schaub.
 }
 \references{
-Schaub & Kéry (2021) Integrated Population Modeling, section 4.5.1.1.
+Schaub & Kéry (2021) \emph{Integrated Population Modeling}, section 4.5.1.1.
 }
 
 \examples{
