@@ -11,7 +11,7 @@
 The gamma distribution
 }
 \description{
-Density, distribution function, quantile function and random number generation for the Gamma distribution with parameters \code{mean} and \code{sd}. These are wrappers for \code{stats::dgamma}, etc. \code{getGammaPar} returns the shape and rate parameters.
+Density, distribution function, quantile function and random number generation for the gamma distribution with parameters \code{mean} and \code{sd}. These are wrappers for \code{stats::dgamma}, etc. \code{getGammaPar} returns the shape and rate parameters.
 }
 \usage{
 dgamma2(x, mean, sd)

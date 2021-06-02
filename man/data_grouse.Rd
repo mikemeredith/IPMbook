@@ -12,7 +12,7 @@ Data for black grouse \emph{Lyrurus tetrix} from Alpe Devero in the Piemont regi
 The number of displaying cocks was recorded each spring. In late summer, grouse were looked for with the help of pointer dogs and counted. Some grouse were equipped with a radio transmitter and the status of these birds (alive, dead) was regularly recorded.
 }
 
-\usage{data("grouse")}
+\usage{data(grouse)}
 
 \format{
 \code{grouse} is a list with 10 components:

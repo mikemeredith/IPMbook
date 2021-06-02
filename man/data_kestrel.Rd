@@ -58,7 +58,7 @@ Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sat
 
 Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press. chapter 20.
 
-Schmid, H., Zbinden, N., Keller, V., 2004. \emph{Überwachung der Bestandsentwicklung häufiger Brutvögel in der Schweiz}. Schweizerische Vogelwarte, Sempach.
+Schmid, H., Zbinden, N., Keller, V. (2004) \emph{Überwachung der Bestandsentwicklung häufiger Brutvögel in der Schweiz}. Schweizerische Vogelwarte, Sempach.
 }
 
 \examples{

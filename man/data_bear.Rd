@@ -30,7 +30,7 @@ Note that not all hair samples were successfully genotyped, and traps were not d
 %%The contact would be Maria Davidson, Large Carnivore Program Manager, Louisiana Department of Wildlife and Fisheries, 646 Cajundome Blvd. Suite 127, Lafayette, LA 70506
 
 \references{
-Chandler, R. B., Clark, J. D. (2014) Spatially explicit integrated population models, \emph{Methods in Ecology and Evolution} 5, 1351–1360.
+Chandler, R. B., Clark, J. D. (2014) Spatially explicit integrated population models. \emph{Methods in Ecology and Evolution} 5, 1351–1360.
 
 Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 21.
 }
