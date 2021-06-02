@@ -64,7 +64,7 @@ Marc Kéry
 \references{
 Kéry, M. & Royle, A. (2016) \emph{Applied Hierarchical Modeling in Ecology} Vol 1, Academic Press
 
-Kéry, M. & Royle, A. (2021) \emph{Applied Hierarchical Modeling in Ecology}Vol 2, Academic Press
+Kéry, M. & Royle, A. (2021) \emph{Applied Hierarchical Modeling in Ecology} Vol 2, Academic Press
 
 Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.3.3.
 }
