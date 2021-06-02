@@ -4,13 +4,13 @@
 \docType{data}
 
 \title{
-Data from a nestbox study of wrynecks in Switzerland
+Data from wrynecks in Switzerland, 2002-2006
 }
 \description{
-The data contain information about 181 broods of wrynecks \emph{Jynx torquilla}  collected in the Valais (Swiss Alps) from 2002-2006. Dates are recorded such that day 1 is May 16.
+The data contain information about the survival of 181 broods of wrynecks (\emph{Jynx torquilla})  collected in the Valais (Swiss Alps) from 2002-2006 in nestboxes. Dates are recorded such that day 1 is May 16.
 }
 
-\usage{data("wryneck")}
+\usage{data(wryneck)}
 
 \format{
 \code{wryneck} is a data frame with 5 columns:
@@ -27,9 +27,9 @@ The data contain information about 181 broods of wrynecks \emph{Jynx torquilla} 
 \source{Swiss Ornithological Institute}
 
 \references{
-Geiser, S., R. Arlettaz, and M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149:597–606.
+Geiser, S., R. Arlettaz, and M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149, 597–606.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 4.4.6.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.4.6.
 }
 
 \examples{

@@ -4,13 +4,15 @@
 \docType{data}
 
 \title{
-Data for peregrine falcons from the Jura Mountains
+Data for peregrine falcons from the Jura Mountains, 1965-2007
 }
 \description{
-Data for peregrine falcons \emph{Falco peregrinus} from the Jura Mountains straddling the Franco-Swiss border for 1965 to 2007. We combined data collected by Gaby Banderet and colleagues in Switzerland and René-Jean Monneret, René Ruffinoni and their colleagues in France.
+Data for peregrine falcons (\emph{Falco peregrinus}) from the Jura Mountains straddling the Franco-Swiss border for 1965 to 2007. We combined data collected by Gaby Banderet and colleagues in Switzerland and René-Jean Monneret, René Ruffinoni and their colleagues in France.
+
+Data comprise the annual number of breeding pairs, information on productivity and dead-recoveries of marked individuals.
 }
 
-\usage{data("peregrine")}
+\usage{data(peregrine)}
 
 \format{
 \code{peregrine} is a list with 3 components:
@@ -29,7 +31,7 @@ Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Pari
 
 Monneret, R.-J., Rufinioni, R., Parish, D., Pinaud, D., Kéry, M. (2018) The Peregrine population study in the French Jura mountains 1964–2016: use of occupancy modeling to estimate population size and analyze site persistence and colonization rates. \emph{Ornis Hungarica} 26, 69–90.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 12.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 12.
 }
 
 \examples{

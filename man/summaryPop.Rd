@@ -3,10 +3,10 @@
 \encoding{UTF-8}
 
 \title{
-Calculate summary statistics from a subset of a population
+Calculates summary statistics from a subset of a population
 }
 \description{
-Calculate summary statistics from a subset of a population; used if a count survey is to be simulated with a subset of the complete population.
+Calculates summary statistics from a subset of a population; used if a count survey is to be simulated with a subset of the complete population.
 }
 \usage{
 summaryPop(state, subset)
@@ -24,7 +24,7 @@ vector with the indices of the individuals that are to be included for the summa
 A matrix with the numbers in each adult age class for each year, total adults, and number  of female juveniles.
 }
 \author{
-M. Schaub
+Michael Schaub
 }
 
 \examples{

@@ -28,14 +28,14 @@ if TRUE, information is displayed in the console.
 \value{
 A list with the following 2 components:
 
- \item{prod.ind }{matrix with the individual reproductive output. The three columns give the output, the year of the brood and the age of the mother.}
+ \item{prod.ind }{matrix with the individual reproductive output. The three columns give the output, the year of the brood and the actual age of the mother.}
  \item{prod.agg }{matrix with the same data, but aggregated. The two columns give the year-specific total number of newborn and the year-specific number of surveyed broods.}
 }
 \author{
-M. Schaub
+Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 5.5.1.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

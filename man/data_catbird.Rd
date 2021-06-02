@@ -4,13 +4,13 @@
 \docType{data}
 
 \title{
-Gray catbird data from New England/Mid Atlantic region, USA
+Data for gray catbird from New England/Mid-Atlantic region, USA, 1992-2008
 }
 \description{
-The data set includes sighting data from the North American Breeding Bird Survey (BBS) and mark-recapture data from the Monitoring Avian Productivity and Survivorship program (MAPS) for gray catbirds (\emph{Dumetella carolinensis}) in the New England/Mid Atlantic region, USA, for 1992-2008.
+The data set includes sighting data from the North American Breeding Bird Survey (BBS) and mark-recapture data from the Monitoring Avian Productivity and Survivorship program (MAPS) for gray catbirds (\emph{Dumetella carolinensis}) in the New England/Mid-Atlantic region, USA, for 1992-2008.
 }
 
-\usage{data("catbird")}
+\usage{data(catbird)}
 
 \format{
 \code{catbird} is a list with 9 components:
@@ -33,7 +33,7 @@ The data set includes sighting data from the North American Breeding Bird Survey
 \references{
 Ahrestani, F.S., Saracco, J.F., Sauer, J.R., Pardieck, K.L., & Royle, J.A. (2017) An integrated population model for bird monitoring in North America. \emph{Ecological Applications}, 27, 916-924.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 19.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 19.
 }
 
 \examples{

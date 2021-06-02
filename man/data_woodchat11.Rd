@@ -4,20 +4,22 @@
 \docType{data}
 
 \title{
-Real data for Woodchat Shrike for use in Chapter 11
+Data for woodchat shrike from Germany, 1964-1992
 }
 \description{
-Real data for Woodchat Shrike \emph{Lanius senator} in orchards in southern Germany near Stuttgart from 1964 to 1992.
+Real data for the woodchat shrike (\emph{Lanius senator}) were collected from 1964 to 1992 from a study area in southern Germany.
+
+They comprise the annual number of breeding pairs, information about productivity from regular checks of nests, and capture, ringing and resighting of juvenile and adult shrikes. In some years, no resighting data were collected.
 }
 
-\usage{data("woodchat11")}
+\usage{data(woodchat11)}
 
 \format{
 \code{woodchat11} is a list with 6 components:
 
 \describe{
   \item{ch }{capture histories for 1079 individuals (males and females) x 29 years.}
-  \item{age }{the age of each individual at first capture.}
+  \item{age }{the age of each individual at first capture, 1 = nestling (juvenile), 2 = at least 1 year old (adult).}
   \item{count }{the annual number of breeding pairs found in the study area.}
   \item{f }{the number fledglings (male or female) produced by 365 broods monitored.}
   \item{d }{d = 0 if \code{f} is an accurate count, d = 1 if it is a lower bound.}
@@ -26,12 +28,14 @@ Real data for Woodchat Shrike \emph{Lanius senator} in orchards in southern Germ
 }
 
 \source{
-Ullrich (2017)
+Bruno Ullrich
 }
 \references{
 Ullrich, B. (2017) Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273–335.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 11.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 11.
+
+Schaub, M. and B. Ullrich (2021) A drop in immigration results in the extinction of a local woodchat shrike population. \emph{Animal Conservation} 24, accepted <https://doi.org/10.1111/acv.12639>
 }
 \examples{
 data(woodchat11)

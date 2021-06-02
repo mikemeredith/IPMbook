@@ -6,7 +6,7 @@
 Simulate a population based on demographic parameters
 }
 \description{
-The simulation tracks individual females from birth through a series of adult age classes to death, as well as numbers of female and male offspring. The function allows for 1 or more age classes. Once an animal reaches the oldest age class, they do not progress further until death.
+The simulation tracks individual females from birth through a series of adult age classes to death, as well as numbers of female and male offspring. The function allows for 1 or more age classes. Once an animal reaches the oldest age class, age does not increase further until death.
 
 The user specifies the number of females in each age class at the beginning of the simulation, before the first breeding season. Adult females can enter the population as immigrants; the age of immigrants is controlled by \code{ageOfImm}.
 
@@ -14,7 +14,7 @@ Fecundity (the total number of offspring per adult female per year) can vary by 
 
 In some age classes, not all animals may attempt to breed, and the probability of breeding can be specified.
 
-Probability of survival can also vary by age class and interval between years. The first row of this matrix specifies the survival of the animals born at the beginning of each interval and the remaining rows control survival for the respective adult age classes.
+Probability of survival can also vary by age class and year. The first row of the survival matrix specifies the survival of the animals born in each year and the remaining rows control survival for the respective adult age classes.
 }
 \usage{
 simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, nYears = 6, pBreed = 1,
@@ -31,7 +31,7 @@ survival probabilities for new-borns and each age class for each interval betwee
 fecundity rates, the number of offspring (male + female) per female in the population, for each adult age class and each year: an age classes x years matrix. Input can be \link{abbreviated}.
 }
   \item{nYears}{
-number of years of data.
+number of years the population is simulated.
 }
   \item{pBreed}{
 the probability that a female will attempt to breed for each adult age class and each year: an age classes x years matrix. Input can be \link{abbreviated}.
@@ -40,7 +40,7 @@ the probability that a female will attempt to breed for each adult age class and
 sex ratio (probability that a new-born is a female) in each year: either scalar or a vector of length \code{nYears}.
 }
   \item{Im}{
-number of immigrants in each year: either scalar or a vector of length \code{nYears}.
+number of female immigrants in each year: either scalar or a vector of length \code{nYears}.
 }
   \item{ageOfIm}{
 the age class of immigrants in each year: either scalar or a vector of length \code{nYears}.
@@ -55,13 +55,15 @@ A list with the simulation settings and the following components:
  \item{N }{a matrix with a column for each year and rows for numbers surviving in each age class, total adults, number of females born and total births, number of immigrants. (Immigrants are included in the age classes at the top of the table.)}
  \item{breeders }{a matrix with a column for each year and rows for numbers breeding in each age class and total breeders. Note that all animals attempting to breed are classified as breeders, even though no offspring may be produced.}
  \item{totAdults }{a vector with total adults in each year.}
- \item{totBreeders }{a vector with total breeders in each year. These two are the same as the relevant rows in \code{N} and \code{breeders}, repeated for ease of extraction with \code{$}.}
+ \item{totBreeders }{a vector with total breeders in each year.}
+
+ The last two are the same as the relevant rows in \code{N} and \code{breeders}, repeated for ease of extraction with \code{$}.
 }
 \author{
-M. Schaub
+Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 5.5.1.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

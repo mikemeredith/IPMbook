@@ -4,10 +4,12 @@
 \docType{data}
 
 \title{
-Data for grouse
+Data for black grouse from Italy, 1997-2016
 }
 \description{
 Data for black grouse \emph{Lyrurus tetrix} from Alpe Devero in the Piemont region of the Alps in Northern Italy from 1997 to 2016.
+
+The number of displaying cocks was recorded each spring. In late summer, grouse were looked for with the help of pointer dogs and counted. Some grouse were equipped with a radio transmitter and the status of these birds (alive, dead) was regularly recorded.
 }
 
 \usage{data("grouse")}
@@ -17,7 +19,7 @@ Data for black grouse \emph{Lyrurus tetrix} from Alpe Devero in the Piemont regi
 
 \describe{
   \item{ch }{matrix of capture histories for 96 radio-tagged birds x 128 months: 1 if found alive, 0 if found dead, otherwise NA.}
-  \item{age }{the age of each bird: 1 juvenile, 2 adult.}
+  \item{age }{the actual age of each bird: 1 juvenile, 2 adult.}
   \item{sex }{the sex of each bird: 1 female, 2 male.}
   \item{season }{the season of the survey: 1 spring, 2 summer, 3 autumn, 4 winter.}
   \item{count.sp }{annual count of displaying males at leks in spring.}
@@ -29,12 +31,12 @@ Data for black grouse \emph{Lyrurus tetrix} from Alpe Devero in the Piemont regi
   }
 }
 
-\source{Luca Rotelli and colleagues, Rotelli et al (in prep.)}
+\source{Luca Rotelli, Radames Bionda; Rotelli et al. (in prep.)}
 
 \references{
-Rotelli, L., Zbinden, N., Bionda, R., Schaad, M. (in prep.) Dynamics of two black grouse populations are driven by the variation of chick survival. \emph{Wildlife Biology}.
+Rotelli, L., Zbinden, N., Bionda, R., Schaub, M. (in prep.) Chick survival and hunting are important drivers for the dynamics of two Alpine black grouse (\emph{Lylurus tetrix}) populations. \emph{Wildlife Biology}.
 
-Schaub, M. & Kéry, M. (2021), \emph{Integrated Population Modeling}, chapter 15.
+Schaub, M. & Kéry, M. (2021), \emph{Integrated Population Models}, Academic Press, chapter 15.
 
 }
 

@@ -1,8 +1,8 @@
 Package: IPMbook
 Type: Package
-Title: Functions and Data for the Book 'Integrated Population Modeling'
-Version: 0.0.0.9053
-Date: 2021-05-28
+Title: Functions and Data for the Book 'Integrated Population Models'
+Version: 0.0.0.9054
+Date: 2021-06-02
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:
@@ -10,9 +10,10 @@ Authors@R: c(
   person("Michael", "Schaub", role="aut"),
   person("Marc", "Kéry", role="aut"),
   person("Mike", "Meredith", role=c("aut", "cre"), email="mike@mmeredith.net"),
-  person("Raphaël", "Arlettaz", role="dtc", comment="bats, hoopoe"),
+  person("Raphaël", "Arlettaz", role="dtc", comment="bats"),
   person("Gabriel", "Banderet", role="dtc", comment="peregrine"),
   person("François", "Biollaz", role="dtc", comment="bats"),
+  person("Radames", "Bionda", role="dtc", comment="grouse"),
   person("Thomas", "Bregnballe", role="dtc", comment="cormorant"),
   person("Hans", "Jakober", role="dtc", comment="redbacked"),
   person("Ioannis", "Ntzoufras", role="ctb"),
@@ -25,10 +26,11 @@ Authors@R: c(
   person("Louisiana Department of Wildlife and Fisheries", role="dtc", comment="bear"),
   person("Monitoring Avian Productivity and Survivorship program (MAPS)", role="dtc", comment="catbird"),
   person("North American Breeding Bird Survey (BBS)", role="dtc", comment="catbird"),
+  person("University Bern, Division of Conservation Biology", role="dtc", comment="hoopoe"),
   person("Vogelwarte Hiddensee, Germany", role="dtc", comment="stork"),
-  person("Swiss Ornithological Institute", role="dtc", comment="kestrel, peregrine, swallow, wryneck")  )
+  person("Swiss Ornithological Institute", role="dtc", comment="hoopoe, kestrel, peregrine, swallow, wryneck")  )
 BugReports: https://github.com/mikemeredith/IPMbook/issues
-Description: Provides functions and data sets to accompany the forthcoming book 'Integrated Population Modeling' by Michael Schaub and Marc Kéry (ISBN: 9780128205648).
+Description: Provides functions and data sets to accompany the  book 'Integrated Population Models' by Michael Schaub and Marc Kéry (ISBN: 9780128205648).
 License: GPL (>=3)
 NeedsCompilation: no
 Encoding: UTF-8

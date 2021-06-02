@@ -8,10 +8,10 @@
 \encoding{UTF-8}
 
 \title{
-The Gamma Distribution
+The gamma distribution
 }
 \description{
-Density, distribution function, quantile function and random generation for the Gamma distribution with parameters \code{mean} and \code{sd}. These are wrappers for \code{stats::dgamma}, etc. \code{getGammaPar} returns the shape and rate parameters.
+Density, distribution function, quantile function and random number generation for the Gamma distribution with parameters \code{mean} and \code{sd}. These are wrappers for \code{stats::dgamma}, etc. \code{getGammaPar} returns the shape and rate parameters.
 }
 \usage{
 dgamma2(x, mean, sd)
@@ -22,22 +22,22 @@ getGammaPar(mean, sd)
 }
 \arguments{
   \item{x}{
-vector of parameter values
+vector of parameter values.
 }
   \item{q}{
-vector of quantiles
+vector of quantiles.
 }
   \item{p}{
-vector of probabilities
+vector of probabilities.
 }
   \item{n}{
 number of random draws required.
 }
   \item{mean}{
-mean of the gamma distribution
+mean of the gamma distribution.
 }
   \item{sd}{
-standard deviation of the gamma distribution
+standard deviation of the gamma distribution.
 }
   \item{lower.tail}{
 logical; if TRUE (default), cumulative probabilities up to x, otherwise, above x.

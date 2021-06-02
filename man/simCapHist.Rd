@@ -3,10 +3,10 @@
 \encoding{UTF-8}
 
 \title{
-Simulate capture histories from a population
+Simulates capture histories from a population
 }
 \description{
-Simulate capture histories from a simulated population created by \code{simPop}. Capture probabilities may vary among the age classes and with time, and can be different for initial capture vs recapture.
+Simulates capture histories from a simulated population created by \code{simPop}. Capture probabilities may vary among the age classes and with time, and can be different for initial capture vs recapture.
 }
 
 \usage{
@@ -24,7 +24,7 @@ matrix with age- and time-specific probabilities for initial capture; the first 
 matrix with age- and time-specific probabilities probabilities of REcapture: this has 1 less column than \code{cap} (no recaptures in the first year) and 1 less row (animals marked in the youngest class will be older when recaptured). Input can be \link{abbreviated}. If \code{recap = NULL}, recapture probabilities will be the same as initial capture probabilities.
 }
   \item{maxAge}{
-maximal number of age classes that can be identified when the individuals are captured for the first time; if NULL, no upper limit is imposed.
+maximum number of age classes that can be identified when the individuals are captured for the first time; if NULL, no upper limit is imposed.
 }
   \item{verbose}{
 if TRUE, information is displayed in the console.
@@ -33,14 +33,14 @@ if TRUE, information is displayed in the console.
 \value{
 A list with the arguments used and the following 2 components:
 
- \item{ch }{matrix with the capture histories}
- \item{age }{vector with the age class at first capture for each individual; note that animals marked as infants/nestlings have age = 1, adult ages from 2 to \code{maxAge}}
+ \item{ch }{matrix with the capture histories.}
+ \item{age }{vector with the age class at first capture for each individual; note that animals marked as infants/nestlings have age = 1, older individuals have ages from 2 to \code{maxAge}.}
 }
 \author{
-M. Schaub
+Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 5.5.1.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

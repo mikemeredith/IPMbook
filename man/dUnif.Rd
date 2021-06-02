@@ -6,14 +6,14 @@
 Discrete uniform prior distribution
 }
 \description{
-\code{dUnif} creates a vector or matrix to be used with the categorical distribution, \code{dcat}, in BUGS to generate a discrete uniform prior.
+\code{dUnif} creates a vector or matrix to be used with the categorical distribution, \code{dcat}, in JAGS to generate a discrete uniform prior.
 }
 \usage{
 dUnif(lower, upper)
 }
 \arguments{
   \item{lower, upper}{
-Range of the discrete uniform prior. Either scalars,or vectors of the same length. Values are rounded to integers.
+Range of the discrete uniform prior. Either scalars, or vectors of the same length. Values are rounded to integers.
 }
 
 }
@@ -23,10 +23,10 @@ If the arguments are scalar, a vector of length equal to \code{upper}, with the 
 Otherwise a matrix with each row constructed as above: the columns from \code{lower} to \code{upper} have a constant value, other columns hold zeros. See the examples.
 }
 \author{
-M. Schaub, Marc Kéry, Mike Meredith
+Michael Schaub, Marc Kéry, Mike Meredith
 }
 \references{
-Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Modeling}, section 5.4.4.
+Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Models}, Academic Press, section 5.4.4.
 }
 \examples{
 # Both arguments scalar, vector output

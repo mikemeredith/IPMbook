@@ -6,10 +6,10 @@
 \encoding{UTF-8}
 
 \title{
-Simulate count survey data
+Simulates count survey data
 }
 \description{
-Simulate count survey data assuming a binomial, normal, or Poisson sampling process. For the last two, it is assumed that individuals may be double counted and missed at the same rate.
+Simulates count survey data assuming a binomial, normal, or Poisson sampling process. For the last two, it is assumed that individuals may be double counted and missed at the same rate.
 
 }
 \usage{
@@ -32,10 +32,10 @@ vector with the annual observation error (SD); a scalar can be used if error doe
 A list with the parameters entered and \code{count} with the number of individuals counted in each year.
 }
 \author{
-M. Schaub
+Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, section 5.5.1.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

@@ -13,10 +13,10 @@
 \encoding{UTF-8}
 
 \title{
-The Beta Distribution
+The beta distribution
 }
 \description{
-Density, distribution function, quantile function and random generation for the Beta distribution with parameters \code{mean} and \code{sd} OR \code{mode} and \code{concentration}. These are wrappers for \code{stats::dbeta}, etc. \code{getBeta*Par} returns the shape parameters.
+Density, distribution function, quantile function and random number generation for the beta distribution with parameters \code{mean} and \code{sd} OR \code{mode} and \code{concentration}. These are wrappers for \code{stats::dbeta}, etc. \code{getBeta*Par} returns the shape parameters.
 }
 \usage{
 dbeta2(x, mean, sd)
@@ -33,13 +33,13 @@ getBeta3Par(mode, concentration)
 }
 \arguments{
   \item{x}{
-vector of parameter values
+vector of parameter values.
 }
   \item{q}{
-vector of quantiles
+vector of quantiles.
 }
   \item{p}{
-vector of probabilities
+vector of probabilities.
 }
   \item{n}{
 number of random draws required.

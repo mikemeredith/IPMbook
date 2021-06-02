@@ -51,5 +51,5 @@ An individuals x time matrix with capture histories, or a vector of capture/nonc
 
 }
 \author{
-M. Schaub, Marc Kéry, Mike Meredith
+Michael Schaub, Marc Kéry, Mike Meredith
 }

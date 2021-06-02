@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 \title{
-Create an age matrix
+Creates an age matrix
 }
 \description{
 Creates an animals x intervals matrix which gives the age class for each individual at the beginning of each interval, based on the occasion of first capture and the age at first capture.
@@ -30,10 +30,10 @@ The maximum age class; age is incremented by 1 each year up to \code{mAge}.
 An individuals x intervals matrix with the age of each individual at the beginning of each interval. Cells prior to the first capture are filled with NAs.
 }
 \author{
-M. Schaub.
+Michael Schaub.
 }
 \references{
-Schaub & Kéry (2021) \emph{Integrated Population Modeling}, section 4.5.1.1.
+Schaub & Kéry (2021) \emph{Integrated Population Models}, Adademic Press, section 4.5.1.1.
 }
 
 \examples{

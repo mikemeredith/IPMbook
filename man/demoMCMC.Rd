@@ -47,12 +47,12 @@ A list with the values of the input arguments and the following additional eleme
  \item{acc.prob }{the proportion of proposed values accepted}
 }
 \author{
-Adapted from code in Ntzoufras (2009) p. 48.
+Adapted from code in Ntzoufras (2009), p. 48.
 }
 \references{
-Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ
+Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ.
 
-Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Modeling}, chapter 13.
+Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Models}, Academic Press, chapter 13.
 }
 \examples{
 require(graphics)

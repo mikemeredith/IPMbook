@@ -4,20 +4,21 @@
 \docType{data}
 
 \title{
-Data for kestrels in the NW quadrant of Switzerland
+Data for kestrels from Switzerland, 2002-2016
 }
 \description{
-Three different data sets for kestrels (\emph{Falco tinnunculus}) in the north-western quadrant of Switzerland.
+The data sets for kestrels (\emph{Falco tinnunculus}) were collected between 2002 and 2016 in the north-western quadrant of Switzerland.
 
+They comprise breeding bird counts from a monitoring program and from the breeding bird atlas, and dead-recoveries of ringed individuals.
 }
 
-\usage{data("kestrel")}
+\usage{data(kestrel)}
 
 \format{
 \code{kestrel} is a list with 4 components:
 
 \describe{
-  \item{\bold{landData }}{landscape data, a data frame with rows for 15734 quadrats (1 x 1km) in the study area and the following columns:
+  \item{\bold{landData }}{landscape data, a data frame with rows for 15,734 quadrats (1 x 1km) in the study area and the following columns:
     \itemize{
       \item x and y : the coordinates of the center of the quadrat.
       \item elevation : mean elevation of the quadrat (m).
@@ -53,9 +54,9 @@ Three different data sets for kestrels (\emph{Falco tinnunculus}) in the north-w
 \references{
 Fay, R., Michler, S., Laesser, J., Schaub, M. (2019) Integrated population model reveals that kestrels breeding in nest boxes operate as a source population. \emph{Ecography} 42, 2122–2131.
 
-Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T. (2018) \emph{SchweizerBrutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
+Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T. (2018) \emph{Schweizer Brutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Modeling}, chapter 20.
+Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press. chapter 20.
 
 Schmid, H., Zbinden, N., Keller, V., 2004. \emph{Überwachung der Bestandsentwicklung häufiger Brutvögel in der Schweiz}. Schweizerische Vogelwarte, Sempach.
 }
