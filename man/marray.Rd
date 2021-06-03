@@ -44,6 +44,6 @@ data(cormorant)
 dim(cormorant$ms.ch) # 12,659 animals x 14 years
 table(cormorant$ms.ch) # 6 states
 ( marr <- marray(cormorant$ms.ch) )
-dim(marr) # 78 (= 13 years-of-release * 6 states) x
+str(marr) # 78 (= 13 years-of-release * 6 states) x
           #   79 (= 13 years-of-recapture * 6 states + never-captured)
 }

@@ -12,6 +12,8 @@ marrayDead <- function(MR){
   nind <- nrow(MR)
   n.occasions <- ncol(MR)
   out <- matrix(0, ncol=n.occasions, nrow=n.occasions-1)
+  dimnames(out) <- list(released = paste0("Y", 1:(n.occasions-1)),
+      recovered = c(paste0("Y", 2:n.occasions), "never"))
 
   # Create vector with occasion of marking
   f <- getFirst(MR)  # year of release

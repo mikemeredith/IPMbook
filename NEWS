@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9055 (2021-06-03)
+
+  * M-arrays produced by `marry`, `marrayAge` and `marrayDead` now have dimnames.
+
 CHANGES in version 0.0.0.9054 (2021-06-02)
 
   * Corrections to help pages.

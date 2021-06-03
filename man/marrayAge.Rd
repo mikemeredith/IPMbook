@@ -37,6 +37,6 @@ Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Pres
 data(woodchat5)
 dim(woodchat5$ch)  # 1902 animals x 20 years
 marr <- marrayAge(ch=woodchat5$ch, age=woodchat5$age, mAge=2)
-dim(marr)  # 19 years-of-release x 20 (= 19 years-of-recapture + never-captured)
+str(marr)  # 19 years-of-release x 20 (= 19 years-of-recapture + never-captured)
            #   x 2 age classes
 }

@@ -66,6 +66,9 @@ marrayAge <- function(ch, age, mAge = 1){
   } # a
 
   marr <- array(0, dim = c(n.occasions-1, n.occasions, maxAge))
+  dimnames(marr) <- list(released = paste0("Y", 1:(n.occasions-1)),
+        recaptured = c(paste0("Y", 2:n.occasions), "never"),
+        age = 1:maxAge)
   for (a in 1:(maxAge-1)){
     for (i in 1:nind){
       u <- which(ch.split[i,,a]==1)

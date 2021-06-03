@@ -19,17 +19,35 @@
 #####################################################################################################
 
 marray <- function(ch, unobs = 0){
+  ch <- round(ch)
+  stopifNegative(ch, allowNA=FALSE, allowZero=TRUE)
+  unobs <- round(unobs)
+  stopifNegative(unobs, allowNA=FALSE, allowZero=TRUE)
+
   if(!is.matrix(ch))
     ch <- matrix(ch, nrow=1)
   ns <- length(table(ch)) - 1 + unobs # number of states, excluding 0
   no <- ncol(ch)                      # number of observations (replicates, years, surveys, ...)
-  out <- matrix(0, ncol = ns*(no-1)+1, nrow = ns*(no-1))
+
   # Remove capture histories of individuals that are marked at last occasion
   first <- getFirst(ch)
   last <- which(first==no)
   if (length(last) > 0)
     ch <- ch[-last,]
-  # Compute m-array
+
+  # Create empty m-array, add dimnames
+  out <- matrix(0, ncol = ns*(no-1)+1, nrow = ns*(no-1))
+  if(ns == 1) {
+    dimnames(out) <- list(released = paste0("Y", 1:(no-1)),
+        recaptured = c(paste0("Y", 2:no), "never"))
+  } else {
+    YStmp <- expand.grid(paste0("S", 1:ns), paste0("Y", 1:no))
+    Y.S <- paste(YStmp[,2], YStmp[,1], sep=".")
+    dimnames(out) <- list(released = Y.S[1:(ns*(no-1))],
+        recaptured = c(Y.S[-(1:ns)], "never"))
+  }
+
+  # Insert values in m-array
   for (i in 1:nrow(ch)){
     cap.occ <- which(ch[i,]!=0)
     state <- ch[i,cap.occ]
