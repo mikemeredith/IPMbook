@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 \title{
-Simulate a population based on demographic parameters
+Simulates a population based on demographic parameters
 }
 \description{
 The simulation tracks individual females from birth through a series of adult age classes to death, as well as numbers of female and male offspring. The function allows for 1 or more age classes. Once an animal reaches the oldest age class, age does not increase further until death.
@@ -14,7 +14,7 @@ Fecundity (the total number of offspring per adult female per year) can vary by 
 
 In some age classes, not all animals may attempt to breed, and the probability of breeding can be specified.
 
-Probability of survival can also vary by age class and year. The first row of the survival matrix specifies the survival of the animals born in each year and the remaining rows control survival for the respective adult age classes.
+Probability of survival can also vary by age class and year. The first row of the survival matrix specifies the survival of the animals born in each year and the remaining rows control survival for the respective older age classes.
 }
 \usage{
 simPop(Ni = c(10, 10), phi = c(0.3, 0.55), f = 3.2, nYears = 6, pBreed = 1,
@@ -50,7 +50,7 @@ the age class of immigrants in each year: either scalar or a vector of length \c
 
 A list with the simulation settings and the following components:
  \item{state }{an individuals x years matrix, with the state of each individual in each year. States are coded: -1 = died, 0 = newborn, 1,2,... = 1-Year, 2-Year,...}
- \item{imYear }{a vector with the year of immigration for each individual, or NA if not an immigrant}
+ \item{imYear }{a vector with the year of immigration for each individual, or NA if not an immigrant.}
  \item{reprod }{an individuals x years x 3 array with the number of female and male offspring and the age of the mother for each individual; NAs indicate individuals not alive or alive but not attempting to breeding.}
  \item{N }{a matrix with a column for each year and rows for numbers surviving in each age class, total adults, number of females born and total births, number of immigrants. (Immigrants are included in the age classes at the top of the table.)}
  \item{breeders }{a matrix with a column for each year and rows for numbers breeding in each age class and total breeders. Note that all animals attempting to breed are classified as breeders, even though no offspring may be produced.}
@@ -63,7 +63,7 @@ A list with the simulation settings and the following components:
 Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

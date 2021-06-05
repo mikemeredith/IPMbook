@@ -7,7 +7,7 @@
 Data for hoopoe from Switzerland, 2002-2017
 }
 \description{
-The data for the hoopoe \emph{Upupa epops} were collected from 2002 to 2017 in the Swiss Alps (Valais). The nestboxes were checked regularly to record the number of broods and to determine breeding success. Nestlings were ringed and breeding adults captured.
+The data for the hoopoe (\emph{Upupa epops}) were collected from 2002 to 2017 in the Swiss Alps (Valais). The nestboxes were checked regularly to record the number of broods and to determine breeding success. Nestlings were ringed and breeding adults captured.
 }
 
 \usage{data(hoopoe)}
@@ -27,13 +27,13 @@ The data for the hoopoe \emph{Upupa epops} were collected from 2002 to 2017 in t
 \source{Swiss Ornithological Institute and Institute of Ecology and Evolution (Division of Conservation Biology), University of Bern.}
 
 \references{
-Arlettaz, R., M. Schaub, J. Fournier, T. S. Reichlin, A. Sierro, J. E. M. Watson, and V. Braunisch (2010) From Publications to Public Actions: When Conservation Biologists Bridge the Gap between Research and Implementation. \emph{BioScience} 60, 835–842.
+Arlettaz, R., M. Schaub, J. Fournier, T. S. Reichlin, A. Sierro, J. E. M. Watson, V. Braunisch (2010) From Publications to Public Actions: When Conservation Biologists Bridge the Gap between Research and Implementation. \emph{BioScience} 60, 835–842.
 
-Plard, F., R. Arlettaz, A. Jacot, and M. Schaub (2020) Disentangling the spatial and temporal causes of decline in a bird population. \emph{Ecology and Evolution} 10, 6909-6918.
+Plard, F., R. Arlettaz, A. Jacot, M. Schaub (2020) Disentangling the spatial and temporal causes of decline in a bird population. \emph{Ecology and Evolution} 10, 6909-6918.
 
 Schaub, M., T. S. Reichlin, F. Abadi, M. Kéry, L. Jenni, and R. Arlettaz (2012) The demographic drivers of local population dynamics in two rare migratory birds. \emph{Oecologia} 168, 97–108.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 14.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 14.
 }
 
 \examples{

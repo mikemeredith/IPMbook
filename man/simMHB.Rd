@@ -53,7 +53,7 @@ A list with the arguments used and the following components:
  \item{alpha }{vector with intercept used for the log-linear model for lambda for each site.}
  \item{beta }{vector with slope used for the log-linear model for lambda for each site.}
  \item{lam }{sites x years matrix with the expected number of animals at each site.}
- \item{N }{sites x years matrix  with the realized number of animals at each site}
+ \item{N }{sites x years matrix  with the realized number of animals at each site.}
  \item{totalN }{vector with the total number of animals in each year.}
  \item{p }{vector with the probability of detection in each year.}
  \item{C }{sites x surveys x years array with the counts of animals detected.}
@@ -62,11 +62,11 @@ A list with the arguments used and the following components:
 Marc Kéry
 }
 \references{
-Kéry, M. & Royle, A. (2016) \emph{Applied Hierarchical Modeling in Ecology} Vol 1, Academic Press
+Kéry, M., Royle, A. (2016) \emph{Applied Hierarchical Modeling in Ecology} Vol 1, Academic Press.
 
-Kéry, M. & Royle, A. (2021) \emph{Applied Hierarchical Modeling in Ecology} Vol 2, Academic Press
+Kéry, M., Royle, A. (2021) \emph{Applied Hierarchical Modeling in Ecology} Vol 2, Academic Press.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.3.3.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.3.3.
 }
 
 \examples{

@@ -5,7 +5,7 @@
 \encoding{UTF-8}
 
 \title{
-Functions and data for the Book 'Integrated Population Models'
+Functions and data for the book 'Integrated Population Models'
 }
 \description{
 Provides functions and data sets to accompany the  book \emph{Integrated Population Models} by Michael Schaub and Marc Kéry (ISBN: 9780128205648).
@@ -27,7 +27,7 @@ The functions are listed by chapter below.
     \item{\code{\link{simMHB}}}{ Simulates detection and count data with spatial and temporal replication (section 4.3.3)}
     \item{\code{\link{createAge}}}{ Creates an age matrix (section 4.5.1.1)}
     \item{\code{\link{marray}}}{ Converts single- or multistate capture histories to an m-array for one age class (section 4.5.1.2)}
-    \item{\code{\link{marrayAge}}}{ Converts single-state to age-dependent m-arrays (section 4.5.1.2)}
+    \item{\code{\link{marrayAge}}}{ Converts single-state capture histories to age-dependent m-arrays (section 4.5.1.2)}
   }
 }
 
@@ -67,7 +67,7 @@ The functions are listed by chapter below.
   \item{\code{\link{woodchat66}}}{ Simulated data for woodchat shrike for use in section 6.6.}
   \item{\code{\link{woodchat7}}}{ Simulated data for woodchat shrike for use in chapter 7.}
   \item{\code{\link{woodchat10}}}{ Simulated data for woodchat shrike for use in chapter 10.}
-  \item{\code{\link{woodchat11}}}{ Real data for woodchat shrike, chapter 11.}
+  \item{\code{\link{woodchat11}}}{ Data for woodchat shrike from Germany, 1964-1992, chapter 11.}
   \item{\code{\link{wryneck}}}{ Nest survival data for wryneck from Switzerland, 2002-2006, section 4.4.6.}
   }
 }

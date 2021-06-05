@@ -13,16 +13,16 @@ createAge(f, age, nyears, mAge=2)
 }
 \arguments{
   \item{f}{
-A vector of first capture occasions.
+a vector of first capture occasions.
 }
   \item{age}{
-A corresponding vector with the age at first capture of each animal.
+a corresponding vector with the age at first capture of each animal.
 }
   \item{nyears}{
-The number of years of the study; the number of intervals is \code{nyears - 1}.
+the number of years of the study; the number of intervals is \code{nyears - 1}.
 }
   \item{mAge}{
-The maximum age class; age is incremented by 1 each year up to \code{mAge}.
+the maximum age class; age is incremented by 1 each year up to \code{mAge}.
 }
 
 }
@@ -30,10 +30,10 @@ The maximum age class; age is incremented by 1 each year up to \code{mAge}.
 An individuals x intervals matrix with the age of each individual at the beginning of each interval. Cells prior to the first capture are filled with NAs.
 }
 \author{
-Michael Schaub.
+Michael Schaub
 }
 \references{
-Schaub & Kéry (2021) \emph{Integrated Population Models}, Adademic Press, section 4.5.1.1.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Adademic Press, section 4.5.1.1.
 }
 
 \examples{

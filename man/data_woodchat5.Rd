@@ -4,7 +4,7 @@
 \docType{data}
 
 \title{
-Simulated data for woodchat shrike for use in Chapter 5
+Simulated data for woodchat shrike for use in chapter 5
 }
 \description{
 Demographic parameters based on the woodchat shrike are introduced in Schaub & Kéry (2021) section 3.2 and details of the simulation are given in section 5.5. This data set has simulated data for use in chapter 5.
@@ -18,16 +18,16 @@ Demographic parameters based on the woodchat shrike are introduced in Schaub & K
 \describe{
   \item{ch }{capture histories for 1902 females x 20 years.}
   \item{age }{the age of each individual at first capture: 1 = juvenile, 2 = at least 1 year old (adult).}
-  \item{repro }{reproduction information for 929 monitored nests: \code{Reproduction} = total number of fledglings (male + female), Year = year monitored, Age of mother = 1 = 1 year old, 2 = at least 2 years old.}
+  \item{repro }{reproduction information for 929 monitored nests: Reproduction = total number of fledglings (male + female), Year = year monitored, Age of mother = 1 = 1 year old, 2 = at least 2 years old.}
   \item{count }{total number of breeding pairs observed in each year.}
   }
 }
 
 \source{
-Simulated data.
+Simulated data
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 5.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 5.
 }
 
 \examples{

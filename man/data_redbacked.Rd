@@ -7,7 +7,7 @@
 Data for red-backed shrike from Germany, 1971-2006
 }
 \description{
-Data for the red-backed shrike (\emph{Lanius collurio}) were collected from 1971 to 2006 from a study area in southern Germany. They comprise the annual number of breeding pairs, information about productivity from regular checks of nests, and capture, ringing and resighting of juvenile and adult shrikes.
+Data for the red-backed shrike (\emph{Lanius collurio}) were collected from 1971 to 2006 from a study area in southern Germany. They comprise the annual number of breeding pairs, information about productivity from regular checks of nests, and capture-recapture data   of juvenile and adult shrikes.
 }
 
 \usage{data(redbacked)}
@@ -25,14 +25,14 @@ Data for the red-backed shrike (\emph{Lanius collurio}) were collected from 1971
 }
 
 \source{
-Wolfgang Stauber and Hans Jakober
+Wolfgang Staube, Hans Jakober
 }
 \references{
-Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012) Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling} 242, 1–9
+Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012) Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling} 242, 1–9.
 
 Schaub, M., Jakober, H., Stauber, W. (2013) Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828–1838.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 8.2.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 8.2.
 }
 \examples{
 data(redbacked)

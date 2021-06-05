@@ -20,7 +20,7 @@ Data comprise the annual number of breeding pairs, information on productivity a
 \describe{
   \item{count }{a 2-column matrix with the number of breeding pairs recorded in each year.}
   \item{productivity }{a 3-column matrix with the number of broods surveyed and the total number of fledglings for each year.}
-  \item{recoveries }{an individuals x years matrix, with "1" when an individual was ringed as a nestling and "1" when recovered dead; otherwise "0".}
+  \item{recoveries }{an individuals x years matrix, with 1 when an individual was ringed as a nestling and when recovered dead; otherwise 0.}
   }
 }
 
@@ -31,7 +31,7 @@ Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Pari
 
 Monneret, R.-J., Rufinioni, R., Parish, D., Pinaud, D., Kéry, M. (2018) The Peregrine population study in the French Jura mountains 1964–2016: use of occupancy modeling to estimate population size and analyze site persistence and colonization rates. \emph{Ornis Hungarica} 26, 69–90.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 12.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 12.
 }
 
 \examples{

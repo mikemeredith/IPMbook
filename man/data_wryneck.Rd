@@ -20,16 +20,16 @@ The data contain information about the survival of 181 broods of wrynecks (\emph
   \item{j }{day of the latest check when nestlings were present.}
   \item{k }{day of the last check; this is the same as 'j' if nestlings fledged successfully, or the day when the nest was found to have failed.}
   \item{x }{1 if nestlings fledged successfully, otherwise 0.}
-  \item{age }{the age of the nestlings on first detection.}
+  \item{age }{the age of the nestlings on first detection in number of days.}
   }
 }
 
 \source{Swiss Ornithological Institute}
 
 \references{
-Geiser, S., R. Arlettaz, and M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149, 597–606.
+Geiser, S., R. Arlettaz, M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149, 597–606.
 
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.4.6.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.4.6.
 }
 
 \examples{

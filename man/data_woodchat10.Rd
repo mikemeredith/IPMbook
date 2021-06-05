@@ -4,7 +4,7 @@
 \docType{data}
 
 \title{
-Simulated data for woodchat shrike for use in Chapter 10
+Simulated data for woodchat shrike for use in chapter 10
 }
 \description{
 Demographic parameters based on the woodchat shrike are introduced in Schaub & Kéry (2021) section 3.2 and details of the simulation are given in section 5.5. This data set has simulated data for use in chapter 10.
@@ -25,10 +25,10 @@ Demographic parameters based on the woodchat shrike are introduced in Schaub & K
 }
 
 \source{
-Simulated data.
+Simulated data
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 10.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 10.
 }
 
 \examples{

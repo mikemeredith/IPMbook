@@ -8,7 +8,7 @@
 \encoding{UTF-8}
 
 \title{
-Various helper functions.
+Various helper functions
 }
 \description{
 \code{cleanCH} removes histories without any capture (ie, all-zero rows) from a capture-recapture matrix.
@@ -34,13 +34,13 @@ getFirst(x)
 }
 \arguments{
   \item{ch}{
-An individuals x time matrix with capture histories.
+an individuals x time matrix with capture histories.
 }
   \item{chDR}{
-An individuals x time matrix with dead recovery capture histories: 1 indicates initial capture or dead recovery, 0 otherwise.
+an individuals x time matrix with dead recovery capture histories: 1 indicates initial capture or dead recovery, 0 otherwise.
 }
   \item{x}{
-An individuals x time matrix with capture histories, or a vector of capture/noncapture data, typically 1 row of a capture history.
+an individuals x time matrix with capture histories, or a vector of capture/noncapture data, typically 1 row of a capture history.
 }
 
 }

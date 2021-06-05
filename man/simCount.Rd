@@ -19,7 +19,7 @@ simCountPois(N)
 }
 \arguments{
   \item{N}{
-Annual number of individuals at risk of detection, which may be all adults or just those breeding. The length of the vector determines the number of sampling occasions.
+annual number of individuals at risk of detection, which may be all adults or just those breeding. The length of the vector determines the number of sampling occasions.
 }
   \item{pDetect}{
 vector with the annual detection probabilities of the individuals at risk of counting; all individuals have the same probability to be counted; a scalar can be used if probability does not change with time.
@@ -35,12 +35,14 @@ A list with the parameters entered and \code{count} with the number of individua
 Michael Schaub
 }
 \references{
-Schaub, M. & Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
+Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{
+# Generate a simulated population:
 pop <- simPop()
 pop$breeders
+# Simulate count data of breeders or of adults
 simCountBin(pop$totBreeders, p=0.6)
 simCountNorm(pop$totBreeders, sigma=10)
 simCountPois(pop$totAdults)

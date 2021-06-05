@@ -43,16 +43,16 @@ if FALSE, plotting is suppressed.
 }
 \value{
 A list with the values of the input arguments and the following additional elements:
- \item{ltheta }{a vector with the MCMC draws}
- \item{acc.prob }{the proportion of proposed values accepted}
+ \item{ltheta }{a vector with the MCMC draws.}
+ \item{acc.prob }{the proportion of proposed values accepted.}
 }
 \author{
 Adapted from code in Ntzoufras (2009), p. 48.
 }
 \references{
-Ntzoufras (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ.
+Ntzoufras, I. (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ.
 
-Schaub, M. & Kéry, M.(2021), \emph{Integrated Population Models}, Academic Press, chapter 13.
+Schaub, M., Kéry, M.(2021), \emph{Integrated Population Models}, Academic Press, chapter 13.
 }
 \examples{
 require(graphics)
