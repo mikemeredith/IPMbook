@@ -31,7 +31,7 @@ Arlettaz, R., M. Schaub, J. Fournier, T. S. Reichlin, A. Sierro, J. E. M. Watson
 
 Plard, F., R. Arlettaz, A. Jacot, M. Schaub (2020) Disentangling the spatial and temporal causes of decline in a bird population. \emph{Ecology and Evolution} 10, 6909-6918.
 
-Schaub, M., T. S. Reichlin, F. Abadi, M. Kéry, L. Jenni, and R. Arlettaz (2012) The demographic drivers of local population dynamics in two rare migratory birds. \emph{Oecologia} 168, 97–108.
+Schaub, M., T. S. Reichlin, F. Abadi, M. Kéry, L. Jenni, R. Arlettaz (2012) The demographic drivers of local population dynamics in two rare migratory birds. \emph{Oecologia} 168, 97–108.
 
 Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 14.
 }

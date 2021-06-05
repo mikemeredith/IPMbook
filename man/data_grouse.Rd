@@ -31,7 +31,7 @@ The number of displaying cocks was recorded each spring. In late summer, grouse 
   }
 }
 
-\source{Luca Rotelli, Radames Bionda; Rotelli et al. (in prep.)}
+\source{Luca Rotelli, Radames Bionda}
 
 \references{
 Rotelli, L., Zbinden, N., Bionda, R., Schaub, M. (in prep.) Chick survival and hunting are important drivers for the dynamics of two Alpine black grouse (\emph{Lylurus tetrix}) populations. \emph{Wildlife Biology}.
