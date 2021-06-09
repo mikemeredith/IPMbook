@@ -58,7 +58,7 @@ The functions are listed by chapter below.
   \item{\code{\link{hoopoe}}}{ Data for hoopoe from Switzerland, 2001-2017, chapter 14.}
   \item{\code{\link{kestrel}}}{ Data for kestrels from Switzerland, 2002-2016, chapter 20.}
   \item{\code{\link{peregrine}}}{ Data for peregrine falcons from France and Switzerland, 1965-2007, chapter 12.}
-  \item{\code{\link{redbacked}}}{ Data for redbacked shrike from Germany, 1971-2006, section 8.2.}
+  \item{\code{\link{redbacked}}}{ Data for red-backed shrike from Germany, 1971-2006, section 8.2.}
   \item{\code{\link{stork}}}{ Data for white storks from Germany, 1986-2001, section 4.5.4.}
   \item{\code{\link{swallow}}}{ Data for barn swallow from Switzerland, 1997-2003, chapter 16.}
   \item{\code{\link{woodchat5}}}{ Simulated data for woodchat shrike for use in chapter 5.}

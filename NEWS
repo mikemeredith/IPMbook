@@ -1,4 +1,8 @@
 
+CHANGES in version 0.0.0.9057 (2021-06-09)
+
+  * Changes to `marry*` help pages now they have dimnames.
+
 CHANGES in version 0.0.0.9056 (2021-06-04)
 
   * More tidying of help pages.

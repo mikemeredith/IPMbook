@@ -29,6 +29,6 @@ Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press
 \examples{
 data(peregrine)
 str(peregrine$recoveries)  # 1810 animals x 43 years
-m.dead <- marrayDead(peregrine$recoveries)
-str(m.dead)  # 42 years-of-release x 43 (= 42 years-of-recovery + never-recovered)
+dr <- cleanCH(peregrine$recoveries[, 29:43])  # Use last 15 years of data
+marrayDead(dr)
 }

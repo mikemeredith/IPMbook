@@ -36,14 +36,13 @@ Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press
 # Convert a single state capture history matrix into an m-array
 data(woodchat5)
 dim(woodchat5$ch)  # 1902 animals x 20 years
-( marr <- marray(woodchat5$ch) )
-str(marr) # 19 years-of-release x 20 (= 19 years-of-recaptures + never-recaptured)
+ch1 <- cleanCH(woodchat5$ch[, 11:20])  # Use last 10 years only
+marray(ch1)
 
 # Convert a multistate capture history into an m-array
 data(cormorant)
 dim(cormorant$ms.ch) # 12,659 animals x 14 years
-table(cormorant$ms.ch) # 6 states
-( marr <- marray(cormorant$ms.ch) )
-str(marr) # 78 (= 13 years-of-release * 6 states) x
-          #   79 (= 13 years-of-recapture * 6 states + never-captured)
+ch2 <- cleanCH(cormorant$ms.ch[, 11:14])  # Use last 4 years only
+table(ch2) # 6 states
+marray(ch2)
 }

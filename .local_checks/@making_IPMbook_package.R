@@ -19,7 +19,7 @@ devtools::load_all("IPMbook")
 # ==========================
 unlink(list.files(pattern="Rplots.pdf", recursive=TRUE))
 system("R CMD build IPMbook")  # Produces the .tar.gz
-pkg <- "IPMbook_0.0.0.9056.tar.gz"  # <-- fix version number here
+pkg <- "IPMbook_0.0.0.9057.tar.gz"  # <-- fix version number here
 
 # Pick one to check:
 ## on desktop
@@ -37,6 +37,10 @@ system(paste("R CMD INSTALL ", pkg, "--build")) # install and produce the .zip b
 # Try it out:
 library(IPMbook)
 ?IPMbook
+
+example(marray)
+example(marrayAge)
+example(marrayDead)
 
 data(bats)
 ini <- zInit(bats$ch)
