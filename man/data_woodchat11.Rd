@@ -31,7 +31,7 @@ They comprise the annual number of breeding pairs, information about productivit
 Bruno Ullrich
 }
 \references{
-Ullrich, B. (2017) Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273–335.
+Ullrich, B. (2017) Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273-335.
 
 Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 11.
 

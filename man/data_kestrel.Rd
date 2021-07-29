@@ -52,7 +52,7 @@ They comprise breeding bird counts from a monitoring program and from the breedi
 \source{Swiss Ornithological Institute}
 
 \references{
-Fay, R., Michler, S., Laesser, J., Schaub, M. (2019) Integrated population model reveals that kestrels breeding in nest boxes operate as a source population. \emph{Ecography} 42, 2122–2131.
+Fay, R., Michler, S., Laesser, J., Schaub, M. (2019) Integrated population model reveals that kestrels breeding in nest boxes operate as a source population. \emph{Ecography} 42, 2122-2131.
 
 Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T. (2018) \emph{Schweizer Brutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
 

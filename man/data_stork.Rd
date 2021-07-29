@@ -18,7 +18,7 @@ Data for white stork (\emph{Ciconia ciconia}) during 16 years (1986-2001) in eas
 \source{Vogelwarte Hiddensee, Germany}
 
 \references{
-Schaub, M., Kania, W., Köppen, U. (2005) Variation of primary production during winter induces synchrony in survival rates in migratory white storks \emph{Ciconia ciconia}. \emph{Journal of Animal Ecology} 74, 656–666.
+Schaub, M., Kania, W., Köppen, U. (2005) Variation of primary production during winter induces synchrony in survival rates in migratory white storks \emph{Ciconia ciconia}. \emph{Journal of Animal Ecology} 74, 656-666.
 
 Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.5.4.
 }

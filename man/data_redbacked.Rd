@@ -28,9 +28,9 @@ Data for the red-backed shrike (\emph{Lanius collurio}) were collected from 1971
 Wolfgang Staube, Hans Jakober
 }
 \references{
-Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012) Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling} 242, 1–9.
+Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012) Estimating the strength of density dependence in the presence of observation errors using integrated population models. \emph{Ecological Modelling} 242, 1-9.
 
-Schaub, M., Jakober, H., Stauber, W. (2013) Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828–1838.
+Schaub, M., Jakober, H., Stauber, W. (2013) Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828-1838.
 
 Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 8.2.
 }

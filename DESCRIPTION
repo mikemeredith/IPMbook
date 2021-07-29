@@ -1,8 +1,8 @@
 Package: IPMbook
 Type: Package
 Title: Functions and Data for the Book 'Integrated Population Models'
-Version: 0.0.0.9057
-Date: 2021-06-09
+Version: 0.1.1
+Date: 2021-07-29
 Depends: R (>= 2.10)
 Imports: stats, abind
 Suggests:
@@ -30,8 +30,9 @@ Authors@R: c(
   person("Vogelwarte Hiddensee, Germany", role="dtc", comment="stork"),
   person("Swiss Ornithological Institute", role="dtc", comment="hoopoe, kestrel, peregrine, swallow, wryneck")  )
 BugReports: https://github.com/mikemeredith/IPMbook/issues
-Description: Provides functions and data sets to accompany the  book 'Integrated Population Models' by Michael Schaub and Marc Kéry (ISBN: 9780128205648).
+Description: Provides functions and data sets to accompany the  book 'Integrated Population Models: Theory and Ecological Applications with R and JAGS' by Michael Schaub and Marc Kéry (ISBN: 9780128205648).
 License: GPL (>=3)
+URL: https://www.elsevier.com/books/integrated-population-models/schaub/978-0-12-820564-8
 NeedsCompilation: no
 Encoding: UTF-8
 Language: en-US
