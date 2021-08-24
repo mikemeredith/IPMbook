@@ -33,7 +33,7 @@ Some elk cows were radio-tracked each year, and for these we have data for survi
 \references{
 Gove, N. E., Skalski, J. R., Zager, P., Townsend, R. L. (2002) Statistical models for population reconstruction using age-at-harvest data. \emph{Journal of Wildlife Management} 66, 310-320.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 17.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 17.
 }
 
 \examples{

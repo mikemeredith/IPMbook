@@ -32,7 +32,7 @@ Abadi, F., Gimenez, O., Jakober, H., Stauber, W., Arlettaz, R., Schaub, M. (2012
 
 Schaub, M., Jakober, H., Stauber, W. (2013) Strong contribution of immigration to local population regulation: evidence from a migratory passerine. \emph{Ecology} 94, 1828-1838.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 8.2.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, section 8.2.
 }
 \examples{
 data(redbacked)

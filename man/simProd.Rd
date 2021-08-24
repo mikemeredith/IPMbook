@@ -35,7 +35,7 @@ A list with the following 2 components:
 Michael Schaub
 }
 \references{
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, section 5.5.1.
 }
 
 \examples{

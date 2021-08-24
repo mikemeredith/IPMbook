@@ -31,7 +31,7 @@ Kéry, M., Banderet, G., Neuhaus, M., Weggler, M., Schmid, H., Sattler, T., Pari
 
 Monneret, R.-J., Rufinioni, R., Parish, D., Pinaud, D., Kéry, M. (2018) The Peregrine population study in the French Jura mountains 1964-2016: use of occupancy modeling to estimate population size and analyze site persistence and colonization rates. \emph{Ornis Hungarica} 26, 69-90.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 12.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 12.
 }
 
 \examples{

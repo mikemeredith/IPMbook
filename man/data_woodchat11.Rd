@@ -33,7 +33,7 @@ Bruno Ullrich
 \references{
 Ullrich, B. (2017) Entdeckung und Aussterben einer Population des Rotkopfwürgers \emph{Lanius senator} in den Streuobstwiesen des Mittleren Albvorlandes, Landkreise Göppingen und Esslingen am Neckar. \emph{Ökologie der Vögel} 35, 273-335.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 11.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 11.
 
 Schaub, M., B. Ullrich (2021) A drop in immigration results in the extinction of a local woodchat shrike population. \emph{Animal Conservation} 24, accepted <https://doi.org/10.1111/acv.12639>
 }

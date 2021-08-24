@@ -29,7 +29,7 @@ For multi-state capture-recapture data with s states (including potential unobse
 Michael Schaub
 }
 \references{
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.5.1.2.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, section 4.5.1.2.
 }
 
 \examples{

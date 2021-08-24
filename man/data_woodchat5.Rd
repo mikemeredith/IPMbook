@@ -27,7 +27,7 @@ Demographic parameters based on the woodchat shrike are introduced in Schaub & K
 Simulated data
 }
 \references{
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 5.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 5.
 }
 
 \examples{

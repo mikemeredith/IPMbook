@@ -26,7 +26,7 @@ Otherwise a matrix with each row constructed as above: the columns from \code{lo
 Michael Schaub, Marc Kéry, Mike Meredith
 }
 \references{
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 5.4.4.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, section 5.4.4.
 }
 \examples{
 # Both arguments scalar, vector output

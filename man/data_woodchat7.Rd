@@ -27,7 +27,7 @@ Simulation of data with demographic parameters based on the woodchat shrike are 
 Simulated data
 }
 \references{
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press,  chapter 7.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press,  chapter 7.
 }
 \examples{
 data(woodchat7)

@@ -31,7 +31,7 @@ Each year the number of breeding pairs and detailed information about productivi
 \references{
 Schaub, M., von Hirschheydt, J., Grüebler, M.U. (2015) Differential contribution of demographic rate synchrony to population synchrony in barn swallows. \emph{Journal of Animal Ecology} 84, 1530-1541.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 16.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 16.
 }
 
 \examples{

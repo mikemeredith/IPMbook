@@ -56,7 +56,7 @@ Fay, R., Michler, S., Laesser, J., Schaub, M. (2019) Integrated population model
 
 Knaus, P., Antoniazza, S., Wechsler, S., Guelat, J., Kéry, M., Strebel, N., Sattler, T. (2018) \emph{Schweizer Brutvogelatlas 2013-2016. Verbreitung und Bestandsentwicklung der Vögel in der Schweiz und im Fürstentum Liechtenstein}, Sempach.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press. chapter 20.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press. chapter 20.
 
 Schmid, H., Zbinden, N., Keller, V. (2004) \emph{Überwachung der Bestandsentwicklung häufiger Brutvögel in der Schweiz}. Schweizerische Vogelwarte, Sempach.
 }

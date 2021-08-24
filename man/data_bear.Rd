@@ -32,7 +32,7 @@ Note that not all hair samples were successfully genotyped, and traps were not d
 \references{
 Chandler, R. B., Clark, J. D. (2014) Spatially explicit integrated population models. \emph{Methods in Ecology and Evolution} 5, 1351-1360.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, chapter 21.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 21.
 }
 
 \examples{

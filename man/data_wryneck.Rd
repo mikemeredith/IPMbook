@@ -29,7 +29,7 @@ The data contain information about the survival of 181 broods of wrynecks (\emph
 \references{
 Geiser, S., R. Arlettaz, M. Schaub (2008) Impact of weather variation on feeding behaviour, nestling growth and brood survival in Wrynecks \emph{Jynx torquilla}. \emph{Journal of Ornithology} 149, 597-606.
 
-Schaub, M., Kéry, M. (2021) \emph{Integrated Population Models}, Academic Press, section 4.4.6.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, section 4.4.6.
 }
 
 \examples{
