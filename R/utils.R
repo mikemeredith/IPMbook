@@ -22,13 +22,15 @@ cleanCH <- function(ch){
 
 # From a capture history matrix, creates a matrix with 1 where the individual
 #  is known to be alive, NA elsewhere.
+# Modified to deal with all-zero rows 2021-09-25
 # Input variables
 #    ch: matrix with capture histories.
 
 zKnown <- function(ch) {
   zknown1 <- function(x) {
     kn <- which(x > 0)
-    x[min(kn):max(kn)] <- 1
+    if(length(kn) > 0)
+      x[min(kn):max(kn)] <- 1
     x[x == 0] <- NA
     return(x)
   }
@@ -38,6 +40,7 @@ zKnown <- function(ch) {
 
 # From a capture history matrix, creates a matrix with 1 after the occasion
 #   of first capture, NA elsewhere.
+# Modified to deal with all-zero rows 2021-09-25
 # Input variables
 #    ch: matrix with capture histories.
 
@@ -45,7 +48,7 @@ zInit  <- function(ch){
   f <- getFirst(ch) # occasion of first capture
   zInit <- array(NA, dim = dim(ch))
   for(i in 1:nrow(ch)){
-    if(f[i] >= ncol(ch)) # first captured on last occasion (or never!)
+    if(is.na(f[i]) || f[i] >= ncol(ch)) # first captured on last occasion (or never!)
       next
     zInit[i,(f[i]+1):ncol(ch)] <- 1
   }
