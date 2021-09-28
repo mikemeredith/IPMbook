@@ -15,77 +15,75 @@
 #    Depends on functions 'marray', 'cleanCH' and 'getFirst'
 #
 #
-# Written: 14.3.2016, M.Schaub
-#
-# Last up-date: 17.03.2020
+# Written: 14.3.2016, M.Schaub, desecrated by Mike Meredith 2021-09-27
 #
 ################################################
 
 
-marrayAge <- function(ch, age, mAge = 1){
+marrayAge <- function(ch, age, mAge = 1, freq = 1){
   ch <- round(ch)
   stopifNegative(ch, allowNA=FALSE, allowZero=TRUE)
   age <- round(age)
   stopifNegative(age, allowNA=FALSE, allowZero=FALSE)
   mAge <- round(mAge[1])
   stopifNegative(mAge, allowNA=FALSE, allowZero=FALSE)
+  freq <- round(freq)
+  if(length(freq) == 1)
+    freq <- rep(freq, nrow(ch))
 
   if (!is.matrix(ch))
     ch <- matrix(ch, nrow = 1)
   maxAge <- max(age, mAge)
   nind <- nrow(ch)
   stopifnotLength(age, nind, allow1=FALSE)
+  stopifnotLength(freq, nind, allow1=FALSE)
   n.occasions <- ncol(ch)
+
+  # Remove capture histories of individuals that are marked at last occasion
   first <- getFirst(ch)
+  last <- which(first == n.occasions)
+  if (length(last) > 0) {
+    ch <- ch[-last,]
+    age <- age[-last]
+    freq <- freq[-last]
+    first <- getFirst(ch)
+    nind <- nrow(ch)
+  }
+  absfreq <- abs(freq)
+
+    # Check for trap losses
+  traploss <- freq < 0
+  if(all(traploss == FALSE))
+    traploss <- is.na(rowSums(ch))
+
   age.matrix <- matrix(0, ncol = n.occasions, nrow = nind)
   for (i in 1:nind){
     age.matrix[i,first[i]:n.occasions] <- 1:(n.occasions-first[i]+1)+(age[i]-1)
   }
   age.matrix[age.matrix > maxAge] <- maxAge
 
-  ch.rec <- ch
-  for (i in 1:nind){
-    h <- which(ch.rec[i,]==1)
-    for (j in 1:length(h)){
-      ch.rec[i,h[j]] <- j
-    } # j
-  } # i
-  ch.rec[ch.rec > maxAge] <- maxAge
-
-  ch.split <- array(0, dim = c(nrow(ch), ncol(ch), maxAge))
-  for (a in 1:maxAge){
-    for (i in 1:nind){
-      j <- which(ch.rec[i,]==a | ch.rec[i,]==(a+1))
-      if (length(j)==0)
-        next
-      ch.split[i,j[1:2],age.matrix[i,j[1]]] <- 1
-      if (length(j)>1){
-        ch.split[i,j[2:length(j)],age.matrix[i,j[2]]] <- 1
-      }
-    } # i
-  } # a
-
   marr <- array(0, dim = c(n.occasions-1, n.occasions, maxAge))
   dimnames(marr) <- list(released = paste0("Y", 1:(n.occasions-1)),
         recaptured = c(paste0("Y", 2:n.occasions), "never"),
         age = 1:maxAge)
-  for (a in 1:(maxAge-1)){
-    for (i in 1:nind){
-      u <- which(ch.split[i,,a]==1)
-      if (length(u)==0)
-        next
-      if (u[1]==n.occasions)
-        next
-      if (length(u)==1)
-        marr[u,n.occasions,a] <- marr[u,n.occasions,a] + 1
-      if (length(u)==2)
-        marr[u[1], u[2]-1, a] <- marr[u[1], u[2]-1, a] + 1
-    } # i
-  } # a
 
-  a <- maxAge
-  if(sum(ch.split[,,a])) # all zeros, leave the zeros in marr[,,a]
-     marr[,,a] <- marray(cleanCH(ch.split[,,a]))
+  for (i in 1:nind){
+    cap.occ <- which(ch[i,]!=0)
+    capID <- paste0("Y", cap.occ)
+    cap.age <- age.matrix[i, cap.occ]
+
+    if (length(capID) == 1) {  # never recaptured
+       marr[capID[1], 'never', cap.age[1]] <- marr[capID[1], 'never', cap.age[1]] + absfreq[i]
+    }
+    if (length(capID) > 1) {  # recaptured at least once
+      for (t in 2:length(cap.occ)){
+        marr[capID[t-1], capID[t], cap.age[t-1]] <- marr[capID[t-1], capID[t], cap.age[t-1]] + absfreq[i]
+      }
+      if (max(cap.occ) < n.occasions && !traploss[i]){  # never recaptured after last release
+        marr[capID[t], 'never', cap.age[t]] <- marr[capID[t], 'never', cap.age[t]]  + absfreq[i]
+      }
+    }
+  }
 
   return(marr)
 }

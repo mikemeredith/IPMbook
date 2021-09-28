@@ -5,6 +5,10 @@
 #
 # Input variables
 #    ch: matrix with single- or multistate capture histories (0: not captured; 1..X: captured in the 1..X states)
+#    New 2021-09-27:
+#      ch can include NA for occasions after a trap loss.
+#      ch can include only unique capture histories, with the number of animals with each history given in
+#        the vector 'freq'.
 #    unobs: number of unobserved states (default is 0, needs to be given only in specific cases)
 #
 # Output
@@ -12,17 +16,20 @@
 #
 #    Depends on functions 'getFirst'
 #
-# Written: 22.9.2016, M.Schaub
-#
-# Last up-date:
+# Written: 22.9.2016, M.Schaub, desecrated by Mike Meredith 2021-09-27
 #
 #####################################################################################################
 
-marray <- function(ch, unobs = 0){
+marray <- function(ch, unobs = 0, freq = 1){
+  if(is.data.frame(ch))
+    ch <- as.matrix(ch)
   ch <- round(ch)
-  stopifNegative(ch, allowNA=FALSE, allowZero=TRUE)
+  stopifNegative(ch, allowNA=TRUE, allowZero=TRUE)
   unobs <- round(unobs)
   stopifNegative(unobs, allowNA=FALSE, allowZero=TRUE)
+  freq <- round(freq)
+  if(length(freq) == 1)
+    freq <- rep(freq, nrow(ch))
 
   if(!is.matrix(ch))
     ch <- matrix(ch, nrow=1)
@@ -32,8 +39,16 @@ marray <- function(ch, unobs = 0){
   # Remove capture histories of individuals that are marked at last occasion
   first <- getFirst(ch)
   last <- which(first==no)
-  if (length(last) > 0)
+  if (length(last) > 0) {
     ch <- ch[-last,]
+    freq <- freq[-last]
+  }
+  absfreq <- abs(freq)
+
+  # Check for trap losses
+  traploss <- freq < 0
+  if(all(traploss == FALSE))
+    traploss <- is.na(rowSums(ch))
 
   # Create empty m-array, add dimnames
   out <- matrix(0, ncol = ns*(no-1)+1, nrow = ns*(no-1))
@@ -51,18 +66,24 @@ marray <- function(ch, unobs = 0){
   for (i in 1:nrow(ch)){
     cap.occ <- which(ch[i,]!=0)
     state <- ch[i,cap.occ]
-    if (length(state) == 1) {
-       out[state[1]+ns*(cap.occ[1]-1), ns*(no-1)+1] <- out[state[1]+ns*(cap.occ[1]-1), ns*(no-1)+1] + 1
+    if(ns == 1) {
+      capID <- paste0("Y", cap.occ)
+    } else {
+      capID <- paste0("Y", cap.occ, ".S", state)
     }
-    if (length(state) > 1) {
+    if (length(state) == 1) {  # never recaptured
+       out[capID[1], 'never'] <- out[capID[1], 'never'] + absfreq[i]
+    }
+    if (length(state) > 1) {  # recaptured at least once
       for (t in 2:length(cap.occ)){
-        out[(cap.occ[t-1]-1)*ns+state[t-1], (cap.occ[t]-2)*ns+state[t]] <- out[(cap.occ[t-1]-1)*ns+state[t-1], (cap.occ[t]-2)*ns+state[t]] + 1
-      } # t
-      if (max(cap.occ) < no){
-        out[(cap.occ[t]-1)*ns+state[t], ns*(no-1)+1] <- out[(cap.occ[t]-1)*ns+state[t], ns*(no-1)+1] + 1
-      } # if
-    } # if
-  } # t  ?? i
+        out[capID[t-1], capID[t]] <- out[capID[t-1], capID[t]] + absfreq[i]
+      }
+      if (max(cap.occ) < no && !traploss[i]){  # never recaptured after last release
+        out[capID[t], 'never'] <- out[capID[t], 'never'] + absfreq[i]
+      }
+    }
+  }
+
   return(out)
 }
 

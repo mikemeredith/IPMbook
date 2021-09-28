@@ -13,13 +13,14 @@ out <- spell_check_package(pkg = "IPMbook")
 # For package development
 system("R CMD INSTALL IPMbook") # Use this for a "dev" install.
 devtools::load_all("IPMbook")
+devtools::load_all("D:/Github/IPMbook_package/IPMbook")
 
 
 # Create the IPMbook package
 # ==========================
 unlink(list.files(pattern="Rplots.pdf", recursive=TRUE))
 system("R CMD build IPMbook")  # Produces the .tar.gz
-pkg <- "IPMbook_0.1.2.9000.tar.gz"  # <-- fix version number here
+pkg <- "IPMbook_0.1.2.9002.tar.gz"  # <-- fix version number here
 
 # Pick one to check:
 ## on desktop

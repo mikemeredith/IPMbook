@@ -1,3 +1,11 @@
+CHANGES in version 0.1.2.9002 (2021-09-28)
+
+  * Modified `marray` and `marrayAge` to deal with trap losses. (Not applicable to `marrayDead`.)
+
+CHANGES in version 0.1.2.9001 (2021-09-27)
+
+  * Modified `marray*` functions to accept a matrix of unique capture histories accompanied by a vector of frequencies.
+
 CHANGES in version 0.1.2.9000 (2021-09-25)
 
   * Modified `zInit` and `zKnown` to handle all-zero capture histories.
