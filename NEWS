@@ -1,3 +1,7 @@
+CHANGES in version 0.1.2.9003 (2021-09-29)
+
+  * `marray*` functions now accept data frames for capture histories.
+
 CHANGES in version 0.1.2.9002 (2021-09-28)
 
   * Modified `marray` and `marrayAge` to deal with trap losses. (Not applicable to `marrayDead`.)

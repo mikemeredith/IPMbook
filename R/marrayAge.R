@@ -21,8 +21,10 @@
 
 
 marrayAge <- function(ch, age, mAge = 1, freq = 1){
+  if(is.data.frame(ch))
+    ch <- as.matrix(ch)
   ch <- round(ch)
-  stopifNegative(ch, allowNA=FALSE, allowZero=TRUE)
+  stopifNegative(ch, allowNA=TRUE, allowZero=TRUE)
   age <- round(age)
   stopifNegative(age, allowNA=FALSE, allowZero=FALSE)
   mAge <- round(mAge[1])

@@ -4,8 +4,10 @@
 # Modified to deal with a matrix of unique capture histories plus a vector of frequencies 2021-09-28.
 
 marrayDead <- function(MR, freq = 1){
+  if(is.data.frame(MR))
+    MR <- as.matrix(MR)
   MR <- round(MR)
-  stopifNegative(MR, allowNA=FALSE, allowZero=TRUE)
+  stopifNegative(MR, allowNA=TRUE, allowZero=TRUE)
   if(!is.matrix(MR))
     MR <- matrix(MR, nrow=1)
   if(any(rowSums(MR) > 2))
