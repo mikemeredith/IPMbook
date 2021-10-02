@@ -1,3 +1,9 @@
+CHANGES in version 0.1.2.9004 (2021-10-01)
+
+  * `marray*` functions now deal correctly with trap losses if only 1 capture.
+
+  * `marray*` functions deal with with groups specified as columns in the `freq` argument.
+
 CHANGES in version 0.1.2.9003 (2021-09-29)
 
   * `marray*` functions now accept data frames for capture histories.
@@ -16,6 +22,6 @@ CHANGES in version 0.1.2.9000 (2021-09-25)
 
 CHANGES in version 0.1.2 (2021-09-14)
 
-  * Corrected publication date of Schaube and Kéry (2021) to (2022) in all help pages, though it will ship in Q3 2021.
+  * Corrected publication date of Schaub and Kéry (2021) to (2022) in all help pages, though it will ship in Q3 2021.
 
   * Changed the book URL to the permanent site at Swiss Ornithological Institute.

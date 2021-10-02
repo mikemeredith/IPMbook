@@ -6,27 +6,27 @@
 Converts capture-histories to an m-array for one age class
 }
 \description{
-Creates an m-array for a single- or multistate capture-recapture data with one age class.
+Creates an m-array for a single- or multistate capture-recapture data with one age class and optionally more than one group.
 }
 \usage{
 marray(ch, unobs = 0, freq = 1)
 }
 \arguments{
   \item{ch}{
-an individuals x time matrix with single- or multistate capture histories (0: not captured; 1...X: captured in the 1...X states). This can be a matrix of unique capture histories accompanied by a vector, \code{freq}, specifying the number of animals with each capture history. Trap losses can be indicated either by negative values for \code{freq}, or by filling the row with NA after the last capture.
+an individuals x time matrix with single- or multistate capture histories (0: not captured; 1...X: captured in the 1...X states). This can be a matrix of unique capture histories accompanied by a vector or matrix, \code{freq}, specifying the number of animals with each capture history. Trap losses can be indicated either by negative values for \code{freq}, or by filling the row with NA after the last capture.
 }
   \item{unobs}{
 number of unobserved states (default is 0, needs to be given only in specific cases).
 }
   \item{freq}{
-a vector with the number of animals with each capture history. If a single value is supplied, it will be used for all rows in the capture history. The default is to assume each row corresponds to a single animal.
+a vector with the number of animals with each capture history, or a matrix with a column for each group. If a single value is supplied, it will be used for all rows in the capture history; the default is to assume each row corresponds to a single animal.
 }
 
 }
 \value{
-For single-state capture recapture data, an m-array which is a (years-1) x years matrix, where element [i, j] contains the number of individuals released in year i and recaptured in year j+1 (by definition no recaptures can occur in year 1). The last column contains the number of individuals released in year i and never recaptured.
+For single-state capture recapture data, an m-array which is a (years-1) x years x groups array, where element [i, j, g] contains the number of individuals in group g released in year i and recaptured in year j+1 (by definition no recaptures can occur in year 1). If no groups are specified, this will be a (years-1) x years matrix. The last column contains the number of individuals released in year i and never recaptured.
 
-For multi-state capture-recapture data with s states (including potential unobservable states), an m-array which is a (years-1)*s x (years-1)*2 + 1 matrix. An element [i, j] contains the number of individuals released in year t and state n (i = (t-1)*s + n) and recaptured in year k+1 in state m (j = (k-1)*s + m). The last column contains the number of individuals released in year t and state s and never recaptured. The labeling of unobserved states starts with the number of observed states + 1.
+For multi-state capture-recapture data with s states (including potential unobservable states), an m-array which is a (years-1)*s x (years-1)*2 + 1 x groups array. An element [i, j, g] contains the number of individuals in group g released in year t and state n (i = (t-1)*s + n) and recaptured in year k+1 in state m (j = (k-1)*s + m). If no groups are specified, this will be a matrix. The last column contains the number of individuals released in year t and state s and never recaptured. The labeling of unobserved states starts with the number of observed states + 1.
 }
 \author{
 Michael Schaub

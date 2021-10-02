@@ -12,32 +12,46 @@ marrayDead <- function(MR, freq = 1){
     MR <- matrix(MR, nrow=1)
   if(any(rowSums(MR) > 2))
     stop("The rows of MR may not have more that two 1's", call.=FALSE)
-  freq <- round(freq)
+  if(is.data.frame(freq))
+    freq <- as.matrix(freq)
   if(length(freq) == 1)
     freq <- rep(freq, nrow(MR))
+  if(!is.matrix(freq))
+    freq <- matrix(freq, ncol=1)
+  freq <- round(freq)
+  absfreq <- abs(freq)
 
   nind <- nrow(MR)
   n.occasions <- ncol(MR)
-  out <- matrix(0, ncol=n.occasions, nrow=n.occasions-1)
+  ng <- ncol(freq)                    # number of groups, can be 1
+
+  # Create empty m-array, add dimnames
+  out <- array(0, dim=c(n.occasions-1, n.occasions, ng))
+  
+  gNames <- colnames(freq)
+  if(is.null(gNames))
+    gNames <- paste0("G", 1:ng)
   dimnames(out) <- list(released = paste0("Y", 1:(n.occasions-1)),
-      recovered = c(paste0("Y", 2:n.occasions), "never"))
+      recovered = c(paste0("Y", 2:n.occasions), "never"),
+      gNames)
 
   # Create vector with occasion of marking
   f <- getFirst(MR)  # year of release
   f.fact <- factor(f, levels=1:n.occasions)
-  # Calculate the number of released individuals at each time period
-  released <- tapply(freq, f.fact, sum)
-  released[is.na(released)] <- 0  # tapply returns NA if a value is missing from f.
+  for(g in 1:ng) {
+    # Calculate the number of released individuals at each time period
+    released <- tapply(freq[,g], f.fact, sum)
+    released[is.na(released)] <- 0  # tapply returns NA if a value is missing from f.
 
-  # Fill m-array with recovered individuals
-  rec.ind <- which(apply(MR, 1, sum)==2)  # which were recovered dead
-  rec <- getFirst(rmFirst(MR[rec.ind, ])) # year of recovery
-  for (i in seq_along(rec.ind)){
-    out[f[rec.ind[i]],rec[i]-1] <- out[f[rec.ind[i]],rec[i]-1] + abs(freq[rec.ind[i]])
+    # Fill m-array with recovered individuals
+    rec.ind <- which(apply(MR, 1, sum)==2)  # which were recovered dead
+    rec <- getFirst(rmFirst(MR[rec.ind, ])) # year of recovery
+    for (i in seq_along(rec.ind)){
+      out[f[rec.ind[i]],rec[i]-1, g] <- out[f[rec.ind[i]],rec[i]-1, g] + abs(freq[rec.ind[i], g])
+    }
+    # Calculate the number of individuals that are never recovered
+    out[ ,n.occasions, g] <- released[-n.occasions] - rowSums(out[,,g])
   }
-  # Calculate the number of individuals that are never recovered
-  out[ ,n.occasions] <- released[-n.occasions] - rowSums(out)
-
-  return(out)
+  return(drop(out))
 }
 

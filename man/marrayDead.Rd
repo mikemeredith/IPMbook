@@ -16,11 +16,11 @@ marrayDead(MR, freq = 1)
 an individuals x time matrix with 1 denoting either the time of marking or the time of recovery; otherwise 0.
 }
   \item{freq}{
-a vector with the number of animals with each capture history. If a single value is supplied, it will be used for all rows in the capture history. The default is to assume each row corresponds to a single animal.
+a vector with the number of animals with each capture history, or a matrix with a column for each group. If a single value is supplied, it will be used for all rows in the capture history; the default is to assume each row corresponds to a single animal.
 }
 }
 \value{
-An m-array, a (years-1) x years matrix, where element [i, j] contains the number of individuals marked in year i and recovered in year j+1. The last column contains the number of individuals marked in year i and never recovered.
+An m-array, a (years-1) x years x groups array, where element [i, j, g] contains the number of individuals in group g marked in year i and recovered in year j+1. The last column contains the number of individuals marked in year i and never recovered. If no groups are specified, this will be a (years-1) x years matrix.
 }
 \author{
 Michael Schaub
