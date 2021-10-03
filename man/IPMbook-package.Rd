@@ -74,15 +74,16 @@ The functions are listed by chapter below.
 
 \section{UTILITY FUNCTIONS}{
   \describe{
-  \item{\code{\link{getFirst}}}{ Calculates the occasion of first capture from a capture history matrix.}
-  \item{\code{\link{rmFirst}}}{ Removes the records of first capture from a capture history matrix.}
-  \item{\code{\link{zKnown}}}{ Converts a capture history matrix to one with 1 where the animal is know to be alive, NA elsewhere.}
-  \item{\code{\link{zInit}}}{ Converts a capture history matrix to one with 1 after the occasion of first capture, NA elsewhere.}
-  \item{\code{\link{zInitDR}}}{ Converts a dead-recovery capture history matrix to one with 1 after the occasion of first capture until the occasion of dead recovery, then 0; NA elsewhere.}
+  \item{\code{\link{ch2matrix}}}{ Convert capture histories in text format to a matrix.}
   \item{\code{\link{cleanCH}}}{ Removes all-zero rows from a capture history matrix.}
   \item{\code{\link{dbeta2}}}{ Beta distribution with mean and sd.}
   \item{\code{\link{dbeta3}}}{ Beta distribution with mode and concentration.}
   \item{\code{\link{dgamma2}}}{ Gamma distribution with mean and sd.}
+  \item{\code{\link{getFirst}}}{ Calculates the occasion of first capture from a capture history matrix.}
+  \item{\code{\link{rmFirst}}}{ Removes the records of first capture from a capture history matrix.}
+  \item{\code{\link{zInit}}}{ Converts a capture history matrix to one with 1 after the occasion of first capture, NA elsewhere.}
+  \item{\code{\link{zInitDR}}}{ Converts a dead-recovery capture history matrix to one with 1 after the occasion of first capture until the occasion of dead recovery, then 0; NA elsewhere.}
+  \item{\code{\link{zKnown}}}{ Converts a capture history matrix to one with 1 where the animal is know to be alive, NA elsewhere.}
   }
 }
 

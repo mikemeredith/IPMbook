@@ -1,3 +1,7 @@
+CHANGES in version 0.1.2.9005 (2021-10-03)
+
+  * Added `ch2matrix` utility to convert capture histories in text format to matrices.
+
 CHANGES in version 0.1.2.9004 (2021-10-01)
 
   * `marray*` functions now deal correctly with trap losses if only 1 capture.

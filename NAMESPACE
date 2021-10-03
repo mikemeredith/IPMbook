@@ -20,4 +20,5 @@ export(
   "simCountBin", "simCountNorm", "simCountPois",
   "marray", "marrayAge", "marrayDead", "createAge",
   "summaryPop",
-  "cleanCH", "zKnown", "zInit", "zInitDR", "rmFirst", "getFirst", "dUnif")
+  "cleanCH", "zKnown", "zInit", "zInitDR", "rmFirst", "getFirst",
+  "dUnif", "ch2matrix")
