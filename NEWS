@@ -1,3 +1,7 @@
+CHANGES in version 0.1.2.9005 (2021-10-04)
+
+  * `marray*` functions gain a `groups` argument, as an alternative to columns in `freq`.
+
 CHANGES in version 0.1.2.9005 (2021-10-03)
 
   * Added `ch2matrix` utility to convert capture histories in text format to matrices.

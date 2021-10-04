@@ -3,7 +3,7 @@
 # Modified to deal with a single individual as a vector 2020-10-15
 # Modified to deal with a matrix of unique capture histories plus a vector of frequencies 2021-09-28.
 
-marrayDead <- function(MR, freq = 1){
+marrayDead <- function(MR, freq = 1, groups = NULL){
   if(is.data.frame(MR))
     MR <- as.matrix(MR)
   MR <- round(MR)
@@ -19,6 +19,9 @@ marrayDead <- function(MR, freq = 1){
   if(!is.matrix(freq))
     freq <- matrix(freq, ncol=1)
   freq <- round(freq)
+  if(!is.null(groups) && ncol(freq) == 1)
+    freq <- groupfreq(freq, groups)
+
   absfreq <- abs(freq)
 
   nind <- nrow(MR)

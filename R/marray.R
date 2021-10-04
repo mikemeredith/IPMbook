@@ -20,7 +20,7 @@
 #
 #####################################################################################################
 
-marray <- function(ch, unobs = 0, freq = 1){
+marray <- function(ch, unobs = 0, freq = 1, groups = NULL){
   if(is.data.frame(ch))
     ch <- as.matrix(ch)
   if(!is.matrix(ch))
@@ -36,6 +36,9 @@ marray <- function(ch, unobs = 0, freq = 1){
   if(!is.matrix(freq))
     freq <- matrix(freq, ncol=1)
   freq <- round(freq)
+  if(!is.null(groups) && ncol(freq) == 1)
+    freq <- groupfreq(freq, groups)
+  
   absfreq <- abs(freq)
 
   ns <- length(table(ch)) - 1 + unobs # number of states, excluding 0, can be 1
@@ -77,6 +80,8 @@ marray <- function(ch, unobs = 0, freq = 1){
     }
 
     for(g in 1:ng) {
+      if(absfreq[i, g] == 0)
+        next
       if (length(state) == 1 && !traploss[i, g]) {  # no recaptures
          out[capID[1], 'never', g] <- out[capID[1], 'never', g] + absfreq[i, g]
       }

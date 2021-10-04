@@ -9,7 +9,7 @@ Converts dead-recovery capture histories to an m-array
 Converts dead-recovery capture histories to an m-array.
 }
 \usage{
-marrayDead(MR, freq = 1)
+marrayDead(MR, freq = 1, groups = NULL)
 }
 \arguments{
   \item{MR}{
@@ -17,6 +17,9 @@ an individuals x time matrix with 1 denoting either the time of marking or the t
 }
   \item{freq}{
 a vector with the number of animals with each capture history, or a matrix with a column for each group. If a single value is supplied, it will be used for all rows in the capture history; the default is to assume each row corresponds to a single animal.
+}
+  \item{groups}{
+a factor (or a vector that can be coerced to a factor) which identifies the group that each row of \code{ch} refers to. Ignored if \code{freq} is a matrix with > 1 column.
 }
 }
 

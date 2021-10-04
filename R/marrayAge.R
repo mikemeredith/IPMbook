@@ -20,7 +20,7 @@
 ################################################
 
 
-marrayAge <- function(ch, age, mAge = 1, freq = 1){
+marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
   if(is.data.frame(ch))
     ch <- as.matrix(ch)
   if (!is.matrix(ch))
@@ -38,6 +38,9 @@ marrayAge <- function(ch, age, mAge = 1, freq = 1){
   if(!is.matrix(freq))
     freq <- matrix(freq, ncol=1)
   freq <- round(freq)
+  if(!is.null(groups) && ncol(freq) == 1)
+    freq <- groupfreq(freq, groups)
+
   absfreq <- abs(freq)
 
   maxAge <- max(age, mAge)
