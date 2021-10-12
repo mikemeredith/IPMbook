@@ -9,14 +9,14 @@ Creates age-dependent m-arrays
 Converts single-state capture-recapture data to age-dependent m-arrays.
 }
 \usage{
-marrayAge(ch, age, mAge = 1, freq = 1, groups = NULL)
+marrayAge(ch, age = 1, mAge = 1, freq = 1, groups = NULL)
 }
 \arguments{
   \item{ch}{
 an individuals x time matrix with capture histories (0: not captured; 1: captured). See Details.
 }
   \item{age}{
-vector with the age class at first capture for each individual.
+vector with the age class at first capture for each individual, or a scalar that will be used for all individuals.
 }
   \item{mAge}{
 maximum number of age classes for which m-arrays are constructed; ignored if \code{max(age) > mAge}. Only required if the \code{age} vector has fewer age classes than we want to separate (e.g. capture histories \code{ch} contains only individuals marked as juveniles, and we want 2 age classes).

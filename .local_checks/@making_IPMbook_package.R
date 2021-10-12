@@ -20,7 +20,7 @@ devtools::load_all("D:/Github/IPMbook_package/IPMbook")
 # ==========================
 unlink(list.files(pattern="Rplots.pdf", recursive=TRUE))
 system("R CMD build IPMbook")  # Produces the .tar.gz
-pkg <- "IPMbook_0.1.2.9006.tar.gz"  # <-- fix version number here
+pkg <- "IPMbook_0.1.2.9007.tar.gz"  # <-- fix version number here
 
 # Pick one to check:
 ## on desktop

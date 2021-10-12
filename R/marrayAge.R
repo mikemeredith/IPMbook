@@ -20,7 +20,7 @@
 ################################################
 
 
-marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
+marrayAge <- function(ch, age = 1, mAge = 1, freq = 1, groups = NULL){
   if(is.data.frame(ch))
     ch <- as.matrix(ch)
   if (!is.matrix(ch))
@@ -29,6 +29,8 @@ marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
   stopifNegative(ch, allowNA=TRUE, allowZero=TRUE)
   age <- round(age)
   stopifNegative(age, allowNA=FALSE, allowZero=FALSE)
+  if(length(age) == 1)
+    age <- rep(age, nrow(ch))
   mAge <- round(mAge[1])
   stopifNegative(mAge, allowNA=FALSE, allowZero=FALSE)
   if(is.data.frame(freq))
@@ -49,7 +51,7 @@ marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
   # stopifnotLength(freq, nind, allow1=FALSE)  ## FIXME
   n.occasions <- ncol(ch)
   ng <- ncol(freq)   # number of groups, can be 1
-  
+
   # Remove capture histories of individuals that are marked at last occasion
   first <- getFirst(ch)
   # last <- which(first == n.occasions)
@@ -75,7 +77,7 @@ marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
 
   # Create empty m-array, add dimnames
   marr <- array(0, dim = c(n.occasions-1, n.occasions, maxAge, ng))
-  
+
   gNames <- colnames(freq)
   if(is.null(gNames))
     gNames <- paste0("G", 1:ng)
@@ -92,7 +94,7 @@ marrayAge <- function(ch, age, mAge = 1, freq = 1, groups = NULL){
     cap.occ <- which(ch[i,]!=0)
     capID <- paste0("Y", cap.occ)
     cap.age <- age.matrix[i, cap.occ]
-    
+
     for(g in 1:ng) {
       if (length(capID) == 1 && !traploss[i,g]) {  # no recaptures
          marr[capID[1], 'never', cap.age[1], g] <- marr[capID[1], 'never', cap.age[1],g] + absfreq[i,g]
