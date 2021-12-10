@@ -52,7 +52,7 @@ Adapted from code in Ntzoufras (2009), p. 48.
 \references{
 Ntzoufras, I. (2009) \emph{Bayesian Modeling Using WinBUGS}, Wiley, Hoboken NJ.
 
-Schaub, M., Kéry, M. (2021), \emph{Integrated Population Models}, Academic Press, chapter 13.
+Schaub, M., Kéry, M. (2022), \emph{Integrated Population Models}, Academic Press, section 2.5.
 }
 \examples{
 require(graphics)

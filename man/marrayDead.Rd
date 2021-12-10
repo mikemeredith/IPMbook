@@ -34,7 +34,7 @@ An m-array, a (years-1) x years x groups array, where element [i, j, g] contains
 Michael Schaub
 }
 \references{
-Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 12.4.2.
+Schaub, M., Kéry, M. (2022) \emph{Integrated Population Models}, Academic Press, chapter 12.4.3.
 }
 
 \examples{

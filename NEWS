@@ -1,34 +1,10 @@
-CHANGES in version 0.1.2.9007 (2021-10-11)
-
-  * `marrayAge` now accepts a scalar value for `age`.
-
-CHANGES in version 0.1.2.9006 (2021-10-04)
-
-  * `marray*` functions gain a `groups` argument, as an alternative to columns in `freq`.
-
-CHANGES in version 0.1.2.9005 (2021-10-03)
+CHANGES in version 0.1.3 (2021-12-10)
 
   * Added `ch2matrix` utility to convert capture histories in text format to matrices.
 
-CHANGES in version 0.1.2.9004 (2021-10-01)
-
-  * `marray*` functions now deal correctly with trap losses if only 1 capture.
-
-  * `marray*` functions deal with with groups specified as columns in the `freq` argument.
-
-CHANGES in version 0.1.2.9003 (2021-09-29)
-
-  * `marray*` functions now accept data frames for capture histories.
-
-CHANGES in version 0.1.2.9002 (2021-09-28)
-
   * Modified `marray` and `marrayAge` to deal with trap losses. (Not applicable to `marrayDead`.)
 
-CHANGES in version 0.1.2.9001 (2021-09-27)
-
-  * Modified `marray*` functions to accept a matrix of unique capture histories accompanied by a vector of frequencies.
-
-CHANGES in version 0.1.2.9000 (2021-09-25)
+  * Modified `marray*` functions to accept a wider range of input formats.
 
   * Modified `zInit` and `zKnown` to handle all-zero capture histories.
 
