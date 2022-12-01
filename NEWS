@@ -1,3 +1,7 @@
+CHANGES in version 0.1.4 (2022-11-16)
+
+  * Andy Royle as Maintainer.
+
 CHANGES in version 0.1.3 (2021-12-10)
 
   * Added `ch2matrix` utility to convert capture histories in text format to matrices.
